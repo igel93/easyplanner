@@ -1,0 +1,38 @@
+<div>
+  <label for="eventTitle">Title of the event </label>
+  <input type="text" id="eventTitle" name="eventTitle" value="Title of event">
+</div>
+<div>
+  <label for="eventTitle">from</label>
+  <input type="text" ngbDatepicker #d="ngbDatepicker" value="Select date" >
+  <button (click)="d.toggle()">From</button>
+  
+  <label for="eventTitle">to</label>
+  <input type="text" ngbDatepicker #d="ngbDatepicker" value="Select date" >
+  <button (click)="d.toggle()">To</button>
+</div>
+<div>
+  <label for="fromTime">From time </label>
+  <input type="time" />
+  <label for="toTime">To time </label>
+  <input type="time" />
+</div>
+<div>
+  <label for="position">Position </label>
+  <input type="text" />
+</div>
+<div>
+  <label for="room">Room </label>
+  <input type="text" />
+</div>
+<div>
+  <label for="note">Note </label>
+  <textarea rows="4" cols="20">
+  </textarea>
+</div>
+
+
+
+
+
+
