@@ -1,0 +1,22 @@
+<div class="date-wrap">
+  <div class="date-head">
+    <a (click)="goPrev()" class="left-btn">&lt;</a>{{dateObject.year}}-{{dateObject.month}}
+    <a class="right-btn" (click)="goNext()">&gt;</a>
+  </div>
+  <div class="date-body">
+    <div class="date-day">Sun</div>
+    <div class="date-day">Mon</div>
+    <div class="date-day">Tue</div>
+    <div class="date-day">Wed</div>
+    <div class="date-day">Thu</div>
+    <div class="date-day">Fri</div>
+    <div class="date-day">Sat</div>
+    <div 
+    *ngFor="let item of dateObject.datesArray,let i = index" 
+    class="date-item" [class.active]="item == dateObject.nowDay"
+    (click)='dateClickEvent(i,item)'>{{item}}</div>
+  </div>
+</div>
+<div >
+  <a>{{test}}</a>
+</div>
