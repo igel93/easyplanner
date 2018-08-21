@@ -5,6 +5,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateGroupEventComponent } from './create-group-event/create-group-event.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { CalenderComponent } from './calender/calender.component';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +19,9 @@ import { CreateGroupEventComponent } from './create-group-event/create-group-eve
   imports: [
     BrowserModule,
     NgbModule,
+    FormsModule,
+    HttpModule,
+    CalenderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

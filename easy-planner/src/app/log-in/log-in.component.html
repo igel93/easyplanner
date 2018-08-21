@@ -1,3 +1,18 @@
-<p>
-  log-in works!
-</p>
+<div *ngIf='hide'>
+  <div>
+    <label>USER NAME:</label>
+    <input type="text" (input)="onUpdateUserName($event)">
+  </div>
+  <div>
+    <label class="">PASSWORD:</label>
+    <input type="text" (input)="onUpdatePassword($event)">
+  </div>
+  <!-- <p >{{userName}}</p>
+  <p [innerText]='password'></p> -->
+    <hr>
+    <div>
+      <button class="btn btn-primary">Sign In</button>
+      <button class="btn btn-primary" (click)="onClickAuthentication()">Confirm</button>
+    </div>
+</div>
+<app-calender *ngIf='logIn'></app-calender>
