@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CalenderComponent } from './calender/calender.component';
+import { CreateGroupEventComponent } from './create-group-event/create-group-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    CalenderComponent
+    CalenderComponent,
+    CreateGroupEventComponent
   ],
   imports: [
     BrowserModule,
