@@ -1,4 +1,4 @@
-<div *ngIf='hide'>
+<div style="text-align:center">
   <div>
     <label>USER NAME:</label>
     <input type="text" (input)="onUpdateUserName($event)">
@@ -7,12 +7,11 @@
     <label class="">PASSWORD:</label>
     <input type="text" (input)="onUpdatePassword($event)">
   </div>
-  <!-- <p >{{userName}}</p>
-  <p [innerText]='password'></p> -->
     <hr>
     <div>
       <button class="btn btn-primary">Sign In</button>
-      <button class="btn btn-primary" (click)="onClickAuthentication()">Confirm</button>
+      <button class="btn btn-primary" routerLink={{link}}  [queryParams]="{id:key}" (click)="onClickAuthentication()">Confirm</button>
     </div>
 </div>
-<app-calender *ngIf='logIn'></app-calender>
+<router-outlet></router-outlet>
+

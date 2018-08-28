@@ -9,5 +9,5 @@ export class GroupEvent {
         public position: string,
         public room: string,
         public note: string
-    ) {  }
-}
+    ) { }
+} 
