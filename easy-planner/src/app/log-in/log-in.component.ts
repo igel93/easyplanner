@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -11,6 +12,7 @@ export class LogInComponent implements OnInit {
   password: string;
   router: Router;
   link: string;
+  connection: any;
   constructor() { }
   ngOnInit() { }
   onClickAuthentication() {
@@ -23,4 +25,7 @@ export class LogInComponent implements OnInit {
   onUpdatePassword(event: Event) {
     this.password = (<HTMLInputElement>event.target).value;
   }
+
+
+ 
 }
