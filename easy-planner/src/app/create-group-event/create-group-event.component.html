@@ -36,11 +36,11 @@
       </textarea>
     </div>
   </form>
-  <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit </button>
+  <button type="submit" class="btn btn-success">Submit </button>
   <button type="button" class="btn btn-default" (click)="newGroupEvent()"> New Group Event</button>
 
 <div>
-  <h2>My meetings</h2>
+  <h2>My meetings</h2> 
     <ul class="events">
       <li *ngFor="let event of events">
         <span> {{event.id}} </span>

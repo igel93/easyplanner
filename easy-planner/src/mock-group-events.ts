@@ -18,7 +18,7 @@ export const GROUPEVENTS: GroupEvent[] = [
         fromTime: '18:00', toTime: '19:00',
         date: '05-09-2018', position: 'Oslo', room: '104',
         note: '...'
-    },
+    }, 
 ];
 
 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CalenderComponent } from '../calender/calender.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -8,23 +8,24 @@ import { CalenderComponent } from '../calender/calender.component';
 })
 export class LogInComponent implements OnInit {
   userName: string;
+  key: string;
   password: string;
-  hide: boolean = true;
-  logIn:boolean=false;
-
+  router: Router;
+  link: string;
+  connection: any;
   constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
   onClickAuthentication() {
-    this.hide = false;
-    this.logIn=true;
+    this.link = "/login/calendar-view";
+    this.key = this.userName;
   }
-  onUpdateUserName(event:Event) {
-    this.userName=(<HTMLInputElement>event.target).value;
-   }
-   onUpdatePassword(event:Event) {
-    this.password=(<HTMLInputElement>event.target).value;
-   }
+  onUpdateUserName(event: Event) {
+    this.userName = (<HTMLInputElement>event.target).value;
+  }
+  onUpdatePassword(event: Event) {
+    this.password = (<HTMLInputElement>event.target).value;
+  }
+
+
+ 
 }
