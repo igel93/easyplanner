@@ -1,16 +1,17 @@
 <div style="text-align:center">
   <div>
     <label>USER NAME:</label>
-    <input type="text" (input)="onUpdateUserName($event)">
+    <input type="text" (input)="onUpdateUserName($event)">  
   </div>
   <div>
     <label class="">PASSWORD:</label>
-    <input type="text" (input)="onUpdatePassword($event)">
+    <input type="password" (input)="onUpdatePassword($event)">
   </div>
+  <a >{{userValad}}</a>
     <hr>
     <div>
-      <button class="btn btn-primary">Sign In</button>
-      <button class="btn btn-primary" routerLink={{link}}  [queryParams]="{id:key}" (click)="onClickAuthentication()">Confirm</button>
+      <!-- <button class="btn btn-primary">Sign In</button> -->
+      <button class="btn btn-primary" routerLink={{link}} (click)="onClickAuthentication()">Confirm</button>
     </div>
 </div>
 <router-outlet></router-outlet>

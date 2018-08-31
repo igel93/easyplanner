@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-
+import { ActivatedRoute, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.component.html',
@@ -9,14 +9,12 @@ export class CalenderComponent implements OnInit {
   private year: number;
   private month: number;
   private dateObject;
- test1;
- test2;
- test;
- selectedDate:number[]=[]; 
-  
- /**
-  * return last month data
-  */
+  private id: string;
+  private selectedDate: number[] = [];
+
+  /**
+   * return last month data
+   */
   goPrev() {
     this.month--
     if (this.month == 0) {
@@ -36,14 +34,14 @@ export class CalenderComponent implements OnInit {
     }
     this.dateObject = this.getDatesOfMonth(this.year, this.month)
   }
-  
+
   /**
    * return a array data which contains specific date inforamtion
    * @param year 
    * @param month 
    */
   getDatesOfMonth(year: number, month: number) {
-    let datesArray:number []=[];
+    let datesArray: number[] = [];
     let date = new Date(year, month - 1);
     let nowDay = new Date().getDate();
     let day = date.getDay();
@@ -62,7 +60,6 @@ export class CalenderComponent implements OnInit {
     for (let index = 1; index <= countOfNextMonth; index++) {
       datesArray.push(index);
     }
-    console.log(datesArray)
     return {
       year: year,
       nowDay: nowDay,
@@ -75,34 +72,36 @@ export class CalenderComponent implements OnInit {
    * @param index 
    * @param item 
    */
-  dateClickEvent(index,item) {
+  dateClickEvent(index, item) {
+    // this array stored 0year,1month,2date. 
     this.selectedDate = [];
-    this.selectedDate[0]=this.dateObject.year;
-    if(item>14 && index<13 ){
-      this.selectedDate[1]=this.dateObject.month-1;
-      this.selectedDate[2]=item;
-      this.test= this.selectedDate;
-     return;
-    }
-    if(item < 14&&index>28){
-      this.selectedDate[1]=this.dateObject.month+1;
-      this.selectedDate[2]=item;
-      this.test= this.selectedDate;
+    this.selectedDate[0] = this.dateObject.year;
+    if (item > 14 && index < 13) {
+      this.selectedDate[1] = this.dateObject.month - 1;
+      this.selectedDate[2] = item;
       return;
     }
-    this.selectedDate[1]=this.dateObject.month;
-    this.selectedDate[2]=item;
-    this.test= this.selectedDate;
+    if (item < 14 && index > 28) {
+      this.selectedDate[1] = this.dateObject.month + 1;
+      this.selectedDate[2] = item;
+      return;
+    }
+    this.selectedDate[1] = this.dateObject.month;
+    this.selectedDate[2] = item;
   }
 
-  constructor(private ref: ChangeDetectorRef) {
-    let date = new 　Date()
+  constructor(
+    private ref: ChangeDetectorRef,
+    private route: ActivatedRoute,
+    private router: Router) {
+    let date = new Date()
     this.year = date.getFullYear()
     this.month = date.getMonth() + 1
   }
-  
+
   ngOnInit() {
-    this.dateObject = this.getDatesOfMonth(this.year, this.month)
+    this.dateObject = this.getDatesOfMonth(this.year, this.month);
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }

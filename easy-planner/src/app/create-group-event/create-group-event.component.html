@@ -1,58 +1,52 @@
 <div class="create-group-event-panel">
-<div [hidden]="submitted">
-  <h1>Event details</h1>
-  <form (ngSumbit)="onSubmit()" name="group event form" #groupEventForm="ngForm">
-    <div class="form-group">
-      <label for="eventTitle">Title of the event </label>
-      <input type="text" class="form-control" name="eventTitle" id="eventTitle" required value="Event title"
-      [(ngModel)]="model.eventTitle" eventTitle = "eventTitle" #eventTitle="ngModel">
-    </div>
-    <div class="form-group">
-      <label for="eventTitle">Date</label>
-      <input type="date" class="form-control" name="date" value="Select date" required
-      [(ngModel)]="model.fromDate" fromDate = "fromDate" #eventTitle="ngModel">
-    </div>
-    <div class="form-group">
-      <label for="fromTime">From time </label>
-      <input type="time" value="12:00" class="form-control" name="fromTime" required
-      [(ngModel)]="model.fromTime" fromTime = "fromTime" #eventTitle="ngModel" />
-      <label for="toTime">To time </label>
-      <input type="time" value="13:00" class="form-control" name="toTime" required
-      [(ngModel)]="model.toTime" toTime = "toTime" #eventTitle="ngModel"/>
-    </div>
-    <div class="form-group">
-      <label for="position">Position </label>
-      <input type="text" class="form-control" value="UTS Building 11" name="position" required
-      [(ngModel)]="model.position" position = "postition" #eventTitle="ngModel"/>
-    </div>
-    <div class="form-group">
-      <label for="room">Room </label>
-      <input type="text" class="form-control" value="505" name="room"
-      [(ngModel)]="model.room" room = "room" #eventTitle="ngModel"/>
-    </div>
-    <div class="form-group">
-      <label for="note">Note </label>
-      <textarea rows="4" cols="20" name="textArea" value="Notes..." class="form-control" [(ngModel)]="model.note" note = "note" #eventTitle="ngModel">
+  <div [hidden]="submitted">
+    <h1>Event details</h1>
+    <form (ngSumbit)="onSubmit()" name="group event form" #groupEventForm="ngForm">
+      <div class="form-group">
+        <label for="eventTitle">Title of the event </label>
+        <input type="text" class="form-control" name="eventTitle" id="eventTitle" required value="Event title" [(ngModel)]="model.eventTitle"
+          eventTitle="eventTitle" #eventTitle="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="eventTitle">Date</label>
+        <input type="date" class="form-control" name="date" value="Select date" required [(ngModel)]="model.fromDate" fromDate="fromDate"
+          #eventTitle="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="fromTime">From time </label>
+        <input type="time" value="12:00" class="form-control" name="fromTime" required [(ngModel)]="model.fromTime" fromTime="fromTime"
+          #eventTitle="ngModel" />
+        <label for="toTime">To time </label>
+        <input type="time" value="13:00" class="form-control" name="toTime" required [(ngModel)]="model.toTime" toTime="toTime" #eventTitle="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="position">Position </label>
+        <input type="text" class="form-control" value="UTS Building 11" name="position" required [(ngModel)]="model.position" position="postition"
+          #eventTitle="ngModel" />
+      </div>
+      <div class="form-group">
+        <label for="room">Room </label>
+        <input type="text" class="form-control" value="505" name="room" [(ngModel)]="model.room" room="room" #eventTitle="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="note">Note </label>
+        <textarea rows="4" cols="20" name="textArea" value="Notes..." class="form-control" [(ngModel)]="model.note" note="note" #eventTitle="ngModel">
       </textarea>
+      </div>
+    </form>
+    <button type="submit" (click)="onSubmit()" class="btn btn-success">Submit </button>
+    <button type="button" class="btn btn-default" (click)="newGroupEvent()"> New Group Event</button>
+
+    <div>
+      <h2>My meetings</h2>
+      <ul class="events">
+        <li *ngFor="let event of events">
+          <span> {{event.id}} </span>
+          {{event.eventTitle}} {{event.fromTime}} {{event.toTime}} {{event.date}} {{event.position}} {{event.room}}
+        </li>
+      </ul>
     </div>
-  </form>
-  <button type="submit" class="btn btn-success">Submit </button>
-  <button type="button" class="btn btn-default" (click)="newGroupEvent()"> New Group Event</button>
 
-<div>
-  <h2>My meetings</h2> 
-    <ul class="events">
-      <li *ngFor="let event of events">
-        <span> {{event.id}} </span>
-        {{event.eventTitle}}
-        {{event.fromTime}}
-        {{event.toTime}}
-        {{event.date}}
-        {{event.position}}
-        {{event.room}}
-      </li>
-    </ul>
-</div>
-
-
-
+    <router-outlet></router-outlet>

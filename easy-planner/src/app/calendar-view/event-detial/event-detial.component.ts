@@ -8,12 +8,20 @@ import { GROUPEVENTS } from 'src/mock-group-events';
 })
 export class EventDetialComponent implements OnInit {
   events = GROUPEVENTS;
-  key: String;
+  id: String;
   name: String;
-  constructor(private activatedRoute: ActivatedRoute) {
+  link: String;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {
   }
   ngOnInit() {
     //this method will get the papameter from last component
-    this.name=this.activatedRoute.snapshot.queryParamMap.get('id');
+    this.name = this.activatedRoute.snapshot.paramMap.get('id');
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.link = "/create-group-event/" + this.id;
+  }
+  logOut() {
+    this.router.navigate(['/login']);
   }
 }
