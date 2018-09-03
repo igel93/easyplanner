@@ -1,5 +1,9 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
+.create-group-event-panel {
+    padding-left: 50px; 
+}
+
 /* Application-wide Styles */
     h1 {
       color: #369;
@@ -14,7 +18,7 @@
     body {
       margin: 2em;
     }
-    body, input[text], button {
+    body, input[text] {
       color: #888;
       font-family: Cambria, Georgia;
     }
@@ -23,12 +27,26 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    input[time] {
+      width: 250px;
+      padding: 5px;
+    }
+    
+    textarea {
+      width: 300px;
+      padding: 5px;
+    }
+
     .ng-valid[required], .ng-valid.required  {
-     border-left: 5px solid #42A948; /* green */
+      border-left: 5px solid #42A948; /* green */
+      width: 250px;
+      padding: 5px;
     }
 
     .ng-invalid:not(form)  {
       border-left: 5px solid #a94442; /* red */
+      width: 250px;
+      padding: 5px;
     }
 
     .events {

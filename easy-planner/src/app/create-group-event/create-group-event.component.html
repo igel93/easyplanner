@@ -27,7 +27,7 @@
     </div>
     <div class="form-group">
       <label for="room">Room </label>
-      <input type="text" class="form-control" value="505" name="room"
+      <input type="text" class="form-control" value="505" name="room" required
       [(ngModel)]="model.room" room = "room" #eventTitle="ngModel"/>
     </div>
     <div class="form-group">
@@ -36,7 +36,7 @@
       </textarea>
     </div>
   </form>
-  <button type="submit" class="btn btn-success">Submit </button>
+  <button type="submit" class="btn btn-success" routerLink={{link}}>2Submit </button>
   <button type="button" class="btn btn-default" (click)="newGroupEvent()"> New Group Event</button>
 
 <div>
