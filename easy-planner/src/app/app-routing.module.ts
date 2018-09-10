@@ -8,8 +8,8 @@ import { CreateGroupEventComponent } from './create-group-event/create-group-eve
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LogInComponent },
-  { path: 'login/calendar-view', component: CalendarViewComponent },
-  { path: 'login/calendar-view/create-group-event', component: CreateGroupEventComponent }
+  { path: 'calendar-view', component: CalendarViewComponent },
+  { path: 'create-group-event', component: CreateGroupEventComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
