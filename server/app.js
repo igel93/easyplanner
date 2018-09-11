@@ -6,13 +6,13 @@ var logger = require('morgan');
 const calendarRouter = require('./routes/calendar-view')
 const loginRouter = require('./routes/login')
 const connection = require('./routes/mysqlConnection');
+const cors= require('cors')
 var app = express();
-
 connection.connect();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

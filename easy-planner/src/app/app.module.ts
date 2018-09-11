@@ -10,7 +10,9 @@ import { CreateGroupEventComponent } from './create-group-event/create-group-eve
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { EasyPlannerServerService } from './easy-planner-server.service'
+import { EasyPlannerServerService } from './easy-planner-server.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ModifyEventComponent } from './modify-event/modify-event.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { EasyPlannerServerService } from './easy-planner-server.service'
     CalenderComponent,
     CreateGroupEventComponent,
     CalendarViewComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserProfileComponent,
+    ModifyEventComponent
   ],
   imports: [
     BrowserModule,

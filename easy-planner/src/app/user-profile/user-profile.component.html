@@ -1,0 +1,33 @@
+<div>
+  <h3 style="text-align:center">Change Password</h3>
+  <br>
+  <div>
+    <form (ngSubmit)="onSubmit(profileForm.value)" #profileForm="ngForm">
+      <table align='center'>
+        <tbody>
+          <tr>
+            <td> <label>Current:</label></td>
+            <td> <input type="text" required [(ngModel)]=oldPassword name=oldPassword></td>
+          </tr>
+          <tr>
+            <td> <label>New:</label></td>
+            <td><input type="text" required [(ngModel)]=newPassword1 name=newPassword1></td>
+          </tr>
+          <tr>
+            <td><label>Retype new:</label></td>
+            <td><input type="text" required [(ngModel)]=newPassword2 name=newPassword2></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div style="text-align:center">
+        <a>{{warning}}</a>
+        <div>
+          <button class="btn btn-primary" (click)="cancelClick()">Cancel</button>
+          <button class="btn btn-primary" type="submit">Confirm</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

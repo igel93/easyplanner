@@ -1,13 +1,13 @@
 export class Event {
-    event_id: any;
-    year:number;
-    month:number;
-    day:number;
-    start_time: any;
-    ending_time: any;
-    location: any;
-    group_name: any=null;
-    group_size: any=0;
-    describtion: any=null;
-    user_id: any;
+    event_id: string=null;
+    year:number=null;
+    month:number=null;
+    day:number=null;
+    start_time: string=null;
+    ending_time: string=null;
+    location: string=null;
+    group_name: string=null;
+    group_size: string=null;
+    describtion: string=null;
+    user_id: string=null;
 }

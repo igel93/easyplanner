@@ -4,50 +4,76 @@ const express = require('express');
 const router = express.Router();
 
 //get HTTP method to /login
-router.get('/:student_id/:password',(req,res) => {
-    //param can pass the select infor
-    sql="select * from user where student_id =? and password =?";
-    connection.query(sql,[req.params.student_id,req.params.password],function (err, rows, fields) {
-        if (err) throw err
-       // console.log('The solution is: ', rows[0].solution);
-         // console.log('The solution is: ', rows);
-        res.setHeader("Access-Control-Allow-Origin", "*");
-       // res.send(rows[0]);
-        results = JSON.stringify(rows[0]);
-        results = JSON.parse(results);
-        res.send(results)
-    })
+router.get('/:student_id/:password', (req, res) => {
+    try {  //param can pass the select infor
+        sql = "select * from user where student_id =?";
+        connection.query(sql, [req.params.student_id], function (err, rows, fields) {
+
+            // console.log('The solution is: ', rows[0].solution);
+            // console.log('The solution is: ', rows);
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            // res.send(rows[0]);
+            results = JSON.stringify(rows[0]);
+            results = JSON.parse(results);
+            res.send(results)
+        })
+    } catch (error) { }
+})
+
+router.get('/:user_id', (req, res) => {
+    try {
+        //param can pass the select infor
+        console.log(req.params.user_id)
+        sql = "select * from user where user_id =?";
+        connection.query(sql, [req.params.user_id], function (err, rows, fields) {
+            if (err) throw err
+            // console.log('The solution is: ', rows[0].solution);
+            console.log('The solution is: ', rows);
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            // res.send(rows[0]);
+            results = JSON.stringify(rows[0]);
+            results = JSON.parse(results);
+            res.send(results)
+        })
+    } catch (error) { }
+
 })
 
 //post HTTP method to /login
-router.post('/',(req,res) => {
-	//param can pass the select infor
-    var param =req.body;
-    b=param.student_id
-    c=param.name
-    d=param.password
-    e=param.email
-    sql="INSERT INTO user (student_id, name, password, email) VALUES (?,?,?,?)"
-    connection.query(sql,[b,c,d,e], function (err, rows, fields) {
-        if (err) throw err
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        res.send('insert success!');
-    })
+router.post('/', (req, res) => {
+    try {//param can pass the select infor
+        var param = req.body;
+        b = param.student_id
+        c = param.name
+        d = param.password
+        e = param.email
+        sql = "INSERT INTO user (student_id, name, password, email) VALUES (?,?,?,?)"
+        connection.query(sql, [b, c, d, e], function (err, rows, fields) {
+            if (err) throw err
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            console.log('The solution is: ', rows);
+            res.send(rows);
+        })
+    } catch (error) { }
 })
 
 //put HTTP method to /login
-router.put('/:student_id',(req,res) => {
-	//param can pass the select infor
-    student_id=req.params.student_id;
-    password=req.body.password;
-    sql="UPDATE user SET password =? WHERE user.student_id =?";
-    connection.query(sql,[password,student_id], function (err, rows, fields) {
-        if (err) throw err
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        res.send('update success!');
-    })
+router.put('/:user_id', (req, res) => {
+    try {
+        //param can pass the select infor
+        user_id = req.params.user_id;
+        password = req.body.password;
+        console.log("pass=" + req.body.params)
+        sql = "UPDATE user SET password =? WHERE user.user_id =?";
+        connection.query(sql, [password, user_id], function (err, rows, fields) {
+            if (err) throw err
+            res.setHeader("Access-Control-Allow-Origin", "*")
+            console.log('The solution is: ', rows);;
+            res.send(rows);
+        })
+    } catch (error) { }
 })
 
-module.exports=router;
+module.exports = router;
 
 

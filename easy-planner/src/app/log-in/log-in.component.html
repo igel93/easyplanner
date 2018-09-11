@@ -1,17 +1,21 @@
 <div style="text-align:center">
+  <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">
     <div>
       <label>USER NAME:</label>
-      <input type="text" (input)="onUpdateUserName($event)">
+      <input type="text" required [(ngModel)]=username name=username>
+      <!-- <input type="text" (input)="onUpdateUserName($event)" required> -->
     </div>
     <div>
-      <label class="">PASSWORD:</label>
-      <input type="password" (input)="onUpdatePassword($event)">
+      <label >PASSWORD:</label>
+      <input type="password" required [(ngModel)]=password name=password>
+      <!-- <input type="password" (input)="onUpdatePassword($event)" required> -->
     </div>
     <hr>
     <a>{{warning}}</a>
     <div>
       <button class="btn btn-primary">Sign In</button>
-      <button class="btn btn-primary" routerLink={{link}} [queryParams]="{name:name,key:key}" (click)="onClickAuthentication()">Confirm</button>
+      <button class="btn btn-primary" type="submit">Confirm</button>
     </div>
+  </form>
 </div>
 <router-outlet></router-outlet>

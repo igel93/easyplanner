@@ -1,9 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 import { EasyPlannerServerService } from '../../easy-planner-server.service'
-import { User } from '../../model/user'
 import { Event } from '../../model/event'
-
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.component.html',
@@ -13,10 +11,12 @@ export class CalenderComponent implements OnInit {
   private year: number;
   private month: number;
   private dateObject;
+  success: boolean = false;
+  message: string;
   key: string;
+  name: string;
   clickDate: number[] = [];
   selectedDate: number[] = [];
-  name: string;
   events: Event[] = [];
   nowDate = new Date();
   years = this.nowDate.getFullYear();
@@ -27,22 +27,35 @@ export class CalenderComponent implements OnInit {
   dayStr: string = String(this.days);
   calendarEvents: Event[] = [];
   flag: number[] = [];
+  
+
 
   initFlag() {
     for (let i = 0; i < 42; i++) {
       this.flag[i] = 0
     }
   }
+
+  myProfileClick() {
+    if (this.key != null) {
+      this.router.navigate(["/user-profile"], { queryParams: { key: this.key } })
+    }
+  }
+
   /**
    * return last month data
    */
   goPrev() {
+    this.success = false;
+    this.calendarService.getEvents(this.key)
+      .subscribe(events => {
+        this.calendarEvents = events
+      })
     this.month--
     if (this.month == 0) {
       this.month = 12;
       this.year--;
     }
-
     this.dateObject = this.getDatesOfMonth(this.year, this.month)
     //console.log("month" + this.month)
     //console.log("flag values" + this.flag)
@@ -51,6 +64,11 @@ export class CalenderComponent implements OnInit {
    * //return next month data
    */
   goNext() {
+    this.success = false;
+    this.calendarService.getEvents(this.key)
+      .subscribe(events => {
+        this.calendarEvents = events
+      })
     this.month++;
     if (this.month == 13) {
       this.month = 1;
@@ -140,7 +158,6 @@ export class CalenderComponent implements OnInit {
         }
       }
     }
-
     //console.log(datesArray)
     return {
       year: year,
@@ -158,7 +175,7 @@ export class CalenderComponent implements OnInit {
    */
   dateClickEvent(index, item) {
     this.selectedDate = [];
-    console.log(this.dateObject.month)
+    this.success = false;
     if (this.dateObject.month == 12 && item < 14 && index > 28) {
       this.selectedDate[0] = this.dateObject.year + 1;
     }
@@ -167,24 +184,52 @@ export class CalenderComponent implements OnInit {
       this.selectedDate[1] = this.dateObject.month - 1;
       this.selectedDate[2] = item;
       this.clickDate = this.selectedDate
+      this.yearStr = String(this.clickDate[0]);
+      this.monthStr = String(this.clickDate[1]);
+      this.dayStr = String(this.clickDate[2]);
+      this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
+        .subscribe(events => {
+          this.events = events
+        })
       return;
     }
     if (item > 14 && index < 13 && this.dateObject.month == 1) {
       this.selectedDate[1] = 12;
       this.selectedDate[2] = item;
       this.clickDate = this.selectedDate
+      this.yearStr = String(this.clickDate[0]);
+      this.monthStr = String(this.clickDate[1]);
+      this.dayStr = String(this.clickDate[2]);
+      this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
+        .subscribe(events => {
+          this.events = events
+        })
       return;
     }
     if (item < 14 && index > 28 && this.dateObject.month != 12) {
       this.selectedDate[1] = this.dateObject.month + 1;
       this.selectedDate[2] = item;
       this.clickDate = this.selectedDate
+      this.yearStr = String(this.clickDate[0]);
+      this.monthStr = String(this.clickDate[1]);
+      this.dayStr = String(this.clickDate[2]);
+      this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
+        .subscribe(events => {
+          this.events = events
+        })
       return;
     }
     if (item < 14 && index > 28 && this.dateObject.month == 12) {
       this.selectedDate[1] = 1;
       this.selectedDate[2] = item;
       this.clickDate = this.selectedDate
+      this.yearStr = String(this.clickDate[0]);
+      this.monthStr = String(this.clickDate[1]);
+      this.dayStr = String(this.clickDate[2]);
+      this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
+        .subscribe(events => {
+          this.events = events
+        })
       return;
     }
     this.selectedDate[1] = this.dateObject.month;
@@ -197,12 +242,28 @@ export class CalenderComponent implements OnInit {
       .subscribe(events => {
         this.events = events
       })
+  }
 
+  deleteClick(event_id: string) {
+    this.calendarService.deleteEvent(event_id)
+      .subscribe(result => {
+        if (result.affectedRows != 0) {
+          this.success = true;
+          this.message = event_id;
+        }
+      })
+  }
+
+  modifyClick(event_id: string) {
+    if (event_id != null) {
+      this.router.navigate(['/modify-event'], { queryParams: { event_id: event_id,key:this.key,name:this.name} })
+    }
   }
 
   constructor(
     private ref: ChangeDetectorRef,
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private calendarService: EasyPlannerServerService) {
     let date = new Date()
     this.year = date.getFullYear()
@@ -210,9 +271,12 @@ export class CalenderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.key = this.activatedRoute.snapshot.queryParamMap.get('key')
-    this.name = this.activatedRoute.snapshot.queryParamMap.get('name')
-
+    // this.key = this.activatedRoute.snapshot.queryParamMap.get('key')
+    // this.name = this.activatedRoute.snapshot.queryParamMap.get('name')
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.name = params['name'];
+      this.key = params['key'];
+    });
     this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
       .subscribe(events => {
         this.events = events
@@ -230,8 +294,6 @@ export class CalenderComponent implements OnInit {
       })
     this.dateObject = this.getDatesOfMonth(this.year, this.month)
     // console.log("flag length" + this.flag.length)
-    console.log("flag values" + this.flag)
-
+    //console.log("flag values" + this.flag)
   }
-
 }

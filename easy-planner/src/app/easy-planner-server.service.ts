@@ -19,12 +19,17 @@ export class EasyPlannerServerService {
     getUser(userName:string,password:string): Observable<User> {
         return this.http.get<User>(this.url + 'login/' + userName + '/' + password)
     }
-    addUser(user: User): Observable<User> {
-        return this.http.post<User>(this.url + 'login/',{user} , httpOptions)
+
+    getUserByID(user_id:string): Observable<User> {
+        return this.http.get<User>(this.url + 'login/' + user_id)
     }
-    updateUser(user: User): Observable<User> {
-        return this.http.put<User>(this.url +'login/' + user.student_id, {user}, httpOptions)
+    addUser(user: User): Observable<any> {
+        return this.http.post<any>(this.url + 'login/',user, httpOptions)
     }
+
+    updateUser(user: User): Observable<any> {
+        return this.http.put<any>(this.url +'login/' + user.user_id, user, httpOptions)
+    } 
 
     /**
      * those methods are used to access the event table
@@ -33,16 +38,19 @@ export class EasyPlannerServerService {
     getEvents(user_id:string): Observable<Event[]> {
         return this.http.get<Event[]>(this.url + 'calender-view/' + user_id)
     }
+    getEventByID(event_id:string): Observable<Event> {
+        return this.http.get<Event>(this.url + 'calender-view/modify-event/' + event_id)
+    }
     getEventsByDate(user_id:string,year:string,month:string,day:string): Observable<Event[]> {
         return this.http.get<Event[]>(this.url + 'calender-view/'+user_id+'/'+year+'/'+month+'/'+day)
+    } 
+    addEvent(event: Event): Observable<any> {
+        return this.http.post<any>(this.url + 'calender-view/', event, httpOptions)
+    } 
+    updateEvent(event: Event): Observable<any> {
+        return this.http.put<any>(this.url + 'calender-view/', event, httpOptions)
     }
-    addEvent(event: Event): Observable<Event> {
-        return this.http.post<Event>(this.url + 'calender-view/', {event}, httpOptions)
+    deleteEvent(event_id: string): Observable<any> {
+        return this.http.delete<any>(this.url + 'calender-view/' +event_id)
     }
-    updateEvent(event: Event): Observable<Event> {
-        return this.http.put<Event>(this.url + 'calender-view/', {event}, httpOptions)
-    }
-    deleteEvent(event_id: string): Observable<Event> {
-        return this.http.delete<Event>(this.url + 'calender-view/' +event_id)
-    }
-}
+} 
