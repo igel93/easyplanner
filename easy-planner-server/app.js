@@ -4,9 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const calendarRouter = require('./routes/calendar-view');
+//const calendarRouter = require('./routes/calendar-view');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const counterRouter = require('./routes/counter');
 
 var app = express();
  
@@ -22,7 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/calendar-view/:id', calendarRouter.get);
+//app.use('/calendar-view/:id', calendarRouter.get);
+
+app.use('/counter/:id', counterRouter.get);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,5 +42,16 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// app.post('/registerUser', function(req, res) {
+//   var user = req.body;
+
+//   var newUser = new user({
+//     studentId: user.studentId,
+//     password: user.password
+//   });
+
+
+// });
 
 module.exports = app;

@@ -9,9 +9,8 @@
   </div>
     <hr>
     <div>
-      <button class="btn btn-primary">Sign In</button>
+      <a routerLink="/login/sign-up"><button class="btn btn-primary">Sign Up</button></a>
       <button class="btn btn-primary" routerLink={{link}}  [queryParams]="{id:key}" (click)="onClickAuthentication()">Confirm</button>
     </div>
 </div>
 <router-outlet></router-outlet>
-

@@ -19,6 +19,9 @@ export class LogInComponent implements OnInit {
     this.link = "/login/calendar-view";
     this.key = this.userName;
   }
+  
+
+
   onUpdateUserName(event: Event) {
     this.userName = (<HTMLInputElement>event.target).value;
   }

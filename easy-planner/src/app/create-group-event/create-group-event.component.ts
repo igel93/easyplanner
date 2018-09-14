@@ -15,9 +15,9 @@ export class CreateGroupEventComponent implements OnInit {
 
   onSubmit() { this.submitted = true; }
 
-  newEvent() {
-    this.model = new GroupEvent(2, '.', '.', '.', '.', '.', '.', '.');
-  }
+  // newEvent() {
+  //   this.model = new GroupEvent(2, '.', '.', '.', '.', '.', '.', '.');
+  // }
 
   constructor() { }
 

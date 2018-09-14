@@ -1,0 +1,40 @@
+<div style="text-align:center">
+  <h1>Create an Easy Planner Account</h1>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="studentId">student ID:</label>
+      <input type="text" [(ngModel)]="model.studentId" name="studentId">
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" [(ngModel)]="model.name" name="name">
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="model.password" name="password">
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="text" [(ngModel)]="model.email" name="email">
+    </div>
+    <div>
+      <label for="role">Role:</label>
+      <select class="" id="role" required [(ngModel)]="model.role" name="role">
+        <option *ngFor="let rol of role" [value]="rol">
+          {{rol}} </option>
+      </select>
+    </div>
+      <hr>
+      <div>
+        <button class="btn btn-primary">Back</button>
+        <button class="btn btn-success" (click)="newUser()" routerLink={{link}} >Create Account</button>
+      </div>
+  </form>
+</div>
+
+ <div>
+   <h2>Model:</h2>
+   {{ currentUser }}
+ </div>
+
+<router-outlet></router-outlet>
