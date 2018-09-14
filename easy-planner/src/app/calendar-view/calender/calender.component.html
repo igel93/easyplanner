@@ -1,23 +1,49 @@
-<div class="date-wrap">
-  <div class="date-head">
-    <a (click)="goPrev()" class="left-btn">&lt;</a>{{dateObject.year}}-{{dateObject.month}}
-    <a class="right-btn" (click)="goNext()">&gt;</a>
+<div class="col-md-5">
+  <div class="date-wrap">
+    <div class="date-head">
+      <a (click)="goPrev()" class="left-btn">&lt;</a>{{dateObject.year}}-{{dateObject.month}}
+      <a class="right-btn" (click)="goNext()">&gt;</a>
+    </div>
+    <div class="date-body">
+      <div class="date-day">Sun</div>
+      <div class="date-day">Mon</div>
+      <div class="date-day">Tue</div>
+      <div class="date-day">Wed</div>
+      <div class="date-day">Thu</div>
+      <div class="date-day">Fri</div>
+      <div class="date-day">Sat</div>
+      <div *ngFor="let item of dateObject.datesArray,let i = index" class="date-item" [class.active]="item == dateObject.nowDay && dateObject.month==dateObject.nowMonth"
+        [class.event]="flag[i]==1" (click)='dateClickEvent(i,item)'>{{item}}</div>
+    </div>
   </div>
-  <div class="date-body">
-    <div class="date-day">Sun</div>
-    <div class="date-day">Mon</div>
-    <div class="date-day">Tue</div>
-    <div class="date-day">Wed</div>
-    <div class="date-day">Thu</div>
-    <div class="date-day">Fri</div>
-    <div class="date-day">Sat</div>
-    <div 
-    *ngFor="let item of dateObject.datesArray,let i = index" 
-    class="date-item" [class.active]="item == dateObject.nowDay"
-    (click)='dateClickEvent(i,item)'>{{item}}</div>
+  <div>
+    <!-- <a>{{clickDate}}</a> -->
   </div>
 </div>
-<div >
-  <a>{{test}}</a>
+<div class="col-md-7">
+  <div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>Hi,{{name}}</a></li>
+        <li><a (click)="myProfileClick()"> MyProfile </a></li>
+        <li><a routerLink="/login">Logout</a></li>
+      </ul>
+    </div>
+    <h2>My meetings
+      <button class="btn btn-primary" routerLink="/create-group-event" [queryParams]="{key:key}">Add New</button>
+    </h2>
+    <a *ngIf="success">Delete {{message}} success!!!</a>
+    <hr>
+    <ul class="events">
+      <li *ngFor="let event of events">
+        <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending
+        time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}
+        <br> Describtion:{{event.describtion}}
+        <br><button class="btn btn-primary" (click)='deleteClick(event.event_id)'>Delete</button>
+        <button class="btn btn-primary" (click)='modifyClick(event.event_id)'>Modify</button>
+        <hr>
+      </li>
+    </ul>
+  </div>
 </div>
-
+<router-outlet></router-outlet>

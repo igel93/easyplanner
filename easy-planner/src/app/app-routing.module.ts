@@ -4,15 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogInComponent } from '../app/log-in/log-in.component'
 import { CalendarViewComponent } from './calendar-view/calendar-view.component'
 import { CreateGroupEventComponent } from './create-group-event/create-group-event.component'
-
+import { UserProfileComponent } from './user-profile/user-profile.component'
+import { ModifyEventComponent } from './modify-event/modify-event.component'
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LogInComponent },
-  { path: 'login/calendar-view', component: CalendarViewComponent },
-  { path: 'login/calendar-view/create-group-event', component: CreateGroupEventComponent }
+  { path: 'calendar-view', component: CalendarViewComponent },
+  { path: 'create-group-event', component: CreateGroupEventComponent },
+  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'modify-event', component: ModifyEventComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

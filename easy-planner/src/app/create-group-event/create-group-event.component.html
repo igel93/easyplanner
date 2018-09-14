@@ -1,6 +1,6 @@
 <div class="create-group-event-panel">
 <div [hidden]="submitted">
-  <h1>Event details</h1>
+  <h1>Event details</h1> 
   <form (ngSumbit)="onSubmit()" name="group event form" #groupEventForm="ngForm">
     <div class="form-group">
       <label for="eventTitle">Title of the event </label>
@@ -36,8 +36,8 @@
       </textarea>
     </div>
   </form>
-  <button type="submit" class="btn btn-success">Submit </button>
-  <button type="button" class="btn btn-default" (click)="newGroupEvent()"> New Group Event</button>
+  <button type="submit" class="btn btn-success" routerLink="/calendar-view" >Submit </button>
+  <button type="button" class="btn btn-default"  (click)="newGroupEvent()"> New Group Event</button>
 
 <div>
   <h2>My meetings</h2> 
