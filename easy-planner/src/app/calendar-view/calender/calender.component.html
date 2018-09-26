@@ -30,7 +30,7 @@
       </ul>
     </div>
     <h2>My meetings
-      <button class="btn btn-primary" routerLink="/create-group-event" [queryParams]="{key:key}">Add New</button>
+      <button class="btn btn-primary" routerLink="/create-group-event" [queryParams]="{key:key,name:name}">Add New</button>
     </h2>
     <a *ngIf="success">Delete {{message}} success!!!</a>
     <hr>
@@ -38,7 +38,7 @@
       <li *ngFor="let event of events">
         <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending
         time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}
-        <br> Describtion:{{event.describtion}}
+        <br> describtion:{{event.describtion}}
         <br><button class="btn btn-primary" (click)='deleteClick(event.event_id)'>Delete</button>
         <button class="btn btn-primary" (click)='modifyClick(event.event_id)'>Modify</button>
         <hr>

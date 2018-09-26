@@ -13,8 +13,8 @@
     <hr>
     <a>{{warning}}</a>
     <div>
-      <button class="btn btn-primary">Sign In</button>
-      <button class="btn btn-primary" type="submit">Confirm</button>
+      <button class="btn btn-primary" type="submit" (click)="onSubmit()">Confirm</button>
+      <a routerLink="/app-register-user" type="register" class="btn btn-link">Sign Up</a>
     </div>
   </form>
 </div>

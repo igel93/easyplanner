@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
-import { EasyPlannerServerService } from '../easy-planner-server.service'
-import { User } from '../model/user'
+import { EasyPlannerServerService } from '../easy-planner-server.service';
+import { User } from '../model/user';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -20,18 +21,20 @@ export class LogInComponent implements OnInit {
   constructor(private calendarService: EasyPlannerServerService
     , private router: Router) { }
   ngOnInit() { }
+
   onSubmit(value) {
     this.calendarService.getUser(value.username, value.password)
       .subscribe(user => {
-        this.user = user
+        this.user = user;
         if (value.password == this.user.password) {
-          this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } })
+          this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
         }
         else {
-          this.warning = "Username or Passward incorrect, please try again."
+          this.warning = "Username or Password incorrect, please try again.";
         }
-      })
+      });
   }
+
   // onClickAuthentication() {
   //   this.getUser()
   //   if (this.userName == this.user.student_id) {

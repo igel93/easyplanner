@@ -6,9 +6,11 @@ import { CalendarViewComponent } from './calendar-view/calendar-view.component'
 import { CreateGroupEventComponent } from './create-group-event/create-group-event.component'
 import { UserProfileComponent } from './user-profile/user-profile.component'
 import { ModifyEventComponent } from './modify-event/modify-event.component'
+import { RegisterUserComponent } from './register-user/register-user.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LogInComponent },
+  { path: 'app-register-user', component: RegisterUserComponent },
   { path: 'calendar-view', component: CalendarViewComponent },
   { path: 'create-group-event', component: CreateGroupEventComponent },
   { path: 'user-profile', component: UserProfileComponent },

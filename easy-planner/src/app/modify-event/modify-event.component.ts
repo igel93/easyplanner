@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
-import { EasyPlannerServerService } from '../easy-planner-server.service'
+import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { Event } from '../model/event';
 import { Time } from '@angular/common';
 @Component({
