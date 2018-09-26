@@ -147,7 +147,7 @@ var PlatformLocation = /** @class */ (function () {
     return PlatformLocation;
 }());
 /**
- * @description Indicates when a location is initialized.
+ * @describtion Indicates when a location is initialized.
  * @experimental
  */
 var LOCATION_INITIALIZED = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('Location Initialized');
@@ -214,7 +214,7 @@ var APP_BASE_HREF = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionTok
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * A service that applications can use to interact with a browser's URL.
  *
@@ -388,7 +388,7 @@ function _stripIndexHtml(url) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  * A {@link LocationStrategy} used to configure the {@link Location} service to
  * represent its state in the
  * [hash fragment](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax)
@@ -467,7 +467,7 @@ var HashLocationStrategy = /** @class */ (function (_super) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  * A {@link LocationStrategy} used to configure the {@link Location} service to
  * represent its state in the
  * [path](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax) of the
@@ -1321,7 +1321,7 @@ var TranslationType;
 })(TranslationType || (TranslationType = {}));
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a date according to locale rules.
  *
@@ -2045,7 +2045,7 @@ function formatNumberToLocaleString(value, pattern, locale, groupSymbol, decimal
 }
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a number as currency using locale rules.
  *
@@ -2074,7 +2074,7 @@ function formatCurrency(value, locale, currency, currencyCode, digitsInfo) {
 }
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a number as a percentage according to locale rules.
  *
@@ -2093,7 +2093,7 @@ function formatPercent(value, locale, digitsInfo) {
 }
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a number as text. Group sizing and separator and other locale-specific
  * configurations are based on the locale.
@@ -2821,7 +2821,7 @@ function parseCookieValue(cookieStr, name) {
  *     <some-element [ngClass]="{'class1 class2 class3' : true}">...</some-element>
  * ```
  *
- * @description
+ * @describtion
  *
  * Adds and removes CSS classes on an HTML element.
  *
@@ -3546,7 +3546,7 @@ var SwitchView = /** @class */ (function () {
  *       <some-element *ngSwitchDefault>...</some-element>
  *     </container-element>
  * ```
- * @description
+ * @describtion
  *
  * Adds / removes DOM sub-trees when the nest match expressions matches the switch expression.
  *
@@ -3633,7 +3633,7 @@ var NgSwitch = /** @class */ (function () {
  *   <some-element *ngSwitchCase="match_expression_1">...</some-element>
  * </container-element>
  *```
- * @description
+ * @describtion
  *
  * Creates a view that will be added/removed from the parent {@link NgSwitch} when the
  * given expression evaluate to respectively the same/different value as the switch
@@ -3679,7 +3679,7 @@ var NgSwitchCase = /** @class */ (function () {
  * </container-element>
  * ```
  *
- * @description
+ * @describtion
  *
  * Creates a view that is added to the parent {@link NgSwitch} when no case expressions
  * match the switch expression.
@@ -3726,7 +3726,7 @@ var NgSwitchDefault = /** @class */ (function () {
  * </some-element>
  * ```
  *
- * @description
+ * @describtion
  *
  * Adds / removes DOM sub-trees based on a numeric value. Tailored for pluralization.
  *
@@ -3790,7 +3790,7 @@ var NgPlural = /** @class */ (function () {
 /**
  * @ngModule CommonModule
  *
- * @description
+ * @describtion
  *
  * Creates a view that will be added/removed from the parent {@link NgPlural} when the
  * given expression matches the plural expression according to CLDR rules.
@@ -3845,7 +3845,7 @@ var NgPluralCase = /** @class */ (function () {
  * <some-element [ngStyle]="objExp">...</some-element>
  * ```
  *
- * @description
+ * @describtion
  *
  * Update an HTML element styles.
  *
@@ -3925,7 +3925,7 @@ var NgStyle = /** @class */ (function () {
  * <ng-container *ngTemplateOutlet="templateRefExp; context: contextExp"></ng-container>
  * ```
  *
- * @description
+ * @describtion
  *
  * Inserts an embedded view from a prepared `TemplateRef`.
  *
@@ -4255,7 +4255,7 @@ var DateFormatter = /** @class */ (function () {
   */
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a date according to locale rules.
  *
@@ -4478,11 +4478,11 @@ var DeprecatedDecimalPipe = /** @class */ (function () {
 /**
  * @ngModule CommonModule
  *
- * @description
+ * @describtion
  *
  * Formats a number as percentage according to locale rules.
  *
- * - `digitInfo` See {@link DecimalPipe} for detailed description.
+ * - `digitInfo` See {@link DecimalPipe} for detailed describtion.
  *
  * WARNING: this pipe uses the Internationalization API which is not yet available in all browsers
  * and may require a polyfill. See [Browser Support](guide/browser-support) for details.
@@ -4511,7 +4511,7 @@ var DeprecatedPercentPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a number as currency using locale rules.
  *
@@ -4522,7 +4522,7 @@ var DeprecatedPercentPipe = /** @class */ (function () {
  * - `symbolDisplay` is a boolean indicating whether to use the currency symbol or code.
  *   - `true`: use symbol (e.g. `$`).
  *   - `false`(default): use code (e.g. `USD`).
- * - `digitInfo` See {@link DecimalPipe} for detailed description.
+ * - `digitInfo` See {@link DecimalPipe} for detailed describtion.
  *
  * WARNING: this pipe uses the Internationalization API which is not yet available in all browsers
  * and may require a polyfill. See [Browser Support](guide/browser-support) for details.
@@ -4597,7 +4597,7 @@ var _promiseStrategy = new PromiseStrategy();
 var _observableStrategy = new ObservableStrategy();
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Unwraps a value from an asynchronous primitive.
  *
@@ -4810,7 +4810,7 @@ var UpperCasePipe = /** @class */ (function () {
 // clang-format off
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Formats a date value according to locale rules.
  *
@@ -4853,7 +4853,7 @@ var UpperCasePipe = /** @class */ (function () {
  * Format details depend on the locale.
  * Fields marked with (*) are only available in the extra data set for the given locale.
  *
- *  | Field type         | Format      | Description                                                   | Example Value                                              |
+ *  | Field type         | Format      | describtion                                                   | Example Value                                              |
  *  |--------------------|-------------|---------------------------------------------------------------|------------------------------------------------------------|
  *  | Era                | G, GG & GGG | Abbreviated                                                   | AD                                                         |
  *  |                    | GGGG        | Wide                                                          | Anno Domini                                                |
@@ -4994,7 +4994,7 @@ var DatePipe = /** @class */ (function () {
 var _INTERPOLATION_REGEXP = /#/g;
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Maps a value to a string that pluralizes the value according to locale rules.
  *
@@ -5043,7 +5043,7 @@ var I18nPluralPipe = /** @class */ (function () {
  */
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Generic selector that displays the string that matches the current value.
  *
@@ -5093,7 +5093,7 @@ var I18nSelectPipe = /** @class */ (function () {
  */
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Converts a value into its JSON-format representation.  Useful for debugging.
  *
@@ -5131,7 +5131,7 @@ function makeKeyValuePair(key, value) {
 }
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Transforms Object or Map into an array of key value pairs.
  *
@@ -5219,7 +5219,7 @@ function defaultComparator(keyValueA, keyValueB) {
  */
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Transforms a number into a string,
  * formatted according to locale rules that determine group sizing and
@@ -5294,7 +5294,7 @@ var DecimalPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Transforms a number to a percentage
  * string, formatted according to locale rules that determine group sizing and
@@ -5355,7 +5355,7 @@ var PercentPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Transforms a number to a currency string, formatted according to locale rules
  * that determine group sizing and separator, decimal-point character,
@@ -5471,7 +5471,7 @@ function strToNumber(value) {
  */
 /**
  * @ngModule CommonModule
- * @description
+ * @describtion
  *
  * Creates a new `Array` or `String` containing a subset (slice) of the elements.
  *
@@ -14317,15 +14317,15 @@ var Message = /** @class */ (function () {
      * @param placeholders maps placeholder names to static content
      * @param placeholderToMessage maps placeholder names to messages (used for nested ICU messages)
      * @param meaning
-     * @param description
+     * @param describtion
      * @param id
      */
-    function Message(nodes, placeholders, placeholderToMessage, meaning, description, id) {
+    function Message(nodes, placeholders, placeholderToMessage, meaning, describtion, id) {
         this.nodes = nodes;
         this.placeholders = placeholders;
         this.placeholderToMessage = placeholderToMessage;
         this.meaning = meaning;
-        this.description = description;
+        this.describtion = describtion;
         this.id = id;
         if (nodes.length) {
             this.sources = [{
@@ -14573,8 +14573,8 @@ var _expParser = new Parser(new Lexer());
  */
 function createI18nMessageFactory(interpolationConfig) {
     var visitor = new _I18nVisitor(_expParser, interpolationConfig);
-    return function (nodes, meaning, description, id) {
-        return visitor.toI18nMessage(nodes, meaning, description, id);
+    return function (nodes, meaning, describtion, id) {
+        return visitor.toI18nMessage(nodes, meaning, describtion, id);
     };
 }
 var _I18nVisitor = /** @class */ (function () {
@@ -14582,14 +14582,14 @@ var _I18nVisitor = /** @class */ (function () {
         this._expressionParser = _expressionParser;
         this._interpolationConfig = _interpolationConfig;
     }
-    _I18nVisitor.prototype.toI18nMessage = function (nodes, meaning, description, id) {
+    _I18nVisitor.prototype.toI18nMessage = function (nodes, meaning, describtion, id) {
         this._isIcu = nodes.length == 1 && nodes[0] instanceof Expansion;
         this._icuDepth = 0;
         this._placeholderRegistry = new PlaceholderRegistry();
         this._placeholderToContent = {};
         this._placeholderToMessage = {};
         var i18nodes = visitAll(this, nodes, {});
-        return new Message(i18nodes, this._placeholderToContent, this._placeholderToMessage, meaning, description, id);
+        return new Message(i18nodes, this._placeholderToContent, this._placeholderToMessage, meaning, describtion, id);
     };
     _I18nVisitor.prototype.visitElement = function (el, context) {
         var children = visitAll(this, el.children);
@@ -14951,8 +14951,8 @@ var _Visitor = /** @class */ (function () {
             // Do not create empty messages
             return null;
         }
-        var _a = _parseMessageMeta(msgMeta), meaning = _a.meaning, description = _a.description, id = _a.id;
-        var message = this._createI18nMessage(ast, meaning, description, id);
+        var _a = _parseMessageMeta(msgMeta), meaning = _a.meaning, describtion = _a.describtion, id = _a.id;
+        var message = this._createI18nMessage(ast, meaning, describtion, id);
         this._messages.push(message);
         return message;
     };
@@ -14987,8 +14987,8 @@ var _Visitor = /** @class */ (function () {
                 return;
             }
             if (attr.value && attr.value != '' && i18nParsedMessageMeta.hasOwnProperty(attr.name)) {
-                var _a = i18nParsedMessageMeta[attr.name], meaning = _a.meaning, description = _a.description, id = _a.id;
-                var message = _this._createI18nMessage([attr], meaning, description, id);
+                var _a = i18nParsedMessageMeta[attr.name], meaning = _a.meaning, describtion = _a.describtion, id = _a.id;
+                var message = _this._createI18nMessage([attr], meaning, describtion, id);
                 var nodes = _this._translations.get(message);
                 if (nodes) {
                     if (nodes.length == 0) {
@@ -15052,8 +15052,8 @@ var _Visitor = /** @class */ (function () {
      * If a section has only one significant children (comments not significant) then we should not
      * keep the message from this children:
      *
-     * `<p i18n="meaning|description">{ICU message}</p>` would produce two messages:
-     * - one for the <p> content with meaning and description,
+     * `<p i18n="meaning|describtion">{ICU message}</p>` would produce two messages:
+     * - one for the <p> content with meaning and describtion,
      * - another one for the ICU message.
      *
      * In this case the last message is discarded as it contains less information (the AST is
@@ -15096,14 +15096,14 @@ function _getI18nAttr(p) {
 }
 function _parseMessageMeta(i18n) {
     if (!i18n)
-        return { meaning: '', description: '', id: '' };
+        return { meaning: '', describtion: '', id: '' };
     var idIndex = i18n.indexOf(ID_SEPARATOR);
     var descIndex = i18n.indexOf(MEANING_SEPARATOR);
     var _a = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((idIndex > -1) ? [i18n.slice(0, idIndex), i18n.slice(idIndex + 2)] : [i18n, ''], 2), meaningAndDesc = _a[0], id = _a[1];
     var _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((descIndex > -1) ?
         [meaningAndDesc.slice(0, descIndex), meaningAndDesc.slice(descIndex + 1)] :
-        ['', meaningAndDesc], 2), meaning = _b[0], description = _b[1];
-    return { meaning: meaning, description: description, id: id };
+        ['', meaningAndDesc], 2), meaning = _b[0], describtion = _b[1];
+    return { meaning: meaning, describtion: describtion, id: id };
 }
 
 /**
@@ -15355,8 +15355,8 @@ var Xliff = /** @class */ (function (_super) {
             });
             var transUnit = new Tag(_UNIT_TAG, { id: message.id, datatype: 'html' });
             (_a = transUnit.children).push.apply(_a, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])([new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes))], contextTags));
-            if (message.description) {
-                transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'description' }, [new Text$2(message.description)]));
+            if (message.describtion) {
+                transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'describtion' }, [new Text$2(message.describtion)]));
             }
             if (message.meaning) {
                 transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'meaning' }, [new Text$2(message.meaning)]));
@@ -15605,9 +15605,9 @@ var Xliff2 = /** @class */ (function (_super) {
         messages.forEach(function (message) {
             var unit = new Tag(_UNIT_TAG$1, { id: message.id });
             var notes = new Tag('notes');
-            if (message.description || message.meaning) {
-                if (message.description) {
-                    notes.children.push(new CR(8), new Tag('note', { category: 'description' }, [new Text$2(message.description)]));
+            if (message.describtion || message.meaning) {
+                if (message.describtion) {
+                    notes.children.push(new CR(8), new Tag('note', { category: 'describtion' }, [new Text$2(message.describtion)]));
                 }
                 if (message.meaning) {
                     notes.children.push(new CR(8), new Tag('note', { category: 'meaning' }, [new Text$2(message.meaning)]));
@@ -15908,8 +15908,8 @@ var Xmb = /** @class */ (function (_super) {
         var rootNode = new Tag(_MESSAGES_TAG);
         messages.forEach(function (message) {
             var attrs = { id: message.id };
-            if (message.description) {
-                attrs['desc'] = message.description;
+            if (message.describtion) {
+                attrs['desc'] = message.describtion;
             }
             if (message.meaning) {
                 attrs['meaning'] = message.meaning;
@@ -25466,7 +25466,7 @@ var ConstantPool = /** @class */ (function () {
     //
     // ```
     // /**
-    //  * @desc description?
+    //  * @desc describtion?
     //  * @meaning meaning?
     //  */
     // const MSG_XYZ = goog.getMsg('message');
@@ -25650,12 +25650,12 @@ function invalid(arg) {
 function isVariable(e) {
     return e instanceof ReadVarExpr;
 }
-// Converts i18n meta informations for a message (description, meaning) to a JsDoc statement
+// Converts i18n meta informations for a message (describtion, meaning) to a JsDoc statement
 // formatted as expected by the Closure compiler.
 function i18nMetaToDocStmt(meta) {
     var tags = [];
-    if (meta.description) {
-        tags.push({ tagName: "desc" /* Desc */, text: meta.description });
+    if (meta.describtion) {
+        tags.push({ tagName: "desc" /* Desc */, text: meta.describtion });
     }
     if (meta.meaning) {
         tags.push({ tagName: "meaning" /* Meaning */, text: meta.meaning });
@@ -25717,7 +25717,7 @@ var MessageBundle = /** @class */ (function () {
             var mapper = serializer.createNameMapper(messages[id]);
             var src = messages[id];
             var nodes = mapper ? mapperVisitor.convert(src.nodes, mapper) : src.nodes;
-            var transformedMessage = new Message(nodes, {}, {}, src.meaning, src.description, id);
+            var transformedMessage = new Message(nodes, {}, {}, src.meaning, src.describtion, id);
             transformedMessage.sources = src.sources;
             if (filterSources) {
                 transformedMessage.sources.forEach(function (source) { return source.filePath = filterSources(source.filePath); });
@@ -27679,11 +27679,11 @@ function createCssSelector(tag, attributes) {
 }
 // Parse i18n metas like:
 // - "@@id",
-// - "description[@@id]",
-// - "meaning|description[@@id]"
+// - "describtion[@@id]",
+// - "meaning|describtion[@@id]"
 function parseI18nMeta(i18n) {
     var meaning;
-    var description;
+    var describtion;
     var id;
     if (i18n) {
         // TODO(vicb): figure out how to force a message ID with closure ?
@@ -27693,9 +27693,9 @@ function parseI18nMeta(i18n) {
         _a = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((idIndex > -1) ? [i18n.slice(0, idIndex), i18n.slice(idIndex + 2)] : [i18n, ''], 2), meaningAndDesc = _a[0], id = _a[1];
         _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((descIndex > -1) ?
             [meaningAndDesc.slice(0, descIndex), meaningAndDesc.slice(descIndex + 1)] :
-            ['', meaningAndDesc], 2), meaning = _b[0], description = _b[1];
+            ['', meaningAndDesc], 2), meaning = _b[0], describtion = _b[1];
     }
-    return { description: description, id: id, meaning: meaning };
+    return { describtion: describtion, id: id, meaning: meaning };
     var _a, _b;
 }
 function interpolate(args) {
@@ -33650,7 +33650,7 @@ var HostListener = makePropDecorator('HostListener', function (eventName, args) 
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Represents a type that a Component or other object is instances of.
  *
@@ -34673,7 +34673,7 @@ var ViewEncapsulation;
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description Represents the version of Angular
+ * @describtion Represents the version of Angular
  *
  *
  */
@@ -52116,7 +52116,7 @@ function isEmptyInputValue(value) {
     return value == null || value.length === 0;
 }
 /**
- * @description
+ * @describtion
  * An `InjectionToken` for registering additional synchronous validators used with `AbstractControl`s.
  *
  * @see `NG_ASYNC_VALIDATORS`
@@ -52143,7 +52143,7 @@ function isEmptyInputValue(value) {
  */
 var NG_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('NgValidators');
 /**
- * @description
+ * @describtion
  * An `InjectionToken` for registering additional asynchronous validators used with `AbstractControl`s.
  *
  * @see `NG_VALIDATORS`
@@ -52152,7 +52152,7 @@ var NG_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionTok
 var NG_ASYNC_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('NgAsyncValidators');
 var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
 /**
- * @description
+ * @describtion
  * Provides a set of built-in validators that can be used by form controls.
  *
  * A validator is a function that processes a `FormControl` or collection of
@@ -52165,7 +52165,7 @@ var Validators = /** @class */ (function () {
     function Validators() {
     }
     /**
-     * @description
+     * @describtion
      * Validator that requires the control's value to be greater than or equal to the provided number.
      * The validator exists only as a function and not as a directive.
      *
@@ -52195,7 +52195,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the control's value to be less than or equal to the provided number.
      * The validator exists only as a function and not as a directive.
      *
@@ -52225,7 +52225,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the control have a non-empty value.
      *
      * @usageNotes
@@ -52246,7 +52246,7 @@ var Validators = /** @class */ (function () {
         return isEmptyInputValue(control.value) ? { 'required': true } : null;
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the control's value be true. This validator is commonly
      * used for required checkboxes.
      *
@@ -52267,7 +52267,7 @@ var Validators = /** @class */ (function () {
         return control.value === true ? null : { 'required': true };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the control's value pass an email validation test.
      *
      * @usageNotes
@@ -52291,7 +52291,7 @@ var Validators = /** @class */ (function () {
         return EMAIL_REGEXP.test(control.value) ? null : { 'email': true };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the length of the control's value to be greater than or equal
      * to the provided minimum length. This validator is also provided by default if you use the
      * the HTML5 `minlength` attribute.
@@ -52325,7 +52325,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the length of the control's value to be less than or equal
      * to the provided maximum length. This validator is also provided by default if you use the
      * the HTML5 `maxlength` attribute.
@@ -52356,7 +52356,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Validator that requires the control's value to match a regex pattern. This validator is also
      * provided
      * by default if you use the HTML5 `pattern` attribute.
@@ -52406,7 +52406,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Validator that performs no operation.
      */
     Validators.nullValidator = function (c) { return null; };
@@ -52421,7 +52421,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @description
+     * @describtion
      * Compose multiple async validators into a single function that returns the union
      * of the individual error objects for the provided control.
      *
@@ -52804,7 +52804,7 @@ var RadioControlRegistry = /** @class */ (function () {
     return RadioControlRegistry;
 }());
 /**
- * @description
+ * @describtion
  *
  * Writes radio control values and listens to radio control changes.
  *
@@ -53026,7 +53026,7 @@ function _extractId(valueString) {
     return valueString.split(':')[0];
 }
 /**
- * @description
+ * @describtion
  *
  * Writes values and listens to changes on a select element.
  *
@@ -53174,7 +53174,7 @@ var SelectControlValueAccessor = /** @class */ (function () {
     return SelectControlValueAccessor;
 }());
 /**
- * @description
+ * @describtion
  *
  * Marks `<option>` as dynamic, so Angular can be notified when options change.
  *
@@ -55530,7 +55530,7 @@ var formDirectiveProvider = {
 };
 var resolvedPromise = Promise.resolve(null);
 /**
- * @description
+ * @describtion
  *
  * Creates a top-level `FormGroup` instance and binds it to a form
  * to track aggregate form value and validation status.
@@ -55728,7 +55728,7 @@ var modelGroupProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return NgModelGroup; })
 };
 /**
- * @description
+ * @describtion
  *
  * Creates and binds a `FormGroup` instance to a DOM element.
  *
@@ -55812,7 +55812,7 @@ var formControlBinding = {
  */
 var resolvedPromise$1 = Promise.resolve(null);
 /**
- * @description
+ * @describtion
  *
  * Creates a `FormControl` instance from a domain model and binds it
  * to a form control element.
@@ -56021,7 +56021,7 @@ var formControlBinding$1 = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormControlDirective; })
 };
 /**
- * @description
+ * @describtion
  *
  * Syncs a standalone `FormControl` instance to a form control element.
  *
@@ -56233,7 +56233,7 @@ var formDirectiveProvider$1 = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormGroupDirective; })
 };
 /**
- * @description
+ * @describtion
  *
  * Binds an existing `FormGroup` to a DOM element.
  *
@@ -56406,7 +56406,7 @@ var formGroupNameProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormGroupName; })
 };
 /**
- * @description
+ * @describtion
  *
  * Syncs a nested `FormGroup` to a DOM element.
  *
@@ -56483,7 +56483,7 @@ var formArrayNameProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormArrayName; })
 };
 /**
- * @description
+ * @describtion
  *
  * Syncs a nested `FormArray` to a DOM element.
  *
@@ -56612,7 +56612,7 @@ var controlNameBinding = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormControlName; })
 };
 /**
- * @description
+ * @describtion
  *
  * Syncs a `FormControl` in an existing `FormGroup` to a form control
  * element by name.
@@ -57125,7 +57125,7 @@ var PatternValidator = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  * Creates an `AbstractControl` from a user-specified configuration.
  *
  * The `FormBuilder` provides syntactic sugar that shortens creating instances of a `FormControl`,
@@ -57139,7 +57139,7 @@ var FormBuilder = /** @class */ (function () {
     function FormBuilder() {
     }
     /**
-     * @description
+     * @describtion
      * Construct a new `FormGroup` instance.
      *
      * @param controlsConfig A collection of child controls. The key for each child is the name
@@ -57158,7 +57158,7 @@ var FormBuilder = /** @class */ (function () {
         return new FormGroup(controls, validator, asyncValidator);
     };
     /**
-     * @description
+     * @describtion
      * Construct a new `FormControl` instance.
      *
      * @param formState Initializes the control with an initial value,
@@ -57184,7 +57184,7 @@ var FormBuilder = /** @class */ (function () {
         return new FormControl(formState, validator, asyncValidator);
     };
     /**
-     * @description
+     * @describtion
      * Construct a new `FormArray` instance.
      *
      * @param controlsConfig An array of child controls. The key for each child control is its index
@@ -57248,7 +57248,7 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.1.1')
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Adds `novalidate` attribute to all forms by default.
  *
@@ -60580,7 +60580,7 @@ __webpack_require__.r(__webpack_exports__);
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Base for events the Router goes through, as opposed to events tied to a specific
  * Route. `RouterEvent`s will only be fired one time for any given navigation.
@@ -60611,7 +60611,7 @@ var RouterEvent = /** @class */ (function () {
     return RouterEvent;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when a navigation starts.
  *
@@ -60644,7 +60644,7 @@ var NavigationStart = /** @class */ (function (_super) {
     return NavigationStart;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when a navigation ends successfully.
  *
@@ -60670,7 +60670,7 @@ var NavigationEnd = /** @class */ (function (_super) {
     return NavigationEnd;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when a navigation is canceled.
  *
@@ -60694,7 +60694,7 @@ var NavigationCancel = /** @class */ (function (_super) {
     return NavigationCancel;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when a navigation fails due to an unexpected error.
  *
@@ -60720,7 +60720,7 @@ var NavigationError = /** @class */ (function (_super) {
     return NavigationError;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when routes are recognized.
  *
@@ -60749,7 +60749,7 @@ var RoutesRecognized = /** @class */ (function (_super) {
     return RoutesRecognized;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents the start of the Guard phase of routing.
  *
@@ -60777,7 +60777,7 @@ var GuardsCheckStart = /** @class */ (function (_super) {
     return GuardsCheckStart;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents the end of the Guard phase of routing.
  *
@@ -60808,7 +60808,7 @@ var GuardsCheckEnd = /** @class */ (function (_super) {
     return GuardsCheckEnd;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents the start of the Resolve phase of routing. The timing of this
  * event may change, thus it's experimental. In the current iteration it will run
@@ -60839,7 +60839,7 @@ var ResolveStart = /** @class */ (function (_super) {
     return ResolveStart;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents the end of the Resolve phase of routing. See note on
  * `ResolveStart` for use of this experimental API.
@@ -60868,7 +60868,7 @@ var ResolveEnd = /** @class */ (function (_super) {
     return ResolveEnd;
 }(RouterEvent));
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered before lazy loading a route config.
  *
@@ -60884,7 +60884,7 @@ var RouteConfigLoadStart = /** @class */ (function () {
     return RouteConfigLoadStart;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents an event triggered when a route has been lazy loaded.
  *
@@ -60900,7 +60900,7 @@ var RouteConfigLoadEnd = /** @class */ (function () {
     return RouteConfigLoadEnd;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ChildActivationEnd` for use of this experimental API.
@@ -60920,7 +60920,7 @@ var ChildActivationStart = /** @class */ (function () {
     return ChildActivationStart;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ChildActivationStart` for use of this experimental API.
@@ -60940,7 +60940,7 @@ var ChildActivationEnd = /** @class */ (function () {
     return ChildActivationEnd;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ActivationEnd` for use of this experimental API.
@@ -60960,7 +60960,7 @@ var ActivationStart = /** @class */ (function () {
     return ActivationStart;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ActivationStart` for use of this experimental API.
@@ -60980,7 +60980,7 @@ var ActivationEnd = /** @class */ (function () {
     return ActivationEnd;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents a scrolling event.
  */
@@ -61036,7 +61036,7 @@ var EmptyOutletComponent = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Name of the primary outlet.
  *
@@ -61376,7 +61376,7 @@ function containsSegmentGroupHelper(container, containee, containeePaths) {
     }
 }
 /**
- * @description
+ * @describtion
  *
  * Represents the parsed URL.
  *
@@ -61432,7 +61432,7 @@ var UrlTree = /** @class */ (function () {
     return UrlTree;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the parsed URL segment group.
  *
@@ -61466,7 +61466,7 @@ var UrlSegmentGroup = /** @class */ (function () {
     return UrlSegmentGroup;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents a single URL segment.
  *
@@ -61536,7 +61536,7 @@ function mapChildrenIntoArray(segment, fn) {
     return res;
 }
 /**
- * @description
+ * @describtion
  *
  * Serializes and deserializes a URL string into a URL tree.
  *
@@ -61553,7 +61553,7 @@ var UrlSerializer = /** @class */ (function () {
     return UrlSerializer;
 }());
 /**
- * @description
+ * @describtion
  *
  * A default implementation of the `UrlSerializer`.
  *
@@ -62400,7 +62400,7 @@ function nodeChildrenAsMap(node) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Represents the state of the router.
  *
@@ -62460,7 +62460,7 @@ function createEmptyStateSnapshot(urlTree, rootComponent) {
     return new RouterStateSnapshot('', new TreeNode(activated, []));
 }
 /**
- * @description
+ * @describtion
  *
  * Contains the information about a route associated with a component loaded in an
  * outlet.  An `ActivatedRoute` can also be used to traverse the router state tree.
@@ -62607,7 +62607,7 @@ function flattenInherited(pathFromRoot) {
     }, { params: {}, data: {}, resolve: {} });
 }
 /**
- * @description
+ * @describtion
  *
  * Contains the information about a route associated with a component loaded in an
  * outlet at a particular moment in time. ActivatedRouteSnapshot can also be used to
@@ -62713,7 +62713,7 @@ var ActivatedRouteSnapshot = /** @class */ (function () {
     return ActivatedRouteSnapshot;
 }());
 /**
- * @description
+ * @describtion
  *
  * Represents the state of the router at a moment in time.
  *
@@ -63752,7 +63752,7 @@ function getResolve(route) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Provides a way to customize when activated routes get reused.
  *
@@ -63839,7 +63839,7 @@ var RouterConfigLoader = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Provides a way to migrate AngularJS applications to Angular.
  *
@@ -63882,7 +63882,7 @@ function defaultRouterHook(snapshot, runExtras) {
     return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(null);
 }
 /**
- * @description
+ * @describtion
  *
  * Provides the navigation and url manipulation capabilities.
  *
@@ -64649,7 +64649,7 @@ function validateCommands(commands) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Lets you link to specific routes in your app.
  *
@@ -64802,7 +64802,7 @@ var RouterLink = /** @class */ (function () {
     return RouterLink;
 }());
 /**
- * @description
+ * @describtion
  *
  * Lets you link to specific routes in your app.
  *
@@ -64917,7 +64917,7 @@ function attrBoolValue(s) {
  */
 /**
  *
- * @description
+ * @describtion
  *
  * Lets you add a CSS class to an element when the link's route becomes active.
  *
@@ -65134,7 +65134,7 @@ var ChildrenOutletContexts = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Acts as a placeholder that Angular dynamically fills based on the current router state.
  *
@@ -65309,7 +65309,7 @@ var OutletInjector = /** @class */ (function () {
 *found in the LICENSE file at https://angular.io/license
 */
 /**
- * @description
+ * @describtion
  *
  * Provides a preloading strategy.
  *
@@ -65321,7 +65321,7 @@ var PreloadingStrategy = /** @class */ (function () {
     return PreloadingStrategy;
 }());
 /**
- * @description
+ * @describtion
  *
  * Provides a preloading strategy that preloads all modules as quickly as possible.
  *
@@ -65340,7 +65340,7 @@ var PreloadAllModules = /** @class */ (function () {
     return PreloadAllModules;
 }());
 /**
- * @description
+ * @describtion
  *
  * Provides a preloading strategy that does not preload any modules.
  *
@@ -65535,7 +65535,7 @@ var RouterScroller = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @description
+ * @describtion
  *
  * Contains a list of directives
  *
@@ -65543,7 +65543,7 @@ var RouterScroller = /** @class */ (function () {
  */
 var ROUTER_DIRECTIVES = [RouterOutlet, RouterLink, RouterLinkWithHref, RouterLinkActive, EmptyOutletComponent];
 /**
- * @description
+ * @describtion
  *
  * Is used in DI to configure the router.
  *
@@ -65610,7 +65610,7 @@ function routerNgProbeToken() {
  * class MyNgModule {}
  * ```
  *
- * @description
+ * @describtion
  *
  * Adds router directives and providers.
  *
@@ -65720,7 +65720,7 @@ function provideForRootGuard(router) {
     return 'guarded';
 }
 /**
- * @description
+ * @describtion
  *
  * Registers routes.
  *

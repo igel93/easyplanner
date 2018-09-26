@@ -1,0 +1,37 @@
+<div>
+  <h3 style="text-align:center">Create Event </h3>
+  <br>
+  <div>
+    <form (ngSubmit)="onSubmit(registerUserForm.value)" #registerUserForm="ngForm">
+      <div>
+        <label for="student_id">Student ID</label>
+        <input type="text" value="student_id" name="student_id" required [(ngModel)]=student_id>
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" value="name" name="name" required [(ngModel)]=name>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" value="password" name="password" required [(ngModel)]=password>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" value="email" name="email" required [(ngModel)]=email>
+      </div>
+      <div style="text-align:center">
+        <a>{{warning}}</a>
+      </div>
+      <div>
+          <button class="btn btn-primary" (click)="cancelClick()">Cancel</button>
+          <button class="btn btn-primary" type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+

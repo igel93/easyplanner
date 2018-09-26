@@ -14,10 +14,12 @@ const httpOptions = {
 export class EasyPlannerServerService {
     events: Event[];
     url: string = "http://localhost:3000/";
+
     constructor(private http: HttpClient) { }
 
     getUser(userName:string,password:string): Observable<User> {
-        return this.http.get<User>(this.url + 'login/' + userName + '/' + password)
+        // FIXME: ensure that this is always used by login
+        return this.http.get<User>(this.url + 'login/' + userName + '/' + password);
     }
 
     getUserByID(user_id:string): Observable<User> {

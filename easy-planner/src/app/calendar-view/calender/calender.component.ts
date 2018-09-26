@@ -27,7 +27,7 @@ export class CalenderComponent implements OnInit {
   dayStr: string = String(this.days);
   calendarEvents: Event[] = [];
   flag: number[] = [];
-  
+
 
 
   initFlag() {
@@ -50,13 +50,14 @@ export class CalenderComponent implements OnInit {
     this.calendarService.getEvents(this.key)
       .subscribe(events => {
         this.calendarEvents = events
+        this.dateObject = this.getDatesOfMonth(this.year, this.month)
       })
     this.month--
     if (this.month == 0) {
       this.month = 12;
       this.year--;
     }
-    this.dateObject = this.getDatesOfMonth(this.year, this.month)
+    
     //console.log("month" + this.month)
     //console.log("flag values" + this.flag)
   }
@@ -68,13 +69,14 @@ export class CalenderComponent implements OnInit {
     this.calendarService.getEvents(this.key)
       .subscribe(events => {
         this.calendarEvents = events
+        this.dateObject = this.getDatesOfMonth(this.year, this.month)
       })
     this.month++;
     if (this.month == 13) {
       this.month = 1;
       this.year++;
     }
-    this.dateObject = this.getDatesOfMonth(this.year, this.month)
+    
     // this.setFlag(this.year, this.month, this.dateObject)
     // console.log("flag length" + this.month)
     //console.log("flag values" + this.flag)
@@ -286,13 +288,14 @@ export class CalenderComponent implements OnInit {
     this.calendarService.getEvents(this.key)
       .subscribe(events => {
         this.calendarEvents = events
+        this.dateObject = this.getDatesOfMonth(this.year, this.month)
         // console.log(this.calendarEvents[0].year, this.calendarEvents[0].month, this.calendarEvents[0].day)
         // console.log(this.calendarEvents[1].year, this.calendarEvents[1].month, this.calendarEvents[1].day)
         // console.log(this.calendarEvents[2].year, this.calendarEvents[2].month, this.calendarEvents[2].day)
         // console.log(this.calendarEvents[3].year, this.calendarEvents[3].month, this.calendarEvents[3].day)
         // console.log(this.calendarEvents[4].year, this.calendarEvents[4].month, this.calendarEvents[4].day)
       })
-    this.dateObject = this.getDatesOfMonth(this.year, this.month)
+    
     // console.log("flag length" + this.flag.length)
     //console.log("flag values" + this.flag)
   }
