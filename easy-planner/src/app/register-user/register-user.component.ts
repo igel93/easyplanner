@@ -10,6 +10,7 @@ import { User } from '../model/user';
 })
 export class RegisterUserComponent implements OnInit {
   user: User = {
+    user_id: null,
     student_id: null,
     name: null,
     password: null,
@@ -27,10 +28,10 @@ export class RegisterUserComponent implements OnInit {
     if (value.password == null) { } else { this.user.password = value.password; }
     if (value.email == null) { } else { this.user.email = value.email; }
     console.log(this.user);
-    this.calendarService.addUser(this.user);
-      .subscribe(result => {
-        if (result.affectedRows != 0) {
-          this.router.navigate(['/login'], { queryParams: { name: this.name, key: this.key } });
+    this.calendarService.addUser(this.user)
+      .subscribe(user => {
+        if (user.affectedRows !== 0) {
+          this.router.navigate(['/login'], { queryParams: { name: this.user.name, key: this.user.user_id } });
         }
       });
   }
