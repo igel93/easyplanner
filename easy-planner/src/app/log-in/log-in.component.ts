@@ -26,7 +26,7 @@ export class LogInComponent implements OnInit {
     this.calendarService.getUser(value.username, value.password)
       .subscribe(user => {
         this.user = user;
-        if (value.password == this.user.password) {
+        if (value.password === this.user.password) {
           this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
         }
         else {
