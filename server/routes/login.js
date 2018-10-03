@@ -21,8 +21,7 @@ router.get('/:student_id/:password', (req, res) => {
 })
 
 router.get('/:user_id', (req, res) => {
-    try {
-        //param can pass the select infor
+    try { //param can pass the select infor
         console.log(req.params.user_id)
         sql = "select * from user where user_id =?";
         connection.query(sql, [req.params.user_id], function (err, rows, fields) {

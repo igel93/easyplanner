@@ -18,11 +18,13 @@ export class LogInComponent implements OnInit {
     email: null
   };
   warning: string;
+  valid:Boolean=false;
   constructor(private calendarService: EasyPlannerServerService
     , private router: Router) { }
   ngOnInit() { }
 
   onSubmit(value) {
+    if(value.password!=null&&value.username!=null){
     this.calendarService.getUser(value.username, value.password)
       .subscribe(user => {
         this.user = user;
@@ -33,6 +35,9 @@ export class LogInComponent implements OnInit {
           this.warning = "Username or Password incorrect, please try again.";
         }
       });
+    }else{
+      this.valid=true;
+    }
   }
 
   // onClickAuthentication() {
