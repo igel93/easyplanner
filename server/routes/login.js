@@ -9,13 +9,14 @@ router.get('/:student_id/:password', (req, res) => {
         sql = "select * from user where student_id =?";
         connection.query(sql, [req.params.student_id], function (err, rows, fields) {
 
-            // console.log('The solution is: ', rows[0].solution);
-            // console.log('The solution is: ', rows);
+            
             res.setHeader("Access-Control-Allow-Origin", "*");
-            // res.send(rows[0]);
-            results = JSON.stringify(rows[0]);
-            results = JSON.parse(results);
-            res.send(results)
+            res.send(rows[0]);
+            console.log('The solution is: ', rows[0].solution);
+            console.log('The solution is: ', rows);
+            // results = JSON.stringify(rows[0]);
+            // results = JSON.parse(results);
+            // res.send(results)
         })
     } catch (error) { }
 })

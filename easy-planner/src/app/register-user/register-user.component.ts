@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
+import { isNull } from 'util';
 
 @Component({
   selector: 'app-register-user',
@@ -52,19 +53,23 @@ export class RegisterUserComponent implements OnInit {
     }else{this.warning= this.warning+"The password has to be same one! ";}
   
     if(this.test==4){
-      // this.calendarService.getUser(this.user.student_id,this.user.password)
-      // .subscribe(result=>{
-      // this.result=result
-      // if(this.result.student_id!=this.user.student_id){
+      this.calendarService.getUser(this.user.student_id,this.user.password)
+      .subscribe(result=>{
+      this.result=result
+      console.log("user:"+this.user.student_id)
+      if(!isNull(result)){
+        this.warning="The username already exist!"
+      }else{
+        this.calendarService.addUser(this.user)
+        .subscribe(user => {
+          if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
+        });
+       }
+      });
       // this.calendarService.addUser(this.user)
       // .subscribe(user => {
       //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
       // });
-      // }else{this.warning="The username already exist!"}});
-      this.calendarService.addUser(this.user)
-      .subscribe(user => {
-        if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
-      });
     }else{
       this.warning= this.warning+"The register information is not allowed empty!  "
     }
