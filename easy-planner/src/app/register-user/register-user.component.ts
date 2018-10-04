@@ -29,6 +29,7 @@ export class RegisterUserComponent implements OnInit {
   uid:string=null;
   constructor(private calendarService: EasyPlannerServerService, private router: Router) { }
 
+  
   ngOnInit() {  }
 
   onSubmit(value) {
