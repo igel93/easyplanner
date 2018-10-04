@@ -31,7 +31,7 @@ export class LogInComponent implements OnInit {
         if (value.password === this.user.password) {
           this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
         }
-        else {
+        else { 
           this.warning = "Username or Password incorrect, please try again.";
         }
       });
