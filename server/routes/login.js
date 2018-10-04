@@ -5,7 +5,7 @@ const router = express.Router();
 
 //get HTTP method to /login
 router.get('/:student_id/:password', (req, res) => {
-    try {  //param can pass the select infor
+    try {  //param can pass the select infor      
         sql = "select * from user where student_id =?";
         connection.query(sql, [req.params.student_id], function (err, rows, fields) {
 
