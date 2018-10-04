@@ -1,0 +1,52 @@
+<div>
+  <h3 style="text-align:center">Modify Event</h3>
+  <br>
+  <div>
+    <form (ngSubmit)="onSubmit(profileForm.value)" #profileForm="ngForm">
+      <table align='center'>
+        <tbody>
+          <tr>
+            <td> <label>Date:</label></td>
+            <td> <label>{{event.year}}--{{event.month}}--{{event.day}}</label></td>
+          </tr>
+          <!-- <a>{{warning1}}</a> -->
+          <tr>
+            <td> <label>Start time:</label></td>
+            <td><input type="time" value={{event.start_time}} required [(ngModel)]=start_time name=start_time></td>
+          </tr>
+          <tr>
+            <td> <label>Ending time:</label></td>
+            <td><input type="time" value={{event.ending_time}} required [(ngModel)]=ending_time name=ending_time></td>
+          </tr>
+          <tr>
+            <td><label>Location:</label></td>
+            <td><input type="text" value={{event.location}} required [(ngModel)]=location name=location></td>
+          </tr>
+          <tr>
+            <td><label>Group name:</label></td>
+            <td><input type="text" value={{event.group_name}} [(ngModel)]=group_name name=group_name></td>
+          </tr>
+          <tr>
+            <td><label>Group size:</label></td>
+            <td><input type="number" value={{event.group_size}} [(ngModel)]=group_size name=group_size></td>
+          </tr>
+          <tr>
+            <td><label>describtion:</label></td>
+            <td>
+              <textarea rows="8" cols="30" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div style="text-align:center">
+        <a>{{warning}}</a>
+        <div>
+          <button class="btn btn-primary" (click)="cancelClick()">Cancel</button>
+          <button class="btn btn-primary" type="submit">Confirm</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

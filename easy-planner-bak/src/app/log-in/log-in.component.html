@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">
+    <div>
+      <label>USER NAME:</label>
+      <input type="text" required [(ngModel)]=username name=username>
+      <!-- <input type="text" (input)="onUpdateUserName($event)" required> -->
+    </div>
+    <div>
+      <label >PASSWORD:</label>
+      <input type="password" required [(ngModel)]=password name=password>
+      <!-- <input type="password" (input)="onUpdatePassword($event)" required> -->
+    </div>
+    <hr>
+    <a>{{warning}}</a>
+    <div>
+      <button class="btn btn-primary" type="submit" (click)="onSubmit()">Confirm</button>
+      <a routerLink="/app-register-user" type="register" class="btn btn-link">Sign Up</a>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

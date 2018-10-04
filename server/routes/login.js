@@ -2,6 +2,9 @@
 const connection = require('./mysqlConnection');
 const express = require('express');
 const router = express.Router();
+const bcrypt = require("bcrypt");
+
+const saltRounds = 10; 
 
 //get HTTP method to /login
 router.get('/:student_id/:password', (req, res) => {
@@ -39,14 +42,17 @@ router.get('/:user_id', (req, res) => {
 
 })
 
+
+
 //post HTTP method to /login
 router.post('/', (req, res) => {
     try {//param can pass the select infor
         var param = req.body;
         b = param.student_id
         c = param.name
-        d = param.password
         e = param.email
+        d = param.password
+            .catch(err => console.error(err.message));
         sql = "INSERT INTO user (student_id, name, password, email) VALUES (?,?,?,?)"
         connection.query(sql, [b, c, d, e], function (err, rows, fields) {
             if (err) throw err
