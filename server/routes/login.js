@@ -8,24 +8,24 @@ const saltRounds = 10;
 
 //get HTTP method to /login
 router.get('/:student_id/:password', (req, res) => {
-    try {  //param can pass the select infor
+    try {  //param can pass the select infor      
         sql = "select * from user where student_id =?";
         connection.query(sql, [req.params.student_id], function (err, rows, fields) {
 
-            // console.log('The solution is: ', rows[0].solution);
-            // console.log('The solution is: ', rows);
+            
             res.setHeader("Access-Control-Allow-Origin", "*");
-            // res.send(rows[0]);
-            results = JSON.stringify(rows[0]);
-            results = JSON.parse(results);
-            res.send(results)
+            res.send(rows[0]);
+            console.log('The solution is: ', rows[0].solution);
+            console.log('The solution is: ', rows);
+            // results = JSON.stringify(rows[0]);
+            // results = JSON.parse(results);
+            // res.send(results)
         })
     } catch (error) { }
 })
 
 router.get('/:user_id', (req, res) => {
-    try {
-        //param can pass the select infor
+    try { //param can pass the select infor
         console.log(req.params.user_id)
         sql = "select * from user where user_id =?";
         connection.query(sql, [req.params.user_id], function (err, rows, fields) {
