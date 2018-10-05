@@ -13,7 +13,7 @@ const httpOptions = {
 
 export class EasyPlannerServerService {
     events: Event[];
-    url: string = "http://localhost:3000/";
+    url: string = "http://localhost:1000/";
 
     constructor(private http: HttpClient) { }
 
