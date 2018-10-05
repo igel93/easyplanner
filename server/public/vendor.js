@@ -147,7 +147,7 @@ var PlatformLocation = /** @class */ (function () {
     return PlatformLocation;
 }());
 /**
- * @describtion Indicates when a location is initialized.
+ * @description Indicates when a location is initialized.
  * @experimental
  */
 var LOCATION_INITIALIZED = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('Location Initialized');
@@ -214,7 +214,7 @@ var APP_BASE_HREF = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionTok
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * A service that applications can use to interact with a browser's URL.
  *
@@ -388,7 +388,7 @@ function _stripIndexHtml(url) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  * A {@link LocationStrategy} used to configure the {@link Location} service to
  * represent its state in the
  * [hash fragment](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax)
@@ -467,7 +467,7 @@ var HashLocationStrategy = /** @class */ (function (_super) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  * A {@link LocationStrategy} used to configure the {@link Location} service to
  * represent its state in the
  * [path](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax) of the
@@ -1321,7 +1321,7 @@ var TranslationType;
 })(TranslationType || (TranslationType = {}));
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a date according to locale rules.
  *
@@ -2045,7 +2045,7 @@ function formatNumberToLocaleString(value, pattern, locale, groupSymbol, decimal
 }
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a number as currency using locale rules.
  *
@@ -2074,7 +2074,7 @@ function formatCurrency(value, locale, currency, currencyCode, digitsInfo) {
 }
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a number as a percentage according to locale rules.
  *
@@ -2093,7 +2093,7 @@ function formatPercent(value, locale, digitsInfo) {
 }
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a number as text. Group sizing and separator and other locale-specific
  * configurations are based on the locale.
@@ -2821,7 +2821,7 @@ function parseCookieValue(cookieStr, name) {
  *     <some-element [ngClass]="{'class1 class2 class3' : true}">...</some-element>
  * ```
  *
- * @describtion
+ * @description
  *
  * Adds and removes CSS classes on an HTML element.
  *
@@ -3546,7 +3546,7 @@ var SwitchView = /** @class */ (function () {
  *       <some-element *ngSwitchDefault>...</some-element>
  *     </container-element>
  * ```
- * @describtion
+ * @description
  *
  * Adds / removes DOM sub-trees when the nest match expressions matches the switch expression.
  *
@@ -3633,7 +3633,7 @@ var NgSwitch = /** @class */ (function () {
  *   <some-element *ngSwitchCase="match_expression_1">...</some-element>
  * </container-element>
  *```
- * @describtion
+ * @description
  *
  * Creates a view that will be added/removed from the parent {@link NgSwitch} when the
  * given expression evaluate to respectively the same/different value as the switch
@@ -3679,7 +3679,7 @@ var NgSwitchCase = /** @class */ (function () {
  * </container-element>
  * ```
  *
- * @describtion
+ * @description
  *
  * Creates a view that is added to the parent {@link NgSwitch} when no case expressions
  * match the switch expression.
@@ -3726,7 +3726,7 @@ var NgSwitchDefault = /** @class */ (function () {
  * </some-element>
  * ```
  *
- * @describtion
+ * @description
  *
  * Adds / removes DOM sub-trees based on a numeric value. Tailored for pluralization.
  *
@@ -3790,7 +3790,7 @@ var NgPlural = /** @class */ (function () {
 /**
  * @ngModule CommonModule
  *
- * @describtion
+ * @description
  *
  * Creates a view that will be added/removed from the parent {@link NgPlural} when the
  * given expression matches the plural expression according to CLDR rules.
@@ -3845,7 +3845,7 @@ var NgPluralCase = /** @class */ (function () {
  * <some-element [ngStyle]="objExp">...</some-element>
  * ```
  *
- * @describtion
+ * @description
  *
  * Update an HTML element styles.
  *
@@ -3925,7 +3925,7 @@ var NgStyle = /** @class */ (function () {
  * <ng-container *ngTemplateOutlet="templateRefExp; context: contextExp"></ng-container>
  * ```
  *
- * @describtion
+ * @description
  *
  * Inserts an embedded view from a prepared `TemplateRef`.
  *
@@ -4255,7 +4255,7 @@ var DateFormatter = /** @class */ (function () {
   */
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a date according to locale rules.
  *
@@ -4478,11 +4478,11 @@ var DeprecatedDecimalPipe = /** @class */ (function () {
 /**
  * @ngModule CommonModule
  *
- * @describtion
+ * @description
  *
  * Formats a number as percentage according to locale rules.
  *
- * - `digitInfo` See {@link DecimalPipe} for detailed describtion.
+ * - `digitInfo` See {@link DecimalPipe} for detailed description.
  *
  * WARNING: this pipe uses the Internationalization API which is not yet available in all browsers
  * and may require a polyfill. See [Browser Support](guide/browser-support) for details.
@@ -4511,7 +4511,7 @@ var DeprecatedPercentPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a number as currency using locale rules.
  *
@@ -4522,7 +4522,7 @@ var DeprecatedPercentPipe = /** @class */ (function () {
  * - `symbolDisplay` is a boolean indicating whether to use the currency symbol or code.
  *   - `true`: use symbol (e.g. `$`).
  *   - `false`(default): use code (e.g. `USD`).
- * - `digitInfo` See {@link DecimalPipe} for detailed describtion.
+ * - `digitInfo` See {@link DecimalPipe} for detailed description.
  *
  * WARNING: this pipe uses the Internationalization API which is not yet available in all browsers
  * and may require a polyfill. See [Browser Support](guide/browser-support) for details.
@@ -4597,7 +4597,7 @@ var _promiseStrategy = new PromiseStrategy();
 var _observableStrategy = new ObservableStrategy();
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Unwraps a value from an asynchronous primitive.
  *
@@ -4810,7 +4810,7 @@ var UpperCasePipe = /** @class */ (function () {
 // clang-format off
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Formats a date value according to locale rules.
  *
@@ -4853,7 +4853,7 @@ var UpperCasePipe = /** @class */ (function () {
  * Format details depend on the locale.
  * Fields marked with (*) are only available in the extra data set for the given locale.
  *
- *  | Field type         | Format      | describtion                                                   | Example Value                                              |
+ *  | Field type         | Format      | Description                                                   | Example Value                                              |
  *  |--------------------|-------------|---------------------------------------------------------------|------------------------------------------------------------|
  *  | Era                | G, GG & GGG | Abbreviated                                                   | AD                                                         |
  *  |                    | GGGG        | Wide                                                          | Anno Domini                                                |
@@ -4994,7 +4994,7 @@ var DatePipe = /** @class */ (function () {
 var _INTERPOLATION_REGEXP = /#/g;
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Maps a value to a string that pluralizes the value according to locale rules.
  *
@@ -5043,7 +5043,7 @@ var I18nPluralPipe = /** @class */ (function () {
  */
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Generic selector that displays the string that matches the current value.
  *
@@ -5093,7 +5093,7 @@ var I18nSelectPipe = /** @class */ (function () {
  */
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Converts a value into its JSON-format representation.  Useful for debugging.
  *
@@ -5131,7 +5131,7 @@ function makeKeyValuePair(key, value) {
 }
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Transforms Object or Map into an array of key value pairs.
  *
@@ -5219,7 +5219,7 @@ function defaultComparator(keyValueA, keyValueB) {
  */
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Transforms a number into a string,
  * formatted according to locale rules that determine group sizing and
@@ -5294,7 +5294,7 @@ var DecimalPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Transforms a number to a percentage
  * string, formatted according to locale rules that determine group sizing and
@@ -5355,7 +5355,7 @@ var PercentPipe = /** @class */ (function () {
 }());
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Transforms a number to a currency string, formatted according to locale rules
  * that determine group sizing and separator, decimal-point character,
@@ -5471,7 +5471,7 @@ function strToNumber(value) {
  */
 /**
  * @ngModule CommonModule
- * @describtion
+ * @description
  *
  * Creates a new `Array` or `String` containing a subset (slice) of the elements.
  *
@@ -14317,15 +14317,15 @@ var Message = /** @class */ (function () {
      * @param placeholders maps placeholder names to static content
      * @param placeholderToMessage maps placeholder names to messages (used for nested ICU messages)
      * @param meaning
-     * @param describtion
+     * @param description
      * @param id
      */
-    function Message(nodes, placeholders, placeholderToMessage, meaning, describtion, id) {
+    function Message(nodes, placeholders, placeholderToMessage, meaning, description, id) {
         this.nodes = nodes;
         this.placeholders = placeholders;
         this.placeholderToMessage = placeholderToMessage;
         this.meaning = meaning;
-        this.describtion = describtion;
+        this.description = description;
         this.id = id;
         if (nodes.length) {
             this.sources = [{
@@ -14573,8 +14573,8 @@ var _expParser = new Parser(new Lexer());
  */
 function createI18nMessageFactory(interpolationConfig) {
     var visitor = new _I18nVisitor(_expParser, interpolationConfig);
-    return function (nodes, meaning, describtion, id) {
-        return visitor.toI18nMessage(nodes, meaning, describtion, id);
+    return function (nodes, meaning, description, id) {
+        return visitor.toI18nMessage(nodes, meaning, description, id);
     };
 }
 var _I18nVisitor = /** @class */ (function () {
@@ -14582,14 +14582,14 @@ var _I18nVisitor = /** @class */ (function () {
         this._expressionParser = _expressionParser;
         this._interpolationConfig = _interpolationConfig;
     }
-    _I18nVisitor.prototype.toI18nMessage = function (nodes, meaning, describtion, id) {
+    _I18nVisitor.prototype.toI18nMessage = function (nodes, meaning, description, id) {
         this._isIcu = nodes.length == 1 && nodes[0] instanceof Expansion;
         this._icuDepth = 0;
         this._placeholderRegistry = new PlaceholderRegistry();
         this._placeholderToContent = {};
         this._placeholderToMessage = {};
         var i18nodes = visitAll(this, nodes, {});
-        return new Message(i18nodes, this._placeholderToContent, this._placeholderToMessage, meaning, describtion, id);
+        return new Message(i18nodes, this._placeholderToContent, this._placeholderToMessage, meaning, description, id);
     };
     _I18nVisitor.prototype.visitElement = function (el, context) {
         var children = visitAll(this, el.children);
@@ -14951,8 +14951,8 @@ var _Visitor = /** @class */ (function () {
             // Do not create empty messages
             return null;
         }
-        var _a = _parseMessageMeta(msgMeta), meaning = _a.meaning, describtion = _a.describtion, id = _a.id;
-        var message = this._createI18nMessage(ast, meaning, describtion, id);
+        var _a = _parseMessageMeta(msgMeta), meaning = _a.meaning, description = _a.description, id = _a.id;
+        var message = this._createI18nMessage(ast, meaning, description, id);
         this._messages.push(message);
         return message;
     };
@@ -14987,8 +14987,8 @@ var _Visitor = /** @class */ (function () {
                 return;
             }
             if (attr.value && attr.value != '' && i18nParsedMessageMeta.hasOwnProperty(attr.name)) {
-                var _a = i18nParsedMessageMeta[attr.name], meaning = _a.meaning, describtion = _a.describtion, id = _a.id;
-                var message = _this._createI18nMessage([attr], meaning, describtion, id);
+                var _a = i18nParsedMessageMeta[attr.name], meaning = _a.meaning, description = _a.description, id = _a.id;
+                var message = _this._createI18nMessage([attr], meaning, description, id);
                 var nodes = _this._translations.get(message);
                 if (nodes) {
                     if (nodes.length == 0) {
@@ -15052,8 +15052,8 @@ var _Visitor = /** @class */ (function () {
      * If a section has only one significant children (comments not significant) then we should not
      * keep the message from this children:
      *
-     * `<p i18n="meaning|describtion">{ICU message}</p>` would produce two messages:
-     * - one for the <p> content with meaning and describtion,
+     * `<p i18n="meaning|description">{ICU message}</p>` would produce two messages:
+     * - one for the <p> content with meaning and description,
      * - another one for the ICU message.
      *
      * In this case the last message is discarded as it contains less information (the AST is
@@ -15096,14 +15096,14 @@ function _getI18nAttr(p) {
 }
 function _parseMessageMeta(i18n) {
     if (!i18n)
-        return { meaning: '', describtion: '', id: '' };
+        return { meaning: '', description: '', id: '' };
     var idIndex = i18n.indexOf(ID_SEPARATOR);
     var descIndex = i18n.indexOf(MEANING_SEPARATOR);
     var _a = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((idIndex > -1) ? [i18n.slice(0, idIndex), i18n.slice(idIndex + 2)] : [i18n, ''], 2), meaningAndDesc = _a[0], id = _a[1];
     var _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((descIndex > -1) ?
         [meaningAndDesc.slice(0, descIndex), meaningAndDesc.slice(descIndex + 1)] :
-        ['', meaningAndDesc], 2), meaning = _b[0], describtion = _b[1];
-    return { meaning: meaning, describtion: describtion, id: id };
+        ['', meaningAndDesc], 2), meaning = _b[0], description = _b[1];
+    return { meaning: meaning, description: description, id: id };
 }
 
 /**
@@ -15355,8 +15355,8 @@ var Xliff = /** @class */ (function (_super) {
             });
             var transUnit = new Tag(_UNIT_TAG, { id: message.id, datatype: 'html' });
             (_a = transUnit.children).push.apply(_a, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])([new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes))], contextTags));
-            if (message.describtion) {
-                transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'describtion' }, [new Text$2(message.describtion)]));
+            if (message.description) {
+                transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'description' }, [new Text$2(message.description)]));
             }
             if (message.meaning) {
                 transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'meaning' }, [new Text$2(message.meaning)]));
@@ -15605,9 +15605,9 @@ var Xliff2 = /** @class */ (function (_super) {
         messages.forEach(function (message) {
             var unit = new Tag(_UNIT_TAG$1, { id: message.id });
             var notes = new Tag('notes');
-            if (message.describtion || message.meaning) {
-                if (message.describtion) {
-                    notes.children.push(new CR(8), new Tag('note', { category: 'describtion' }, [new Text$2(message.describtion)]));
+            if (message.description || message.meaning) {
+                if (message.description) {
+                    notes.children.push(new CR(8), new Tag('note', { category: 'description' }, [new Text$2(message.description)]));
                 }
                 if (message.meaning) {
                     notes.children.push(new CR(8), new Tag('note', { category: 'meaning' }, [new Text$2(message.meaning)]));
@@ -15908,8 +15908,8 @@ var Xmb = /** @class */ (function (_super) {
         var rootNode = new Tag(_MESSAGES_TAG);
         messages.forEach(function (message) {
             var attrs = { id: message.id };
-            if (message.describtion) {
-                attrs['desc'] = message.describtion;
+            if (message.description) {
+                attrs['desc'] = message.description;
             }
             if (message.meaning) {
                 attrs['meaning'] = message.meaning;
@@ -25466,7 +25466,7 @@ var ConstantPool = /** @class */ (function () {
     //
     // ```
     // /**
-    //  * @desc describtion?
+    //  * @desc description?
     //  * @meaning meaning?
     //  */
     // const MSG_XYZ = goog.getMsg('message');
@@ -25650,12 +25650,12 @@ function invalid(arg) {
 function isVariable(e) {
     return e instanceof ReadVarExpr;
 }
-// Converts i18n meta informations for a message (describtion, meaning) to a JsDoc statement
+// Converts i18n meta informations for a message (description, meaning) to a JsDoc statement
 // formatted as expected by the Closure compiler.
 function i18nMetaToDocStmt(meta) {
     var tags = [];
-    if (meta.describtion) {
-        tags.push({ tagName: "desc" /* Desc */, text: meta.describtion });
+    if (meta.description) {
+        tags.push({ tagName: "desc" /* Desc */, text: meta.description });
     }
     if (meta.meaning) {
         tags.push({ tagName: "meaning" /* Meaning */, text: meta.meaning });
@@ -25717,7 +25717,7 @@ var MessageBundle = /** @class */ (function () {
             var mapper = serializer.createNameMapper(messages[id]);
             var src = messages[id];
             var nodes = mapper ? mapperVisitor.convert(src.nodes, mapper) : src.nodes;
-            var transformedMessage = new Message(nodes, {}, {}, src.meaning, src.describtion, id);
+            var transformedMessage = new Message(nodes, {}, {}, src.meaning, src.description, id);
             transformedMessage.sources = src.sources;
             if (filterSources) {
                 transformedMessage.sources.forEach(function (source) { return source.filePath = filterSources(source.filePath); });
@@ -27679,11 +27679,11 @@ function createCssSelector(tag, attributes) {
 }
 // Parse i18n metas like:
 // - "@@id",
-// - "describtion[@@id]",
-// - "meaning|describtion[@@id]"
+// - "description[@@id]",
+// - "meaning|description[@@id]"
 function parseI18nMeta(i18n) {
     var meaning;
-    var describtion;
+    var description;
     var id;
     if (i18n) {
         // TODO(vicb): figure out how to force a message ID with closure ?
@@ -27693,9 +27693,9 @@ function parseI18nMeta(i18n) {
         _a = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((idIndex > -1) ? [i18n.slice(0, idIndex), i18n.slice(idIndex + 2)] : [i18n, ''], 2), meaningAndDesc = _a[0], id = _a[1];
         _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])((descIndex > -1) ?
             [meaningAndDesc.slice(0, descIndex), meaningAndDesc.slice(descIndex + 1)] :
-            ['', meaningAndDesc], 2), meaning = _b[0], describtion = _b[1];
+            ['', meaningAndDesc], 2), meaning = _b[0], description = _b[1];
     }
-    return { describtion: describtion, id: id, meaning: meaning };
+    return { description: description, id: id, meaning: meaning };
     var _a, _b;
 }
 function interpolate(args) {
@@ -33650,7 +33650,7 @@ var HostListener = makePropDecorator('HostListener', function (eventName, args) 
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Represents a type that a Component or other object is instances of.
  *
@@ -34673,7 +34673,7 @@ var ViewEncapsulation;
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion Represents the version of Angular
+ * @description Represents the version of Angular
  *
  *
  */
@@ -52116,7 +52116,7 @@ function isEmptyInputValue(value) {
     return value == null || value.length === 0;
 }
 /**
- * @describtion
+ * @description
  * An `InjectionToken` for registering additional synchronous validators used with `AbstractControl`s.
  *
  * @see `NG_ASYNC_VALIDATORS`
@@ -52143,7 +52143,7 @@ function isEmptyInputValue(value) {
  */
 var NG_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('NgValidators');
 /**
- * @describtion
+ * @description
  * An `InjectionToken` for registering additional asynchronous validators used with `AbstractControl`s.
  *
  * @see `NG_VALIDATORS`
@@ -52152,7 +52152,7 @@ var NG_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionTok
 var NG_ASYNC_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('NgAsyncValidators');
 var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
 /**
- * @describtion
+ * @description
  * Provides a set of built-in validators that can be used by form controls.
  *
  * A validator is a function that processes a `FormControl` or collection of
@@ -52165,7 +52165,7 @@ var Validators = /** @class */ (function () {
     function Validators() {
     }
     /**
-     * @describtion
+     * @description
      * Validator that requires the control's value to be greater than or equal to the provided number.
      * The validator exists only as a function and not as a directive.
      *
@@ -52195,7 +52195,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the control's value to be less than or equal to the provided number.
      * The validator exists only as a function and not as a directive.
      *
@@ -52225,7 +52225,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the control have a non-empty value.
      *
      * @usageNotes
@@ -52246,7 +52246,7 @@ var Validators = /** @class */ (function () {
         return isEmptyInputValue(control.value) ? { 'required': true } : null;
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the control's value be true. This validator is commonly
      * used for required checkboxes.
      *
@@ -52267,7 +52267,7 @@ var Validators = /** @class */ (function () {
         return control.value === true ? null : { 'required': true };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the control's value pass an email validation test.
      *
      * @usageNotes
@@ -52291,7 +52291,7 @@ var Validators = /** @class */ (function () {
         return EMAIL_REGEXP.test(control.value) ? null : { 'email': true };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the length of the control's value to be greater than or equal
      * to the provided minimum length. This validator is also provided by default if you use the
      * the HTML5 `minlength` attribute.
@@ -52325,7 +52325,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the length of the control's value to be less than or equal
      * to the provided maximum length. This validator is also provided by default if you use the
      * the HTML5 `maxlength` attribute.
@@ -52356,7 +52356,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Validator that requires the control's value to match a regex pattern. This validator is also
      * provided
      * by default if you use the HTML5 `pattern` attribute.
@@ -52406,7 +52406,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Validator that performs no operation.
      */
     Validators.nullValidator = function (c) { return null; };
@@ -52421,7 +52421,7 @@ var Validators = /** @class */ (function () {
         };
     };
     /**
-     * @describtion
+     * @description
      * Compose multiple async validators into a single function that returns the union
      * of the individual error objects for the provided control.
      *
@@ -52804,7 +52804,7 @@ var RadioControlRegistry = /** @class */ (function () {
     return RadioControlRegistry;
 }());
 /**
- * @describtion
+ * @description
  *
  * Writes radio control values and listens to radio control changes.
  *
@@ -53026,7 +53026,7 @@ function _extractId(valueString) {
     return valueString.split(':')[0];
 }
 /**
- * @describtion
+ * @description
  *
  * Writes values and listens to changes on a select element.
  *
@@ -53174,7 +53174,7 @@ var SelectControlValueAccessor = /** @class */ (function () {
     return SelectControlValueAccessor;
 }());
 /**
- * @describtion
+ * @description
  *
  * Marks `<option>` as dynamic, so Angular can be notified when options change.
  *
@@ -55530,7 +55530,7 @@ var formDirectiveProvider = {
 };
 var resolvedPromise = Promise.resolve(null);
 /**
- * @describtion
+ * @description
  *
  * Creates a top-level `FormGroup` instance and binds it to a form
  * to track aggregate form value and validation status.
@@ -55728,7 +55728,7 @@ var modelGroupProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return NgModelGroup; })
 };
 /**
- * @describtion
+ * @description
  *
  * Creates and binds a `FormGroup` instance to a DOM element.
  *
@@ -55812,7 +55812,7 @@ var formControlBinding = {
  */
 var resolvedPromise$1 = Promise.resolve(null);
 /**
- * @describtion
+ * @description
  *
  * Creates a `FormControl` instance from a domain model and binds it
  * to a form control element.
@@ -56021,7 +56021,7 @@ var formControlBinding$1 = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormControlDirective; })
 };
 /**
- * @describtion
+ * @description
  *
  * Syncs a standalone `FormControl` instance to a form control element.
  *
@@ -56233,7 +56233,7 @@ var formDirectiveProvider$1 = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormGroupDirective; })
 };
 /**
- * @describtion
+ * @description
  *
  * Binds an existing `FormGroup` to a DOM element.
  *
@@ -56406,7 +56406,7 @@ var formGroupNameProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormGroupName; })
 };
 /**
- * @describtion
+ * @description
  *
  * Syncs a nested `FormGroup` to a DOM element.
  *
@@ -56483,7 +56483,7 @@ var formArrayNameProvider = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormArrayName; })
 };
 /**
- * @describtion
+ * @description
  *
  * Syncs a nested `FormArray` to a DOM element.
  *
@@ -56612,7 +56612,7 @@ var controlNameBinding = {
     useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return FormControlName; })
 };
 /**
- * @describtion
+ * @description
  *
  * Syncs a `FormControl` in an existing `FormGroup` to a form control
  * element by name.
@@ -57125,7 +57125,7 @@ var PatternValidator = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  * Creates an `AbstractControl` from a user-specified configuration.
  *
  * The `FormBuilder` provides syntactic sugar that shortens creating instances of a `FormControl`,
@@ -57139,7 +57139,7 @@ var FormBuilder = /** @class */ (function () {
     function FormBuilder() {
     }
     /**
-     * @describtion
+     * @description
      * Construct a new `FormGroup` instance.
      *
      * @param controlsConfig A collection of child controls. The key for each child is the name
@@ -57158,7 +57158,7 @@ var FormBuilder = /** @class */ (function () {
         return new FormGroup(controls, validator, asyncValidator);
     };
     /**
-     * @describtion
+     * @description
      * Construct a new `FormControl` instance.
      *
      * @param formState Initializes the control with an initial value,
@@ -57184,7 +57184,7 @@ var FormBuilder = /** @class */ (function () {
         return new FormControl(formState, validator, asyncValidator);
     };
     /**
-     * @describtion
+     * @description
      * Construct a new `FormArray` instance.
      *
      * @param controlsConfig An array of child controls. The key for each child control is its index
@@ -57248,7 +57248,7 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.1.1')
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Adds `novalidate` attribute to all forms by default.
  *
@@ -60580,7 +60580,7 @@ __webpack_require__.r(__webpack_exports__);
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Base for events the Router goes through, as opposed to events tied to a specific
  * Route. `RouterEvent`s will only be fired one time for any given navigation.
@@ -60611,7 +60611,7 @@ var RouterEvent = /** @class */ (function () {
     return RouterEvent;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when a navigation starts.
  *
@@ -60644,7 +60644,7 @@ var NavigationStart = /** @class */ (function (_super) {
     return NavigationStart;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when a navigation ends successfully.
  *
@@ -60670,7 +60670,7 @@ var NavigationEnd = /** @class */ (function (_super) {
     return NavigationEnd;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when a navigation is canceled.
  *
@@ -60694,7 +60694,7 @@ var NavigationCancel = /** @class */ (function (_super) {
     return NavigationCancel;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when a navigation fails due to an unexpected error.
  *
@@ -60720,7 +60720,7 @@ var NavigationError = /** @class */ (function (_super) {
     return NavigationError;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when routes are recognized.
  *
@@ -60749,7 +60749,7 @@ var RoutesRecognized = /** @class */ (function (_super) {
     return RoutesRecognized;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents the start of the Guard phase of routing.
  *
@@ -60777,7 +60777,7 @@ var GuardsCheckStart = /** @class */ (function (_super) {
     return GuardsCheckStart;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents the end of the Guard phase of routing.
  *
@@ -60808,7 +60808,7 @@ var GuardsCheckEnd = /** @class */ (function (_super) {
     return GuardsCheckEnd;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents the start of the Resolve phase of routing. The timing of this
  * event may change, thus it's experimental. In the current iteration it will run
@@ -60839,7 +60839,7 @@ var ResolveStart = /** @class */ (function (_super) {
     return ResolveStart;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents the end of the Resolve phase of routing. See note on
  * `ResolveStart` for use of this experimental API.
@@ -60868,7 +60868,7 @@ var ResolveEnd = /** @class */ (function (_super) {
     return ResolveEnd;
 }(RouterEvent));
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered before lazy loading a route config.
  *
@@ -60884,7 +60884,7 @@ var RouteConfigLoadStart = /** @class */ (function () {
     return RouteConfigLoadStart;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents an event triggered when a route has been lazy loaded.
  *
@@ -60900,7 +60900,7 @@ var RouteConfigLoadEnd = /** @class */ (function () {
     return RouteConfigLoadEnd;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ChildActivationEnd` for use of this experimental API.
@@ -60920,7 +60920,7 @@ var ChildActivationStart = /** @class */ (function () {
     return ChildActivationStart;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ChildActivationStart` for use of this experimental API.
@@ -60940,7 +60940,7 @@ var ChildActivationEnd = /** @class */ (function () {
     return ChildActivationEnd;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ActivationEnd` for use of this experimental API.
@@ -60960,7 +60960,7 @@ var ActivationStart = /** @class */ (function () {
     return ActivationStart;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the start of end of the Resolve phase of routing. See note on
  * `ActivationStart` for use of this experimental API.
@@ -60980,7 +60980,7 @@ var ActivationEnd = /** @class */ (function () {
     return ActivationEnd;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents a scrolling event.
  */
@@ -61036,7 +61036,7 @@ var EmptyOutletComponent = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Name of the primary outlet.
  *
@@ -61376,7 +61376,7 @@ function containsSegmentGroupHelper(container, containee, containeePaths) {
     }
 }
 /**
- * @describtion
+ * @description
  *
  * Represents the parsed URL.
  *
@@ -61432,7 +61432,7 @@ var UrlTree = /** @class */ (function () {
     return UrlTree;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the parsed URL segment group.
  *
@@ -61466,7 +61466,7 @@ var UrlSegmentGroup = /** @class */ (function () {
     return UrlSegmentGroup;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents a single URL segment.
  *
@@ -61536,7 +61536,7 @@ function mapChildrenIntoArray(segment, fn) {
     return res;
 }
 /**
- * @describtion
+ * @description
  *
  * Serializes and deserializes a URL string into a URL tree.
  *
@@ -61553,7 +61553,7 @@ var UrlSerializer = /** @class */ (function () {
     return UrlSerializer;
 }());
 /**
- * @describtion
+ * @description
  *
  * A default implementation of the `UrlSerializer`.
  *
@@ -62400,7 +62400,7 @@ function nodeChildrenAsMap(node) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Represents the state of the router.
  *
@@ -62460,7 +62460,7 @@ function createEmptyStateSnapshot(urlTree, rootComponent) {
     return new RouterStateSnapshot('', new TreeNode(activated, []));
 }
 /**
- * @describtion
+ * @description
  *
  * Contains the information about a route associated with a component loaded in an
  * outlet.  An `ActivatedRoute` can also be used to traverse the router state tree.
@@ -62607,7 +62607,7 @@ function flattenInherited(pathFromRoot) {
     }, { params: {}, data: {}, resolve: {} });
 }
 /**
- * @describtion
+ * @description
  *
  * Contains the information about a route associated with a component loaded in an
  * outlet at a particular moment in time. ActivatedRouteSnapshot can also be used to
@@ -62713,7 +62713,7 @@ var ActivatedRouteSnapshot = /** @class */ (function () {
     return ActivatedRouteSnapshot;
 }());
 /**
- * @describtion
+ * @description
  *
  * Represents the state of the router at a moment in time.
  *
@@ -63752,7 +63752,7 @@ function getResolve(route) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Provides a way to customize when activated routes get reused.
  *
@@ -63839,7 +63839,7 @@ var RouterConfigLoader = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Provides a way to migrate AngularJS applications to Angular.
  *
@@ -63882,7 +63882,7 @@ function defaultRouterHook(snapshot, runExtras) {
     return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(null);
 }
 /**
- * @describtion
+ * @description
  *
  * Provides the navigation and url manipulation capabilities.
  *
@@ -64649,7 +64649,7 @@ function validateCommands(commands) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Lets you link to specific routes in your app.
  *
@@ -64802,7 +64802,7 @@ var RouterLink = /** @class */ (function () {
     return RouterLink;
 }());
 /**
- * @describtion
+ * @description
  *
  * Lets you link to specific routes in your app.
  *
@@ -64917,7 +64917,7 @@ function attrBoolValue(s) {
  */
 /**
  *
- * @describtion
+ * @description
  *
  * Lets you add a CSS class to an element when the link's route becomes active.
  *
@@ -65134,7 +65134,7 @@ var ChildrenOutletContexts = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Acts as a placeholder that Angular dynamically fills based on the current router state.
  *
@@ -65309,7 +65309,7 @@ var OutletInjector = /** @class */ (function () {
 *found in the LICENSE file at https://angular.io/license
 */
 /**
- * @describtion
+ * @description
  *
  * Provides a preloading strategy.
  *
@@ -65321,7 +65321,7 @@ var PreloadingStrategy = /** @class */ (function () {
     return PreloadingStrategy;
 }());
 /**
- * @describtion
+ * @description
  *
  * Provides a preloading strategy that preloads all modules as quickly as possible.
  *
@@ -65340,7 +65340,7 @@ var PreloadAllModules = /** @class */ (function () {
     return PreloadAllModules;
 }());
 /**
- * @describtion
+ * @description
  *
  * Provides a preloading strategy that does not preload any modules.
  *
@@ -65535,7 +65535,7 @@ var RouterScroller = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @describtion
+ * @description
  *
  * Contains a list of directives
  *
@@ -65543,7 +65543,7 @@ var RouterScroller = /** @class */ (function () {
  */
 var ROUTER_DIRECTIVES = [RouterOutlet, RouterLink, RouterLinkWithHref, RouterLinkActive, EmptyOutletComponent];
 /**
- * @describtion
+ * @description
  *
  * Is used in DI to configure the router.
  *
@@ -65610,7 +65610,7 @@ function routerNgProbeToken() {
  * class MyNgModule {}
  * ```
  *
- * @describtion
+ * @description
  *
  * Adds router directives and providers.
  *
@@ -65720,7 +65720,7 @@ function provideForRootGuard(router) {
     return 'guarded';
 }
 /**
- * @describtion
+ * @description
  *
  * Registers routes.
  *
@@ -65947,6 +65947,40 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.1.1')
 
 
 //# sourceMappingURL=router.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/inherits/inherits_browser.js":
+/*!***************************************************!*\
+  !*** ./node_modules/inherits/inherits_browser.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
 
 
 /***/ }),
@@ -78519,6 +78553,619 @@ function __importStar(mod) {
 
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/util/support/isBufferBrowser.js":
+/*!******************************************************!*\
+  !*** ./node_modules/util/support/isBufferBrowser.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function isBuffer(arg) {
+  return arg && typeof arg === 'object'
+    && typeof arg.copy === 'function'
+    && typeof arg.fill === 'function'
+    && typeof arg.readUInt8 === 'function';
+}
+
+/***/ }),
+
+/***/ "./node_modules/util/util.js":
+/*!***********************************!*\
+  !*** ./node_modules/util/util.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var formatRegExp = /%[sdj%]/g;
+exports.format = function(f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i < arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(' ');
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === '%%') return '%';
+    if (i >= len) return x;
+    switch (x) {
+      case '%s': return String(args[i++]);
+      case '%d': return Number(args[i++]);
+      case '%j':
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return '[Circular]';
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i < len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+};
+
+
+// Mark that a method should not be used.
+// Returns a modified function which warns once by default.
+// If --no-deprecation is set, then it is a no-op.
+exports.deprecate = function(fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+};
+
+
+var debugs = {};
+var debugEnviron;
+exports.debuglog = function(set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+};
+
+
+/**
+ * Echos the value of a value. Trys to print the value out
+ * in the best way possible given the different types.
+ *
+ * @param {Object} obj The object to print out.
+ * @param {Object} opts Optional options object that alters the output.
+ */
+/* legacy: obj, showHidden, depth, colors*/
+function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length >= 3) ctx.depth = arguments[2];
+  if (arguments.length >= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an "options" object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}
+exports.inspect = inspect;
+
+
+// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+inspect.colors = {
+  'bold' : [1, 22],
+  'italic' : [3, 23],
+  'underline' : [4, 24],
+  'inverse' : [7, 27],
+  'white' : [37, 39],
+  'grey' : [90, 39],
+  'black' : [30, 39],
+  'blue' : [34, 39],
+  'cyan' : [36, 39],
+  'green' : [32, 39],
+  'magenta' : [35, 39],
+  'red' : [31, 39],
+  'yellow' : [33, 39]
+};
+
+// Don't use 'blue' not visible on cmd.exe
+inspect.styles = {
+  'special': 'cyan',
+  'number': 'yellow',
+  'boolean': 'yellow',
+  'undefined': 'grey',
+  'null': 'bold',
+  'string': 'green',
+  'date': 'magenta',
+  // "name": intentionally not styling
+  'regexp': 'red'
+};
+
+
+function stylizeWithColor(str, styleType) {
+  var style = inspect.styles[styleType];
+
+  if (style) {
+    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+           '\u001b[' + inspect.colors[style][1] + 'm';
+  } else {
+    return str;
+  }
+}
+
+
+function stylizeNoColor(str, styleType) {
+  return str;
+}
+
+
+function arrayToHash(array) {
+  var hash = {};
+
+  array.forEach(function(val, idx) {
+    hash[val] = true;
+  });
+
+  return hash;
+}
+
+
+function formatValue(ctx, value, recurseTimes) {
+  // Provide a hook for user-specified inspect functions.
+  // Check that value is an object with an inspect function on it
+  if (ctx.customInspect &&
+      value &&
+      isFunction(value.inspect) &&
+      // Filter out the util module, it's inspect function is special
+      value.inspect !== exports.inspect &&
+      // Also filter out any prototype objects using the circular check.
+      !(value.constructor && value.constructor.prototype === value)) {
+    var ret = value.inspect(recurseTimes, ctx);
+    if (!isString(ret)) {
+      ret = formatValue(ctx, ret, recurseTimes);
+    }
+    return ret;
+  }
+
+  // Primitive types cannot have properties
+  var primitive = formatPrimitive(ctx, value);
+  if (primitive) {
+    return primitive;
+  }
+
+  // Look up the keys of the object.
+  var keys = Object.keys(value);
+  var visibleKeys = arrayToHash(keys);
+
+  if (ctx.showHidden) {
+    keys = Object.getOwnPropertyNames(value);
+  }
+
+  // IE doesn't make error fields non-enumerable
+  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  if (isError(value)
+      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+    return formatError(value);
+  }
+
+  // Some type of object without properties can be shortcutted.
+  if (keys.length === 0) {
+    if (isFunction(value)) {
+      var name = value.name ? ': ' + value.name : '';
+      return ctx.stylize('[Function' + name + ']', 'special');
+    }
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    }
+    if (isDate(value)) {
+      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+    }
+    if (isError(value)) {
+      return formatError(value);
+    }
+  }
+
+  var base = '', array = false, braces = ['{', '}'];
+
+  // Make Array say that they are Array
+  if (isArray(value)) {
+    array = true;
+    braces = ['[', ']'];
+  }
+
+  // Make functions say that they are functions
+  if (isFunction(value)) {
+    var n = value.name ? ': ' + value.name : '';
+    base = ' [Function' + n + ']';
+  }
+
+  // Make RegExps say that they are RegExps
+  if (isRegExp(value)) {
+    base = ' ' + RegExp.prototype.toString.call(value);
+  }
+
+  // Make dates with properties first say the date
+  if (isDate(value)) {
+    base = ' ' + Date.prototype.toUTCString.call(value);
+  }
+
+  // Make error with message first say the error
+  if (isError(value)) {
+    base = ' ' + formatError(value);
+  }
+
+  if (keys.length === 0 && (!array || value.length == 0)) {
+    return braces[0] + base + braces[1];
+  }
+
+  if (recurseTimes < 0) {
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    } else {
+      return ctx.stylize('[Object]', 'special');
+    }
+  }
+
+  ctx.seen.push(value);
+
+  var output;
+  if (array) {
+    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+  } else {
+    output = keys.map(function(key) {
+      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+    });
+  }
+
+  ctx.seen.pop();
+
+  return reduceToSingleString(output, base, braces);
+}
+
+
+function formatPrimitive(ctx, value) {
+  if (isUndefined(value))
+    return ctx.stylize('undefined', 'undefined');
+  if (isString(value)) {
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+                                             .replace(/'/g, "\\'")
+                                             .replace(/\\"/g, '"') + '\'';
+    return ctx.stylize(simple, 'string');
+  }
+  if (isNumber(value))
+    return ctx.stylize('' + value, 'number');
+  if (isBoolean(value))
+    return ctx.stylize('' + value, 'boolean');
+  // For some reason typeof null is "object", so special case here.
+  if (isNull(value))
+    return ctx.stylize('null', 'null');
+}
+
+
+function formatError(value) {
+  return '[' + Error.prototype.toString.call(value) + ']';
+}
+
+
+function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+  var output = [];
+  for (var i = 0, l = value.length; i < l; ++i) {
+    if (hasOwnProperty(value, String(i))) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          String(i), true));
+    } else {
+      output.push('');
+    }
+  }
+  keys.forEach(function(key) {
+    if (!key.match(/^\d+$/)) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          key, true));
+    }
+  });
+  return output;
+}
+
+
+function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+  var name, str, desc;
+  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+  if (desc.get) {
+    if (desc.set) {
+      str = ctx.stylize('[Getter/Setter]', 'special');
+    } else {
+      str = ctx.stylize('[Getter]', 'special');
+    }
+  } else {
+    if (desc.set) {
+      str = ctx.stylize('[Setter]', 'special');
+    }
+  }
+  if (!hasOwnProperty(visibleKeys, key)) {
+    name = '[' + key + ']';
+  }
+  if (!str) {
+    if (ctx.seen.indexOf(desc.value) < 0) {
+      if (isNull(recurseTimes)) {
+        str = formatValue(ctx, desc.value, null);
+      } else {
+        str = formatValue(ctx, desc.value, recurseTimes - 1);
+      }
+      if (str.indexOf('\n') > -1) {
+        if (array) {
+          str = str.split('\n').map(function(line) {
+            return '  ' + line;
+          }).join('\n').substr(2);
+        } else {
+          str = '\n' + str.split('\n').map(function(line) {
+            return '   ' + line;
+          }).join('\n');
+        }
+      }
+    } else {
+      str = ctx.stylize('[Circular]', 'special');
+    }
+  }
+  if (isUndefined(name)) {
+    if (array && key.match(/^\d+$/)) {
+      return str;
+    }
+    name = JSON.stringify('' + key);
+    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+      name = name.substr(1, name.length - 2);
+      name = ctx.stylize(name, 'name');
+    } else {
+      name = name.replace(/'/g, "\\'")
+                 .replace(/\\"/g, '"')
+                 .replace(/(^"|"$)/g, "'");
+      name = ctx.stylize(name, 'string');
+    }
+  }
+
+  return name + ': ' + str;
+}
+
+
+function reduceToSingleString(output, base, braces) {
+  var numLinesEst = 0;
+  var length = output.reduce(function(prev, cur) {
+    numLinesEst++;
+    if (cur.indexOf('\n') >= 0) numLinesEst++;
+    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+  }, 0);
+
+  if (length > 60) {
+    return braces[0] +
+           (base === '' ? '' : base + '\n ') +
+           ' ' +
+           output.join(',\n  ') +
+           ' ' +
+           braces[1];
+  }
+
+  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+}
+
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+exports.isBuffer = __webpack_require__(/*! ./support/isBuffer */ "./node_modules/util/support/isBufferBrowser.js");
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
+
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
+
+
+// log is just a thin wrapper to console.log that prepends a timestamp
+exports.log = function() {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+};
+
+
+/**
+ * Inherit the prototype methods from one constructor into another.
+ *
+ * The Function.prototype.inherits from lang.js rewritten as a standalone
+ * function (not on Function.prototype). NOTE: If this file is to be loaded
+ * during bootstrapping this function needs to be rewritten using some native
+ * functions as prototype setup using normal JavaScript does not work as
+ * expected during bootstrapping (see mirror.js in r114903).
+ *
+ * @param {function} ctor Constructor function which needs to inherit the
+ *     prototype.
+ * @param {function} superCtor Constructor function to inherit prototype from.
+ */
+exports.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inherits_browser.js");
+
+exports._extend = function(origin, add) {
+  // Don't do anything if add isn't an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+};
+
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
 

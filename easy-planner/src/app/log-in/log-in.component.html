@@ -7,18 +7,21 @@
     </div>
     
     <div>
+
       <label >PASSWORD:</label>
       <input type="password"  name=password [(ngModel)]=password #passwordField="ngModel" required>
-      <!-- <input type="password" (input)="onUpdatePassword($event)" required> -->
+     
     </div>
+
     <div *ngIf=valid>
+
     <div *ngIf="usernameField.invalid && usernameField.errors.required">
       Username is required.
     </div>
     <div *ngIf="passwordField.invalid && passwordField.errors.required">
       Password is required.
     </div>
-    
+
     </div>
 
     <hr>
