@@ -3,9 +3,9 @@ const mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'easyplannerdb.cxoi8rzemvxy.us-east-2.rds.amazonaws.com',
   user: 'root',
-  password: '12345678',
+  password: 'easyplanner2018',
   port: 3306,
-  database: 'easyplannerdb'
-});
+  database: 'easyplannerdb',
 
+});
 module.exports = connection;

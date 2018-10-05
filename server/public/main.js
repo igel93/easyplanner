@@ -298,7 +298,7 @@ module.exports = ".date-wrap {\r\n    margin: 60px auto;\r\n    width: 400px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-5\">\r\n  <div class=\"date-wrap\">\r\n    <div class=\"date-head\">\r\n      <a (click)=\"goPrev()\" class=\"left-btn\">&lt;</a>{{dateObject.year}}-{{dateObject.month}}\r\n      <a class=\"right-btn\" (click)=\"goNext()\">&gt;</a>\r\n    </div>\r\n    <div class=\"date-body\">\r\n      <div class=\"date-day\">Sun</div>\r\n      <div class=\"date-day\">Mon</div>\r\n      <div class=\"date-day\">Tue</div>\r\n      <div class=\"date-day\">Wed</div>\r\n      <div class=\"date-day\">Thu</div>\r\n      <div class=\"date-day\">Fri</div>\r\n      <div class=\"date-day\">Sat</div>\r\n      <div *ngFor=\"let item of dateObject.datesArray,let i = index\" class=\"date-item\" [class.active]=\"item == dateObject.nowDay && dateObject.month==dateObject.nowMonth\"\r\n        [class.event]=\"flag[i]==1\" (click)='dateClickEvent(i,item)'>{{item}}</div>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <!-- <a>{{clickDate}}</a> -->\r\n  </div>\r\n</div>\r\n<div class=\"col-md-7\">\r\n  <div>\r\n    <div class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a (click)=\"myProfileClick()\"> MyProfile </a></li>\r\n        <li><a routerLink=\"/login\">Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    <h2>My meetings\r\n      <button class=\"btn btn-primary\" routerLink=\"/create-group-event\" [queryParams]=\"{key:key,name:name}\">Add New</button>\r\n    </h2>\r\n    <a *ngIf=\"success\">Delete {{message}} success!!!</a>\r\n    <hr>\r\n    <ul class=\"events\">\r\n      <li *ngFor=\"let event of events\">\r\n        <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending\r\n        time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}\r\n        <br> describtion:{{event.describtion}}\r\n        <br><button class=\"btn btn-primary\" (click)='deleteClick(event.event_id)'>Delete</button>\r\n        <button class=\"btn btn-primary\" (click)='modifyClick(event.event_id)'>Modify</button>\r\n        <hr>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div class=\"col-md-5\">\r\n  <div class=\"date-wrap\">\r\n    <div class=\"date-head\">\r\n      <a (click)=\"goPrev()\" class=\"left-btn\">&lt;</a>{{dateObject.year}}-{{dateObject.month}}\r\n      <a class=\"right-btn\" (click)=\"goNext()\">&gt;</a>\r\n    </div>\r\n    <div class=\"date-body\">\r\n      <div class=\"date-day\">Sun</div>\r\n      <div class=\"date-day\">Mon</div>\r\n      <div class=\"date-day\">Tue</div>\r\n      <div class=\"date-day\">Wed</div>\r\n      <div class=\"date-day\">Thu</div>\r\n      <div class=\"date-day\">Fri</div>\r\n      <div class=\"date-day\">Sat</div>\r\n      <div *ngFor=\"let item of dateObject.datesArray,let i = index\" class=\"date-item\" [class.active]=\"item == dateObject.nowDay && dateObject.monthArray[i]==dateObject.nowMonth\"\r\n        [class.event]=\"flag[i]==1\" (click)='dateClickEvent(i,item)'>{{item}}</div>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <!-- <a>{{clickDate}}</a> -->\r\n  </div>\r\n</div>\r\n<div class=\"col-md-7\">\r\n  <div>\r\n    <div class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a (click)=\"myProfileClick()\"> MyProfile </a></li>\r\n        <li><a routerLink=\"/login\">Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    <h2>My meetings\r\n      <button class=\"btn btn-primary\" routerLink=\"/create-group-event\" [queryParams]=\"{key:key,name:name}\">Add New</button>\r\n    </h2>\r\n    <a *ngIf=\"success\">Delete {{message}} success!!!</a>\r\n    <hr>\r\n    <ul class=\"events\">\r\n      <li *ngFor=\"let event of events\">\r\n        <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending\r\n        time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}\r\n        <br> describtion:{{event.describtion}}\r\n        <br><button class=\"btn btn-primary\" (click)='deleteClick(event.event_id)'>Delete</button>\r\n        <button class=\"btn btn-primary\" (click)='modifyClick(event.event_id)'>Modify</button>\r\n        <hr>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -406,6 +406,7 @@ var CalenderComponent = /** @class */ (function () {
      */
     CalenderComponent.prototype.getDatesOfMonth = function (year, month) {
         var datesArray = [];
+        var monthArray = [];
         var date = new Date(year, month - 1);
         var nowDay = new Date().getDate();
         var nowMonth = new Date().getMonth() + 1;
@@ -420,6 +421,7 @@ var CalenderComponent = /** @class */ (function () {
         //add last months'date
         for (var i = lastDayOfLastMonth; i > lastDayOfLastMonth - day; i--) {
             datesArray.unshift(i);
+            monthArray.unshift(month - 1);
             pastDates.unshift(i);
         }
         //  console.log("last"+datesArray)
@@ -443,6 +445,7 @@ var CalenderComponent = /** @class */ (function () {
         var lastDayOfNowMonth = new Date(year, month, 0).getDate();
         for (var index = 1; index <= lastDayOfNowMonth; index++) {
             datesArray.push(index);
+            monthArray.push(month);
             nowDates.push(index);
         }
         //console.log("now"+nowDates)
@@ -458,6 +461,7 @@ var CalenderComponent = /** @class */ (function () {
         var countOfNextMonth = 42 - lastDayOfNowMonth - day;
         for (var index = 1; index <= countOfNextMonth; index++) {
             datesArray.push(index);
+            monthArray.push(month + 1);
             nextDates.push(index);
         }
         // console.log("next" + datesArray)
@@ -484,6 +488,7 @@ var CalenderComponent = /** @class */ (function () {
             nowMonth: nowMonth,
             month: month,
             datesArray: datesArray,
+            monthArray: monthArray
         };
     };
     /**
@@ -800,7 +805,7 @@ var httpOptions = {
 var EasyPlannerServerService = /** @class */ (function () {
     function EasyPlannerServerService(http) {
         this.http = http;
-        this.url = "http://localhost:3000/";
+        this.url = "http://localhost:1000/";
     }
     EasyPlannerServerService.prototype.getUser = function (userName, password) {
         // FIXME: ensure that this is always used by login
@@ -868,7 +873,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav  class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n      <div  class=\"navbar-header\">\r\n        <h3><img width=\"60\" alt=\"EasyPlannerLogo\" src=\"./src/image/ep-logo.png\" /> Welcome to Easy Planner!\r\n        </h3>\r\n      </div>\r\n    <div class=\"collapse navbar-collapse\" *ngIf='false'>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a>Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    </div>\r\n  </nav>\r\n"
+module.exports = "<nav  class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n      <div  class=\"navbar-header\">\r\n        <h3><img width=\"60\" alt=\"EasyPlannerLogo\" src=\"ep-logo.png\" /> Welcome to Easy Planner!\r\n        </h3>\r\n      </div>\r\n    <div class=\"collapse navbar-collapse\" *ngIf='false'>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a>Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    </div>\r\n  </nav>\r\n"
 
 /***/ }),
 
@@ -930,7 +935,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <form (ngSubmit)=\"onSubmit(loginForm.value)\" #loginForm=\"ngForm\">\r\n    <div>\r\n      <label>USER NAME:</label>\r\n      <input type=\"text\" name=username [(ngModel)]=username #usernameField=\"ngModel\" required>\r\n      <!-- <input type=\"text\" (input)=\"onUpdateUserName($event)\" required> -->\r\n    </div>\r\n    \r\n    <div>\r\n      <label >PASSWORD:</label>\r\n      <input type=\"password\"  name=password [(ngModel)]=password #passwordField=\"ngModel\" required>\r\n      <!-- <input type=\"password\" (input)=\"onUpdatePassword($event)\" required> -->\r\n    </div>\r\n    <div *ngIf=valid>\r\n    <div *ngIf=\"usernameField.invalid && usernameField.errors.required\">\r\n      Username is required.\r\n    </div>\r\n    <div *ngIf=\"passwordField.invalid && passwordField.errors.required\">\r\n      Password is required.\r\n    </div>\r\n    \r\n    </div>\r\n\r\n    <hr>\r\n    <a>{{warning}}</a>\r\n    <div>\r\n      <button class=\"btn btn-primary\" type=\"submit\" (click)=\"onSubmit()\">Confirm</button>\r\n      <a routerLink=\"/app-register-user\" type=\"register\" class=\"btn btn-link\">Sign Up</a>\r\n    </div>\r\n  </form>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div style=\"text-align:center\">\r\n  <form (ngSubmit)=\"onSubmit(loginForm.value)\" #loginForm=\"ngForm\">\r\n    <div>\r\n      <label>USER NAME:</label>\r\n      <input type=\"text\" name=username [(ngModel)]=username #usernameField=\"ngModel\" required>\r\n      <!-- <input type=\"text\" (input)=\"onUpdateUserName($event)\" required> -->\r\n    </div>\r\n    \r\n    <div>\r\n\r\n      <label >PASSWORD:</label>\r\n      <input type=\"password\"  name=password [(ngModel)]=password #passwordField=\"ngModel\" required>\r\n     \r\n    </div>\r\n\r\n    <div *ngIf=valid>\r\n\r\n    <div *ngIf=\"usernameField.invalid && usernameField.errors.required\">\r\n      Username is required.\r\n    </div>\r\n    <div *ngIf=\"passwordField.invalid && passwordField.errors.required\">\r\n      Password is required.\r\n    </div>\r\n\r\n    </div>\r\n\r\n    <hr>\r\n    <a>{{warning}}</a>\r\n    <div>\r\n      <button class=\"btn btn-primary\" type=\"submit\" (click)=\"onSubmit()\">Confirm</button>\r\n      <a routerLink=\"/app-register-user\" type=\"register\" class=\"btn btn-link\">Sign Up</a>\r\n    </div>\r\n  </form>\r\n</div>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
