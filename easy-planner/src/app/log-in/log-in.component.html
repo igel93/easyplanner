@@ -27,7 +27,10 @@
     <hr>
     <a>{{warning}}</a>
     <div>
-      <button class="btn btn-primary" type="submit" (click)="onSubmit()">Confirm</button>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        (click)="onSubmit({'username':username,'password':password})">Confirm</button>
       <a routerLink="/app-register-user" type="register" class="btn btn-link">Sign Up</a>
     </div>
   </form>

@@ -1,5 +1,5 @@
 <div class="col-md-5">
-  <div class="date-wrap">
+  <div class="date-wrap" *ngIf="dateObject">
     <div class="date-head">
       <a (click)="goPrev()" class="left-btn">&lt;</a>{{dateObject.year}}-{{dateObject.month}}
       <a class="right-btn" (click)="goNext()">&gt;</a>

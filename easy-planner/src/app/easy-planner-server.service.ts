@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './model/user';
 import { Event } from './model/event';
+import { environment } from '../environments/environment';
+
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -13,13 +15,13 @@ const httpOptions = {
 
 export class EasyPlannerServerService {
     events: Event[];
-    url: string = "http://localhost:1000/";
+    url: string = environment.apiUrl;
 
     constructor(private http: HttpClient) { }
 
-    getUser(userName:string,password:string): Observable<User> {
+    verifyLogin(userName:string,password:string): Observable<User> {
         // FIXME: ensure that this is always used by login
-        return this.http.get<User>(this.url + 'login/' + userName + '/' + password);
+        return this.http.post<User>(this.url + 'login/verify', {userName, password});
     }
 
     getUserByID(user_id:string): Observable<User> {

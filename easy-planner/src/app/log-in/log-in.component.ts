@@ -25,16 +25,11 @@ export class LogInComponent implements OnInit {
 
   onSubmit(value) {
     if(value.password!=null&&value.username!=null){
-    this.calendarService.getUser(value.username, value.password)
+    this.calendarService.verifyLogin(value.username, value.password)
       .subscribe(user => {
         this.user = user;
-        if (value.password === this.user.password) {
-          this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
-        }
-        else { 
-          this.warning = "Username or Password incorrect, please try again.";
-        }
-      });
+        this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
+      }, (err) => this.warning = err.error);
     }else{
       this.valid=true;
     }

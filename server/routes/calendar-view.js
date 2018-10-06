@@ -57,6 +57,9 @@ router.get('/:id/:year/:month/:day', (req, res, next) => {
 router.post('/', (req, res) => {
     try {
         var param = req.body;
+        a1 = param.year
+        a2 = param.month
+        a3 = param.day
         b = param.start_time
         c = param.ending_time
         d = param.location
@@ -64,8 +67,8 @@ router.post('/', (req, res) => {
         f = param.group_size
         g = param.describtion
         h = param.user_id
-        sql = "INSERT INTO event (user_id,start_time,ending_time,location,group_name,group_size,describtion) VALUES (?,?,?,?,?,?,?);"
-        connection.query(sql, [h, b, c, d, e, f, g], function (err, rows, fields) {
+        sql = "INSERT INTO event (year,month,day,user_id,start_time,ending_time,location,group_name,group_size,describtion) VALUES (?,?,?,?,?,?,?,?,?,?);"
+        connection.query(sql, [a1, a2, a3, h, b, c, d, e, f, g], function (err, rows, fields) {
             if (err) throw err
             console.log('The add solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
@@ -91,7 +94,7 @@ router.put('/', (req, res) => {
         g = param.describtion
         h = param.user_id
         event_id = param.event_id
-        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?, user_id=?, WHERE event.event_id =?";
+        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?, user_id=?, WHERE event_id =?";
         connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, h, event_id], function (err, rows, fields) {
             if (err) throw err
             console.log('The modify solution is: ', rows);
@@ -106,7 +109,7 @@ router.put('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     try {
         //param can pass the select infor
-        sql = "DELETE FROM event WHERE event.event_id =?";
+        sql = "DELETE FROM event WHERE event_id =?";
         connection.query(sql, [req.params.id], function (err, rows, fields) {
             if (err) throw err
             console.log('The delete solution is: ', rows);

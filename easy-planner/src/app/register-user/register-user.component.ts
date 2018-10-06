@@ -39,7 +39,7 @@ export class RegisterUserComponent implements OnInit {
     // this.user.email = value.email; 
     this.test=0;
     this.warning=" ";
-    if (value.student_id == null) { } else {
+    if (value.student_id != null) {
        this.user.student_id = value.student_id; 
        this.test=this.test+1;}
     if (value.name == null) { } else { 
@@ -54,19 +54,11 @@ export class RegisterUserComponent implements OnInit {
     }else{this.warning= this.warning+"The password has to be same one! ";}
   
     if(this.test==4){
-      this.calendarService.getUser(this.user.student_id,this.user.password)
-      .subscribe(result=>{
-      this.result=result
-      console.log("user:"+this.user.student_id)
-      if(!isNull(result)){
-        this.warning="The username already exist!"
-      }else{
         this.calendarService.addUser(this.user)
         .subscribe(user => {
+          console.log(user)
           if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
-        });
-       }
-      });
+        }, err => this.warning = err.error);
       // this.calendarService.addUser(this.user)
       // .subscribe(user => {
       //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
