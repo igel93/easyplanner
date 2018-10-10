@@ -71,21 +71,40 @@ router.post('/', async (req, res) => {
 })
 
 //put HTTP method to /login
-router.put('/:user_id', (req, res) => {
+router.put('/:user_id', async (req, res) => {
     try {
-        //param can pass the select infor
-        user_id = req.params.user_id;
-        password = req.body.password;
-        sql = "UPDATE user SET password =? WHERE user.user_id =?";
-        connection.query(sql, [password, user_id], function (err, rows, fields) {
-            if (err) throw err
-            res.setHeader("Access-Control-Allow-Origin", "*")
-            console.log('The solution is: ', rows);;
-            res.send(rows);
-        })
-    } catch (error) { }
+    var passwordIsValid = false;
+    user_id = req.body.user_id;
+    oldpassword = req.body.oldpassword;
+    newpassword = await bcrypt.hash(req.body.newpassword, 5);
+    console.log('oldpass: ', oldpassword);
+    console.log('newpass: ', newpassword);
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
+    if (passwordIsValid) {
+            rows = await queryPromise("UPDATE user SET password=? WHERE user_id=?", [newpassword, user_id]);
+            if (rows.length < 0) {
+                return res.status(401).send("Could not update your password");
+            } else {
+                console.log('testing: ', rows);
+                res.send(rows);
+            }  
+        } 
+
+    if (!passwordIsValid) {
+        rows2 = await queryPromise("SELECT * FROM user WHERE user_id = ?", [user_id]);
+        if (!await bcrypt.compare(oldpassword, rows2[0].password)) 
+            return res.status(401).send("Wrong password try again ");
+        
+        console.log("password check did work! YAY");
+        passwordIsValid = true;
+    } 
+             
+    } catch (error) { 
+        console.log(error)
+        return res.status(500).send('internal error')
+        }
 })
 
 module.exports = router;
-
-

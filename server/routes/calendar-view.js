@@ -74,7 +74,10 @@ router.post('/', (req, res) => {
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
-    } catch (error) { }
+    } catch (error) { 
+        console.log(error)
+        return res.status(500).send("Fill inn all fields to store the event")
+    }
 })
 
 
@@ -94,14 +97,16 @@ router.put('/', (req, res) => {
         g = param.describtion
         h = param.user_id
         event_id = param.event_id
-        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?, user_id=?, WHERE event_id =?";
+        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?,user_id=? WHERE event_id =?";
         connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, h, event_id], function (err, rows, fields) {
             if (err) throw err
             console.log('The modify solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
-    } catch (error) { }
+    } catch (error) {
+        return res.status(500).send(error.toString());
+     }
 })
 
 
