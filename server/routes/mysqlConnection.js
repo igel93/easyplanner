@@ -3,7 +3,7 @@ const mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'easyplannerdb.cxoi8rzemvxy.us-east-2.rds.amazonaws.com',
   user: 'root',
-  password: 'easyplanner2018',
+  password: 'wewillfigureitout',
   port: 3306,
   database: 'easyplannerdb',
 
