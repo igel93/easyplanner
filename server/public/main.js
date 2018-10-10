@@ -87,7 +87,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h3{\r\n    color:darkslateblue;\r\n}"
+module.exports = "h3{\n    color:darkslateblue;\n}"
 
 /***/ }),
 
@@ -98,7 +98,7 @@ module.exports = "h3{\r\n    color:darkslateblue;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n<!-- <app-log-in></app-log-in>\r\n<app-calendar-view></app-calendar-view>\r\n<app-create-group-event></app-create-group-event> -->\r\n"
+module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>\n<!-- <app-log-in></app-log-in>\n<app-calendar-view></app-calendar-view>\n<app-create-group-event></app-create-group-event> -->\n"
 
 /***/ }),
 
@@ -224,7 +224,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n"
+module.exports = "\n"
 
 /***/ }),
 
@@ -235,7 +235,7 @@ module.exports = "\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" style=\"text-align:center\">\r\n    <app-calender> </app-calender>\r\n</div>"
+module.exports = "<div class=\"row\" style=\"text-align:center\">\n    <app-calender> </app-calender>\n</div>"
 
 /***/ }),
 
@@ -287,7 +287,7 @@ var CalendarViewComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".date-wrap {\r\n    margin: 60px auto;\r\n    width: 400px;\r\n    height: 400px;\r\n    display: flex;\r\n    border: 1px solid #eee;\r\n    flex-direction: column;\r\n    box-shadow: 2px 2px 4px #ccc;\r\n}\r\n\r\n.date-wrap .date-head {\r\n    height: 70px;\r\n    flex-basis: 13%;\r\n    line-height: 70px;\r\n    font-family: serif;\r\n    font-size: 25px;\r\n    color: lightslategrey;\r\n    text-align: center;\r\n    border-bottom: 1px solid #aaa;\r\n}\r\n\r\n.date-head a {\r\n    text-decoration: none;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    color: deepskyblue;\r\n}\r\n\r\na.left-btn {\r\n    float: left;\r\n    margin-left: 30px;\r\n}\r\n\r\na.right-btn {\r\n    float: right;\r\n    margin-right: 30px;\r\n}\r\n\r\n.date-day {\r\n    flex-basis: 14%;\r\n    -ms-grid-row-align: center;\r\n        align-self: center;\r\n    text-align: center;\r\n    font-size: 17px;\r\n    color: #666;\r\n    font-family: '黑体';\r\n}\r\n\r\n.date-body {\r\n    flex-basis: 87%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.date-body .date-item {\r\n    flex-basis: 14%;\r\n    -ms-grid-row-align: center;\r\n        align-self: center;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    color: lightslategray\r\n}\r\n\r\n.date-body .date-item:hover {\r\n    color: indianred;\r\n}\r\n\r\n.active {\r\n    background: deepskyblue;\r\n    color: white!important;\r\n    border-radius: 20px;\r\n}\r\n\r\n.event {\r\n    background: rgb(145, 211, 22);\r\n    color: white!important;\r\n    border-radius: 20px;\r\n}"
+module.exports = ".date-wrap {\n    margin: 60px auto;\n    width: 400px;\n    height: 400px;\n    display: flex;\n    border: 1px solid #eee;\n    flex-direction: column;\n    box-shadow: 2px 2px 4px #ccc;\n}\n\n.date-wrap .date-head {\n    height: 70px;\n    flex-basis: 13%;\n    line-height: 70px;\n    font-family: serif;\n    font-size: 25px;\n    color: lightslategrey;\n    text-align: center;\n    border-bottom: 1px solid #aaa;\n}\n\n.date-head a {\n    text-decoration: none;\n    font-weight: bold;\n    cursor: pointer;\n    color: deepskyblue;\n}\n\na.left-btn {\n    float: left;\n    margin-left: 30px;\n}\n\na.right-btn {\n    float: right;\n    margin-right: 30px;\n}\n\n.date-day {\n    flex-basis: 14%;\n    -ms-grid-row-align: center;\n        align-self: center;\n    text-align: center;\n    font-size: 17px;\n    color: #666;\n    font-family: '黑体';\n}\n\n.date-body {\n    flex-basis: 87%;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n\n.date-body .date-item {\n    flex-basis: 14%;\n    -ms-grid-row-align: center;\n        align-self: center;\n    text-align: center;\n    cursor: pointer;\n    color: lightslategray\n}\n\n.date-body .date-item:hover {\n    color: indianred;\n}\n\n.active {\n    background: deepskyblue;\n    color: white!important;\n    border-radius: 20px;\n}\n\n.event {\n    background: rgb(145, 211, 22);\n    color: white!important;\n    border-radius: 20px;\n}"
 
 /***/ }),
 
@@ -298,7 +298,7 @@ module.exports = ".date-wrap {\r\n    margin: 60px auto;\r\n    width: 400px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-5\">\r\n  <div class=\"date-wrap\">\r\n    <div class=\"date-head\">\r\n      <a (click)=\"goPrev()\" class=\"left-btn\">&lt;</a>{{dateObject.year}}-{{dateObject.month}}\r\n      <a class=\"right-btn\" (click)=\"goNext()\">&gt;</a>\r\n    </div>\r\n    <div class=\"date-body\">\r\n      <div class=\"date-day\">Sun</div>\r\n      <div class=\"date-day\">Mon</div>\r\n      <div class=\"date-day\">Tue</div>\r\n      <div class=\"date-day\">Wed</div>\r\n      <div class=\"date-day\">Thu</div>\r\n      <div class=\"date-day\">Fri</div>\r\n      <div class=\"date-day\">Sat</div>\r\n      <div *ngFor=\"let item of dateObject.datesArray,let i = index\" class=\"date-item\" [class.active]=\"item == dateObject.nowDay && dateObject.monthArray[i]==dateObject.nowMonth\"\r\n        [class.event]=\"flag[i]==1\" (click)='dateClickEvent(i,item)'>{{item}}</div>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <!-- <a>{{clickDate}}</a> -->\r\n  </div>\r\n</div>\r\n<div class=\"col-md-7\">\r\n  <div>\r\n    <div class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a (click)=\"myProfileClick()\"> MyProfile </a></li>\r\n        <li><a routerLink=\"/login\">Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    <h2>My meetings\r\n      <button class=\"btn btn-primary\" routerLink=\"/create-group-event\" [queryParams]=\"{key:key,name:name}\">Add New</button>\r\n    </h2>\r\n    <a *ngIf=\"success\">Delete {{message}} success!!!</a>\r\n    <hr>\r\n    <ul class=\"events\">\r\n      <li *ngFor=\"let event of events\">\r\n        <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending\r\n        time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}\r\n        <br> describtion:{{event.describtion}}\r\n        <br><button class=\"btn btn-primary\" (click)='deleteClick(event.event_id)'>Delete</button>\r\n        <button class=\"btn btn-primary\" (click)='modifyClick(event.event_id)'>Modify</button>\r\n        <hr>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div class=\"col-md-5\">\n  <div class=\"date-wrap\" *ngIf=\"dateObject\">\n    <div class=\"date-head\">\n      <a (click)=\"goPrev()\" class=\"left-btn\">&lt;</a>{{dateObject.year}}-{{dateObject.month}}\n      <a class=\"right-btn\" (click)=\"goNext()\">&gt;</a>\n    </div>\n    <div class=\"date-body\">\n      <div class=\"date-day\">Sun</div>\n      <div class=\"date-day\">Mon</div>\n      <div class=\"date-day\">Tue</div>\n      <div class=\"date-day\">Wed</div>\n      <div class=\"date-day\">Thu</div>\n      <div class=\"date-day\">Fri</div>\n      <div class=\"date-day\">Sat</div>\n      <div *ngFor=\"let item of dateObject.datesArray,let i = index\" class=\"date-item\" [class.active]=\"item == dateObject.nowDay && dateObject.monthArray[i]==dateObject.nowMonth\"\n        [class.event]=\"flag[i]==1\" (click)='dateClickEvent(i,item)'>{{item}}</div>\n    </div>\n  </div>\n  <div>\n    <!-- <a>{{clickDate}}</a> -->\n  </div>\n</div>\n<div class=\"col-md-7\">\n  <div>\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a>Hi,{{name}}</a></li>\n        <li><a (click)=\"myProfileClick()\"> MyProfile </a></li>\n        <li><a routerLink=\"/login\">Logout</a></li>\n      </ul>\n    </div>\n    <h2>My meetings\n      <button class=\"btn btn-primary\" routerLink=\"/create-group-event\" [queryParams]=\"{key:key,name:name}\">Add New</button>\n    </h2>\n    <a *ngIf=\"success\">Delete {{message}} success!!!</a>\n    <hr>\n    <ul class=\"events\">\n      <li *ngFor=\"let event of events\">\n        <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending\n        time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}\n        <br> describtion:{{event.describtion}}\n        <br><button class=\"btn btn-primary\" (click)='deleteClick(event.event_id)'>Delete</button>\n        <button class=\"btn btn-primary\" (click)='modifyClick(event.event_id)'>Modify</button>\n        <hr>\n      </li>\n    </ul>\n  </div>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -576,6 +576,7 @@ var CalenderComponent = /** @class */ (function () {
             if (result.affectedRows != 0) {
                 _this.success = true;
                 _this.message = event_id;
+                _this.ngOnInit();
             }
         });
     };
@@ -636,7 +637,7 @@ var CalenderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');\r\n\r\nApplication-wide Styles\r\n    h1 {\r\n      color: #369;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n      font-size: 250%;\r\n    }\r\n    h2, h3 {\r\n      color: #444;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n      font-weight: lighter;\r\n    }\r\n    body {\r\n      margin: 2em;\r\n    }\r\n    body, input[text], button {\r\n      color: #888;\r\n      font-family: Cambria, Georgia;\r\n    }\r\n    /* everywhere else */\r\n    /*\r\n      {\r\n      font-family: Arial, Helvetica, sans-serif;\r\n    }\r\n\r\n    /* .ng-valid[required], .ng-valid.required  {\r\n     border-left: 5px solid #42A948; /* green */\r\n    /* } */\r\n    /*\r\n    .ng-invalid:not(form)  {\r\n      border-left: 5px solid #a94442; /* red */\r\n    /* } \r\n\r\n    .events {\r\n      margin: 0 0 2em 0;\r\n      list-style-type: none;\r\n      padding: 0;\r\n      width: 50em;\r\n    }\r\n    \r\n    .events li {\r\n      cursor: pointer;\r\n      position: relative;\r\n      left: 0;\r\n      background-color: #EEE;\r\n      margin: .5em;\r\n      padding: .1em 0;\r\n      height: 1.6em;\r\n      border-radius: 4px;\r\n    }\r\n    \r\n    \r\n    .li .text {\r\n      position: relative;\r\n      top: -3px;\r\n    }\r\n\r\n    .events .events {\r\n      display: inline-block;\r\n      font-size: small;\r\n      color: white;\r\n      padding: 0.8em 0.7em 0 0.7em;\r\n      background-color: #607D8B;\r\n      line-height: 1em;\r\n      position: relative;\r\n      left: -1px;\r\n      top: -4px;\r\n      height: 1.8em;\r\n      margin-right: .8em;\r\n      border-radius: 4px 0 0 4px;\r\n    } */"
+module.exports = "/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');\n\nApplication-wide Styles\n    h1 {\n      color: #369;\n      font-family: Arial, Helvetica, sans-serif;\n      font-size: 250%;\n    }\n    h2, h3 {\n      color: #444;\n      font-family: Arial, Helvetica, sans-serif;\n      font-weight: lighter;\n    }\n    body {\n      margin: 2em;\n    }\n    body, input[text], button {\n      color: #888;\n      font-family: Cambria, Georgia;\n    }\n    /* everywhere else */\n    /*\n      {\n      font-family: Arial, Helvetica, sans-serif;\n    }\n\n    /* .ng-valid[required], .ng-valid.required  {\n     border-left: 5px solid #42A948; /* green */\n    /* } */\n    /*\n    .ng-invalid:not(form)  {\n      border-left: 5px solid #a94442; /* red */\n    /* } \n\n    .events {\n      margin: 0 0 2em 0;\n      list-style-type: none;\n      padding: 0;\n      width: 50em;\n    }\n    \n    .events li {\n      cursor: pointer;\n      position: relative;\n      left: 0;\n      background-color: #EEE;\n      margin: .5em;\n      padding: .1em 0;\n      height: 1.6em;\n      border-radius: 4px;\n    }\n    \n    \n    .li .text {\n      position: relative;\n      top: -3px;\n    }\n\n    .events .events {\n      display: inline-block;\n      font-size: small;\n      color: white;\n      padding: 0.8em 0.7em 0 0.7em;\n      background-color: #607D8B;\n      line-height: 1em;\n      position: relative;\n      left: -1px;\n      top: -4px;\n      height: 1.8em;\n      margin-right: .8em;\n      border-radius: 4px 0 0 4px;\n    } */"
 
 /***/ }),
 
@@ -647,7 +648,7 @@ module.exports = "/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/boo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h3 style=\"text-align:center\">Create Event </h3>\r\n  <br>\r\n  <div>\r\n    <form (ngSubmit)=\"onSubmit(groupEventForm.value)\" #groupEventForm=\"ngForm\">\r\n      <div>\r\n        <label for=\"year\">Year</label>\r\n        <input type=\"text\" value=\"year\" name=\"year\" required [(ngModel)]=year>\r\n      </div>\r\n      <div>\r\n        <label for=\"month\">Month</label>\r\n        <input type=\"text\" value=\"month\" name=\"month\" required [(ngModel)]=month>\r\n      </div>\r\n      <div>\r\n        <label for=\"day\">Day</label>\r\n        <input type=\"text\" value=\"day\" name=\"day\" required [(ngModel)]=day>\r\n      </div>\r\n      <div>\r\n        <label for=\"start_time\">Start time:</label>\r\n        <input type=\"text\" value=\"start_time\" name=\"start_time\" required [(ngModel)]=start_time>\r\n      </div>\r\n      <div>\r\n        <label for=\"ending_time\">Ending time:</label>\r\n        <input type=\"text\" value=\"ending_time\" name=\"ending_time\" required [(ngModel)]=ending_time>\r\n      </div>\r\n      <div>\r\n        <label for=\"location\">Location:</label>\r\n        <input type=\"text\" value=\"location\" name=\"location\" required [(ngModel)]=location>\r\n      </div>\r\n      <div>\r\n        <label for=\"group_name\">Group name:</label>\r\n        <input type=\"text\" value=\"group_name\" name=\"group_name\" required [(ngModel)]=group_name>\r\n      </div>\r\n      <div>\r\n        <label for=\"group_size\">Group size:</label>\r\n        <input type=\"text\" value=\"group_size\" name=\"group_size\" required [(ngModel)]=group_size>\r\n      </div>\r\n      <div>\r\n        <label for=\"describtion\">describtion:</label>\r\n        <textarea rows=\"8\" cols=\"30\" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>\r\n      </div>\r\n      <div style=\"text-align:center\">\r\n        <a>{{warning}}</a>\r\n      </div>\r\n      <div>\r\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\r\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div>\n  <h3 style=\"text-align:center\">Create Event </h3>\n  <br>\n  <div>\n    <form (ngSubmit)=\"onSubmit(groupEventForm.value)\" #groupEventForm=\"ngForm\">\n      <div>\n        <label for=\"year\">Year</label>\n        <input type=\"text\" value=\"year\" name=\"year\" required [(ngModel)]=year>\n      </div>\n      <div>\n        <label for=\"month\">Month</label>\n        <input type=\"text\" value=\"month\" name=\"month\" required [(ngModel)]=month>\n      </div>\n      <div>\n        <label for=\"day\">Day</label>\n        <input type=\"text\" value=\"day\" name=\"day\" required [(ngModel)]=day>\n      </div>\n      <div>\n        <label for=\"start_time\">Start time:</label>\n        <input type=\"text\" value=\"start_time\" name=\"start_time\" required [(ngModel)]=start_time>\n      </div>\n      <div>\n        <label for=\"ending_time\">Ending time:</label>\n        <input type=\"text\" value=\"ending_time\" name=\"ending_time\" required [(ngModel)]=ending_time>\n      </div>\n      <div>\n        <label for=\"location\">Location:</label>\n        <input type=\"text\" value=\"location\" name=\"location\" required [(ngModel)]=location>\n      </div>\n      <div>\n        <label for=\"group_name\">Group name:</label>\n        <input type=\"text\" value=\"group_name\" name=\"group_name\" required [(ngModel)]=group_name>\n      </div>\n      <div>\n        <label for=\"group_size\">Group size:</label>\n        <input type=\"text\" value=\"group_size\" name=\"group_size\" required [(ngModel)]=group_size>\n      </div>\n      <div>\n        <label for=\"describtion\">describtion:</label>\n        <textarea rows=\"8\" cols=\"30\" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>\n      </div>\n      <div style=\"text-align:center\">\n        <a>{{warning}}</a>\n      </div>\n      <div>\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\n      </div>\n    </form>\n  </div>\n</div>\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -788,6 +789,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EasyPlannerServerService", function() { return EasyPlannerServerService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -799,17 +801,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-Type': 'application/json' })
 };
 var EasyPlannerServerService = /** @class */ (function () {
     function EasyPlannerServerService(http) {
         this.http = http;
-        this.url = "http://localhost:3000/";
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
     }
-    EasyPlannerServerService.prototype.getUser = function (userName, password) {
+    EasyPlannerServerService.prototype.verifyLogin = function (userName, password) {
         // FIXME: ensure that this is always used by login
-        return this.http.get(this.url + 'login/' + userName + '/' + password);
+        return this.http.post(this.url + 'login/verify', { userName: userName, password: password });
     };
     EasyPlannerServerService.prototype.getUserByID = function (user_id) {
         return this.http.get(this.url + 'login/' + user_id);
@@ -827,7 +830,7 @@ var EasyPlannerServerService = /** @class */ (function () {
     EasyPlannerServerService.prototype.getEvents = function (user_id) {
         return this.http.get(this.url + 'calender-view/' + user_id);
     };
-    EasyPlannerServerService.prototype.getEventByID = function (event_id) {
+    EasyPlannerServerService.prototype.getEventByID = function (event_id, user_id) {
         return this.http.get(this.url + 'calender-view/modify-event/' + event_id);
     };
     EasyPlannerServerService.prototype.getEventsByDate = function (user_id, year, month, day) {
@@ -836,7 +839,7 @@ var EasyPlannerServerService = /** @class */ (function () {
     EasyPlannerServerService.prototype.addEvent = function (event) {
         return this.http.post(this.url + 'calender-view/', event, httpOptions);
     };
-    EasyPlannerServerService.prototype.updateEvent = function (event) {
+    EasyPlannerServerService.prototype.updateEvent = function (event, user_id) {
         return this.http.put(this.url + 'calender-view/', event, httpOptions);
     };
     EasyPlannerServerService.prototype.deleteEvent = function (event_id) {
@@ -873,7 +876,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav  class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n      <div  class=\"navbar-header\">\r\n        <h3><img width=\"60\" alt=\"EasyPlannerLogo\" src=\"ep-logo.png\" /> Welcome to Easy Planner!\r\n        </h3>\r\n      </div>\r\n    <div class=\"collapse navbar-collapse\" *ngIf='false'>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a>Hi,{{name}}</a></li>\r\n        <li><a>Logout</a></li>\r\n      </ul>\r\n    </div>\r\n    </div>\r\n  </nav>\r\n"
+module.exports = "<nav  class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div  class=\"navbar-header\">\n        <h3><img width=\"60\" alt=\"EasyPlannerLogo\" src=\"./src/image/ep-logo.png\" /> Welcome to Easy Planner!\n        </h3>\n      </div>\n    <div class=\"collapse navbar-collapse\" *ngIf='false'>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a>Hi,{{name}}</a></li>\n        <li><a>Logout</a></li>\n      </ul>\n    </div>\n    </div>\n  </nav>\n"
 
 /***/ }),
 
@@ -935,7 +938,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <form (ngSubmit)=\"onSubmit(loginForm.value)\" #loginForm=\"ngForm\">\r\n    <div>\r\n      <label>USER NAME:</label>\r\n      <input type=\"text\" name=username [(ngModel)]=username #usernameField=\"ngModel\" required>\r\n      <!-- <input type=\"text\" (input)=\"onUpdateUserName($event)\" required> -->\r\n    </div>\r\n    \r\n    <div>\r\n\r\n      <label >PASSWORD:</label>\r\n      <input type=\"password\"  name=password [(ngModel)]=password #passwordField=\"ngModel\" required>\r\n     \r\n    </div>\r\n\r\n    <div *ngIf=valid>\r\n\r\n    <div *ngIf=\"usernameField.invalid && usernameField.errors.required\">\r\n      Username is required.\r\n    </div>\r\n    <div *ngIf=\"passwordField.invalid && passwordField.errors.required\">\r\n      Password is required.\r\n    </div>\r\n\r\n    </div>\r\n\r\n    <hr>\r\n    <a>{{warning}}</a>\r\n    <div>\r\n      <button class=\"btn btn-primary\" type=\"submit\" (click)=\"onSubmit()\">Confirm</button>\r\n      <a routerLink=\"/app-register-user\" type=\"register\" class=\"btn btn-link\">Sign Up</a>\r\n    </div>\r\n  </form>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div style=\"text-align:center\">\n  <form (ngSubmit)=\"onSubmit(loginForm.value)\" #loginForm=\"ngForm\">\n    <div>\n      <label>USER NAME:</label>\n      <input type=\"text\" name=username [(ngModel)]=username #usernameField=\"ngModel\" required>\n      <!-- <input type=\"text\" (input)=\"onUpdateUserName($event)\" required> -->\n    </div>\n    \n    <div>\n\n      <label >PASSWORD:</label>\n      <input type=\"password\"  name=password [(ngModel)]=password #passwordField=\"ngModel\" required>\n     \n    </div>\n\n    <div *ngIf=valid>\n\n    <div *ngIf=\"usernameField.invalid && usernameField.errors.required\">\n      Username is required.\n    </div>\n    <div *ngIf=\"passwordField.invalid && passwordField.errors.required\">\n      Password is required.\n    </div>\n\n    </div>\n\n    <hr>\n    <a>{{warning}}</a>\n    <div>\n      <button\n        class=\"btn btn-primary\"\n        type=\"submit\"\n        (click)=\"onSubmit({'username':username,'password':password})\">Confirm</button>\n      <a routerLink=\"/app-register-user\" type=\"register\" class=\"btn btn-link\">Sign Up</a>\n    </div>\n  </form>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -981,16 +984,11 @@ var LogInComponent = /** @class */ (function () {
     LogInComponent.prototype.onSubmit = function (value) {
         var _this = this;
         if (value.password != null && value.username != null) {
-            this.calendarService.getUser(value.username, value.password)
+            this.calendarService.verifyLogin(value.username, value.password)
                 .subscribe(function (user) {
                 _this.user = user;
-                if (value.password === _this.user.password) {
-                    _this.router.navigate(["/calendar-view"], { queryParams: { name: _this.user.name, key: _this.user.user_id } });
-                }
-                else {
-                    _this.warning = "Username or Password incorrect, please try again.";
-                }
-            });
+                _this.router.navigate(["/calendar-view"], { queryParams: { name: _this.user.name, key: _this.user.user_id } });
+            }, function (err) { return _this.warning = err.error; });
         }
         else {
             this.valid = true;
@@ -1030,7 +1028,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h3 style=\"text-align:center\">Modify Event</h3>\r\n  <br>\r\n  <div>\r\n    <form (ngSubmit)=\"onSubmit(profileForm.value)\" #profileForm=\"ngForm\">\r\n      <table align='center'>\r\n        <tbody>\r\n          <tr>\r\n            <td> <label>Date:</label></td>\r\n            <td> <label>{{event.year}}--{{event.month}}--{{event.day}}</label></td>\r\n          </tr>\r\n          <!-- <a>{{warning1}}</a> -->\r\n          <tr>\r\n            <td> <label>Start time:</label></td>\r\n            <td><input type=\"time\" value={{event.start_time}} required [(ngModel)]=start_time name=start_time></td>\r\n          </tr>\r\n          <tr>\r\n            <td> <label>Ending time:</label></td>\r\n            <td><input type=\"time\" value={{event.ending_time}} required [(ngModel)]=ending_time name=ending_time></td>\r\n          </tr>\r\n          <tr>\r\n            <td><label>Location:</label></td>\r\n            <td><input type=\"text\" value={{event.location}} required [(ngModel)]=location name=location></td>\r\n          </tr>\r\n          <tr>\r\n            <td><label>Group name:</label></td>\r\n            <td><input type=\"text\" value={{event.group_name}} [(ngModel)]=group_name name=group_name></td>\r\n          </tr>\r\n          <tr>\r\n            <td><label>Group size:</label></td>\r\n            <td><input type=\"number\" value={{event.group_size}} [(ngModel)]=group_size name=group_size></td>\r\n          </tr>\r\n          <tr>\r\n            <td><label>describtion:</label></td>\r\n            <td>\r\n              <textarea rows=\"8\" cols=\"30\" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n      <hr>\r\n      <div style=\"text-align:center\">\r\n        <a>{{warning}}</a>\r\n        <div>\r\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\r\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div>\n  <h3 style=\"text-align:center\">Modify Event</h3>\n  <br>\n  <div>\n    <form (ngSubmit)=\"onSubmit(profileForm.value)\" #profileForm=\"ngForm\">\n      <table align='center'>\n        <tbody>\n          <tr>\n            <td> <label>Date:</label></td>\n            <td> <label>{{event.year}}--{{event.month}}--{{event.day}}</label></td>\n          </tr>\n          <!-- <a>{{warning1}}</a> -->\n          <tr>\n            <td> <label>Start time:</label></td>\n            <td><input type=\"time\" value={{event.start_time}} required [(ngModel)]=start_time name=start_time></td>\n          </tr>\n          <tr>\n            <td> <label>Ending time:</label></td>\n            <td><input type=\"time\" value={{event.ending_time}} required [(ngModel)]=ending_time name=ending_time></td>\n          </tr>\n          <tr>\n            <td><label>Location:</label></td>\n            <td><input type=\"text\" value={{event.location}} required [(ngModel)]=location name=location></td>\n          </tr>\n          <tr>\n            <td><label>Group name:</label></td>\n            <td><input type=\"text\" value={{event.group_name}} [(ngModel)]=group_name name=group_name></td>\n          </tr>\n          <tr>\n            <td><label>Group size:</label></td>\n            <td><input type=\"number\" value={{event.group_size}} [(ngModel)]=group_size name=group_size></td>\n          </tr>\n          <tr>\n            <td><label>describtion:</label></td>\n            <td>\n              <textarea rows=\"8\" cols=\"30\" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n      <hr>\n      <div style=\"text-align:center\">\n        <a>{{warning}}</a>\n        <div>\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\n        </div>\n      </div>\n    </form>\n  </div>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1077,8 +1075,14 @@ var ModifyEventComponent = /** @class */ (function () {
             describtion: null,
             user_id: null
         };
+        this.user = {
+            user_id: null,
+            student_id: null,
+            name: null,
+            password: null,
+            email: null
+        };
     }
-    //warning1: string
     ModifyEventComponent.prototype.onSubmit = function (value) {
         var _this = this;
         //if (value.ending_time < value.start_time) { this.warning1 = "Ending time can not less than start time " }
@@ -1107,15 +1111,15 @@ var ModifyEventComponent = /** @class */ (function () {
             this.event.describtion = value.describtion;
         }
         console.log(this.event);
-        this.calendarService.updateEvent(this.event)
+        this.calendarService.updateEvent(this.event, this.user.user_id)
             .subscribe(function (result) {
             if (result.affectedRows != 0) {
-                _this.router.navigate(["/calendar-view"], { queryParams: { name: _this.name, key: _this.key } });
+                _this.router.navigate(["/calendar-view"], { queryParams: { name: _this.id, key: _this.key } });
             }
-        });
+        }, function (err) { return _this.warning = err.error; });
     };
     ModifyEventComponent.prototype.cancelClick = function () {
-        this.router.navigate(["/calendar-view"], { queryParams: { name: this.name, key: this.key } });
+        this.router.navigate(["/calendar-view"], { queryParams: { name: this.id, key: this.key } });
     };
     ModifyEventComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1125,7 +1129,7 @@ var ModifyEventComponent = /** @class */ (function () {
             _this.key = params['key'];
             _this.name = params['name'];
         });
-        this.calendarService.getEventByID(this.event.event_id)
+        this.calendarService.getEventByID(this.event.event_id, this.user.user_id)
             .subscribe(function (result) {
             if (result) {
                 _this.event = result;
@@ -1167,7 +1171,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h3 style=\"text-align:center\">Register user</h3>\r\n  <br>\r\n  <div>\r\n    <form (ngSubmit)=\"onSubmit(registerUserForm.value)\" #registerUserForm=\"ngForm\">\r\n      <div>\r\n        <label for=\"student_id\">Student ID</label>\r\n        <input type=\"text\" value=\"student_id\" name=\"student_id\" [(ngModel)]=student_id required>\r\n      </div>\r\n      <div>\r\n        <label for=\"name\">Name</label>\r\n        <input type=\"text\" value=\"name\" name=\"name\"  [(ngModel)]=name required>\r\n      </div>\r\n      <div>\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"text\" value=\"password1\" name=\"password1\" [(ngModel)]=password1 required>\r\n      </div>\r\n      <div>\r\n        <label for=\"password\">Password Validation</label>\r\n        <input type=\"text\" value=\"password2\" name=\"password2\" [(ngModel)]=password2 required>\r\n      </div>\r\n      <div>\r\n        <label for=\"email\">Email</label>\r\n        <input type=\"text\" value=\"email\" name=\"email\" [(ngModel)]=email required>\r\n      </div>\r\n      <div style=\"text-align:center\">\r\n        <a>{{warning}}</a>\r\n      </div>\r\n      <div>\r\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\r\n          <button class=\"btn btn-primary\" type=\"submit\">Register</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div>\n  <h3 style=\"text-align:center\">Register user</h3>\n  <br>\n  <div>\n    <form (ngSubmit)=\"onSubmit(registerUserForm.value)\" #registerUserForm=\"ngForm\">\n      <div>\n        <label for=\"student_id\">Student ID</label>\n        <input type=\"text\" value=\"student_id\" name=\"student_id\" [(ngModel)]=student_id required>\n      </div>\n      <div>\n        <label for=\"name\">Name</label>\n        <input type=\"text\" value=\"name\" name=\"name\"  [(ngModel)]=name required>\n      </div>\n      <div>\n        <label for=\"password\">Password</label>\n        <input type=\"password\" value=\"password1\" name=\"password1\" [(ngModel)]=password1 required>\n      </div>\n      <div>\n        <label for=\"password\">Password Validation</label>\n        <input type=\"password\" value=\"password2\" name=\"password2\" [(ngModel)]=password2 required>\n      </div>\n      <div>\n        <label for=\"email\">Email</label>\n        <input type=\"text\" value=\"email\" name=\"email\" [(ngModel)]=email required>\n      </div>\n      <div style=\"text-align:center\">\n        <a>{{warning}}</a>\n      </div>\n      <div>\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\n          <button class=\"btn btn-primary\" type=\"submit\">Register</button>\n      </div>\n    </form>\n  </div>\n</div>\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1184,8 +1188,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _easy_planner_server_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../easy-planner-server.service */ "./src/app/easy-planner-server.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
-/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1195,7 +1197,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1228,8 +1229,7 @@ var RegisterUserComponent = /** @class */ (function () {
         // this.user.email = value.email; 
         this.test = 0;
         this.warning = " ";
-        if (value.student_id == null) { }
-        else {
+        if (value.student_id != null) {
             this.user.student_id = value.student_id;
             this.test = this.test + 1;
         }
@@ -1251,22 +1251,13 @@ var RegisterUserComponent = /** @class */ (function () {
             this.warning = this.warning + "The password has to be same one! ";
         }
         if (this.test == 4) {
-            this.calendarService.getUser(this.user.student_id, this.user.password)
-                .subscribe(function (result) {
-                _this.result = result;
-                console.log("user:" + _this.user.student_id);
-                if (!Object(util__WEBPACK_IMPORTED_MODULE_3__["isNull"])(result)) {
-                    _this.warning = "The username already exist!";
+            this.calendarService.addUser(this.user)
+                .subscribe(function (user) {
+                console.log(user);
+                if (user.affectedRows !== 0) {
+                    _this.router.navigate(['/login']);
                 }
-                else {
-                    _this.calendarService.addUser(_this.user)
-                        .subscribe(function (user) {
-                        if (user.affectedRows !== 0) {
-                            _this.router.navigate(['/login']);
-                        }
-                    });
-                }
-            });
+            }, function (err) { return _this.warning = err.error; });
             // this.calendarService.addUser(this.user)
             // .subscribe(user => {
             //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
@@ -1312,7 +1303,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h3 style=\"text-align:center\">Change Password</h3>\r\n  <br>\r\n  <div>\r\n    <form (ngSubmit)=\"onSubmit(profileForm.value)\" #profileForm=\"ngForm\">\r\n      <table align='center'>\r\n        <tbody>\r\n          <tr>\r\n            <td> <label>Current:</label></td>\r\n            <td> <input type=\"text\" required [(ngModel)]=oldPassword name=oldPassword></td>\r\n          </tr>\r\n          <tr>\r\n            <td> <label>New:</label></td>\r\n            <td><input type=\"text\" required [(ngModel)]=newPassword1 name=newPassword1></td>\r\n          </tr>\r\n          <tr>\r\n            <td><label>Retype new:</label></td>\r\n            <td><input type=\"text\" required [(ngModel)]=newPassword2 name=newPassword2></td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n      <hr>\r\n      <div style=\"text-align:center\">\r\n        <a>{{warning}}</a>\r\n        <div>\r\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\r\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>"
+module.exports = "<div>\n  <h3 style=\"text-align:center\">Change Password</h3>\n  <br>\n  <div>\n    <form (ngSubmit)=\"onSubmit(profileForm.value)\" #profileForm=\"ngForm\">\n      <table align='center'>\n        <tbody>\n          <tr>\n            <td> <label>Current:</label></td>\n            <td> <input type=\"text\" required [(ngModel)]=oldPassword name=oldPassword></td>\n          </tr>\n          <tr>\n            <td> <label>New:</label></td>\n            <td><input type=\"text\" required [(ngModel)]=newPassword1 name=newPassword1></td>\n          </tr>\n          <tr>\n            <td><label>Retype new:</label></td>\n            <td><input type=\"text\" required [(ngModel)]=newPassword2 name=newPassword2></td>\n          </tr>\n        </tbody>\n      </table>\n      <hr>\n      <div style=\"text-align:center\">\n        <a>{{warning}}</a>\n        <div>\n          <button class=\"btn btn-primary\" (click)=\"cancelClick()\">Cancel</button>\n          <button class=\"btn btn-primary\" type=\"submit\">Confirm</button>\n        </div>\n      </div>\n    </form>\n  </div>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1421,7 +1412,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    apiUrl: "http://localhost:3000/"
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
@@ -1467,7 +1459,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\fengchao\Documents\GitHub\easyplanner\easy-planner\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/anneigeltjoern/Documents/easyplanner/easy-planner/src/main.ts */"./src/main.ts");
 
 
 /***/ })
