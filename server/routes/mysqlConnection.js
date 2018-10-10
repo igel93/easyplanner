@@ -6,6 +6,5 @@ var connection = mysql.createConnection({
   password: 'wewillfigureitout',
   port: 3306,
   database: 'easyplannerdb',
-
 });
 module.exports = connection;
