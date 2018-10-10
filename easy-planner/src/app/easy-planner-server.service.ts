@@ -31,8 +31,8 @@ export class EasyPlannerServerService {
         return this.http.post<any>(this.url + 'login/',user, httpOptions);
     }
 
-    updateUser(user: User, oldpassword: string, newpassword: string): Observable<any> {
-        return this.http.put<any>(this.url +'login/' + user.user_id, {user: user, oldpassword: oldpassword, newpassword: newpassword}, httpOptions);
+    updateUser(user: User): Observable<any> {
+        return this.http.put<any>(this.url +'login/' + user.user_id, user, httpOptions);
     }
 
     /**

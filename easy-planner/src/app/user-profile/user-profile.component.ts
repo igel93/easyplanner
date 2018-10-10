@@ -16,27 +16,23 @@ export class UserProfileComponent implements OnInit {
     email: null
   }
   warning: string
-  oldpassword = null; 
-  newpassword = null
   onSubmit(value) {
-    if (value.oldPassword != null && value.newPassword1 != null && value.newPassword2 != null) {
-      if (value.newPassword1 === value.newPassword2) {
-        this.oldpassword = value.oldPassword;
-        this.newpassword = value.newPassword1;
-        console.log(this.oldpassword);
-        console.log(this.newpassword);
-        this.service.updateUser(this.user, this.oldpassword, this.newpassword)
+    if (this.user.password == value.oldPassword) {
+      if (value.newPassword1 == value.newPassword2) {
+        this.user.password = value.newPassword1
+        this.service.updateUser(this.user)
           .subscribe(result => {
-            console.log(result);
             if (result.affectedRows != 0) {
               this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } })
+            } else {
+              this.warning = "update field!"
             }
-          }, err => this.warning = err.error);
+          })
       } else {
         this.warning = "Please enter same new password twice!"
       }
     } else {
-      this.warning = "Make sure all fields are filled out!"
+      this.warning = "Please enter correct old password!"
     }
   }
   cancelClick() {
@@ -59,3 +55,5 @@ export class UserProfileComponent implements OnInit {
       })
   }
 }
+
+
