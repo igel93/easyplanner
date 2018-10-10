@@ -13,7 +13,7 @@ const httpOptions = {
 
 export class EasyPlannerServerService {
     events: Event[];
-    url: string = "http://localhost:443/";
+    url: string = "http://ec2-18-218-231-251.us-east-2.compute.amazonaws.com/";
 
     constructor(private http: HttpClient) { }
 
