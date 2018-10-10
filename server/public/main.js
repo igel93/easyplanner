@@ -805,7 +805,7 @@ var httpOptions = {
 var EasyPlannerServerService = /** @class */ (function () {
     function EasyPlannerServerService(http) {
         this.http = http;
-        this.url = "http://localhost:1000/";
+        this.url = "http://localhost:443/";
     }
     EasyPlannerServerService.prototype.getUser = function (userName, password) {
         // FIXME: ensure that this is always used by login
