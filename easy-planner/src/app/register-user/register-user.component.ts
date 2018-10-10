@@ -64,7 +64,7 @@ export class RegisterUserComponent implements OnInit {
       //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
       // });
     }else{
-      this.warning= this.warning+"The register information is not allowed empty!  "
+      this.warning= this.warning+"The register information is not allowed empty!"
     }
   }
   
