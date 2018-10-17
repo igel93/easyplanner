@@ -35,7 +35,7 @@
     <a *ngIf="success">Delete {{message}} success!!!</a>
     <hr>
     <ul class="events">
-      <li *ngFor="let event of events">
+      <li *ngFor="let event of events; let i = index; trackBy: trackEvents">
         <span>Date: {{event.year}}-{{event.month}}-{{event.day}} </span><br> Start Time: {{event.start_time}}<br> Ending
         time: {{event.ending_time}} <br> Location:{{event.location}} <br> GroupName:{{event.group_name}} <br> GroupSize:{{event.group_size}}
         <br> describtion:{{event.describtion}}

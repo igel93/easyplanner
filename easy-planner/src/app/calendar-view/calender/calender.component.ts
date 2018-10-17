@@ -258,7 +258,7 @@ export class CalenderComponent implements OnInit {
         if (result.affectedRows != 0) {
           this.success = true;
           this.message = event_id;
-          this.ngOnInit();
+          //this.ngOnInit();
         }
       })
   }
@@ -279,9 +279,12 @@ export class CalenderComponent implements OnInit {
     this.month = date.getMonth() + 1
   }
 
+  trackEvents(index, event) {
+    return event ? event.event_id : undefined;
+  }
+
   ngOnInit() {
     // this.key = this.activatedRoute.snapshot.queryParamMap.get('key')
-    // this.name = this.activatedRoute.snapshot.queryParamMap.get('name')
     this.activatedRoute.queryParams.subscribe(params => {
       this.name = params['name'];
       this.key = params['key'];
