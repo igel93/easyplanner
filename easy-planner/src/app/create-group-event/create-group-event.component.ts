@@ -16,7 +16,8 @@ export class CreateGroupEventComponent implements OnInit {
   id: string;
   key: string;
   name: string;
-
+  input:string;
+  inputdate: string[];
   user: User = {
     user_id: null,
     student_id: null,
@@ -40,9 +41,20 @@ export class CreateGroupEventComponent implements OnInit {
   };
 
   onSubmit(value) {
-    if (value.year == null) { } else { this.event.year = value.year; }
-    if (value.month == null) { } else { this.event.month = value.month; }
-    if (value.day == null) { } else { this.event.day = value.day; }
+    // if (value.year == null) { } else { this.event.year = value.year; }
+    // if (value.month == null) { } else { this.event.month = value.month; }
+    // if (value.day == null) { } else { this.event.day = value.day; }
+    if (value.date == null) { } else {
+      this.input= value.date;
+      this.inputdate= this.input.split('-');
+      this.event.year = Number (this.inputdate[0]);
+      this.event.month = Number (this.inputdate[1]);
+      this.event.day = Number (this.inputdate[2]); 
+      console.log(this.input);
+      console.log(this.event.year);
+      console.log(this.event.month);
+      console.log(this.event.day);
+    }
     if (value.start_time == null) { } else { this.event.start_time = value.start_time; }
     if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time; }
     if (value.location == null) { } else { this.event.location = value.location; }

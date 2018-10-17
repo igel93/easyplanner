@@ -3,25 +3,17 @@
   <br>
   <div>
     <form (ngSubmit)="onSubmit(groupEventForm.value)" #groupEventForm="ngForm">
-      <div>
-        <label for="year">Year</label>
-        <input type="text" value="year" name="year" required [(ngModel)]=year>
-      </div>
-      <div>
-        <label for="month">Month</label>
-        <input type="text" value="month" name="month" required [(ngModel)]=month>
-      </div>
-      <div>
-        <label for="day">Day</label>
-        <input type="text" value="day" name="day" required [(ngModel)]=day>
-      </div>
+        <div>
+            <label for="date">Date</label>
+            <input type="date" value="date" name="date" required [(ngModel)]=date>
+          </div>
       <div>
         <label for="start_time">Start time:</label>
-        <input type="text" value="start_time" name="start_time" required [(ngModel)]=start_time>
+        <input type="time" value="start_time" name="start_time" required [(ngModel)]=start_time>
       </div>
       <div>
         <label for="ending_time">Ending time:</label>
-        <input type="text" value="ending_time" name="ending_time" required [(ngModel)]=ending_time>
+        <input type="time" value="ending_time" name="ending_time" required [(ngModel)]=ending_time>
       </div>
       <div>
         <label for="location">Location:</label>
@@ -33,7 +25,7 @@
       </div>
       <div>
         <label for="group_size">Group size:</label>
-        <input type="text" value="group_size" name="group_size" required [(ngModel)]=group_size>
+        <input type="number" value="group_size" name="group_size" required [(ngModel)]=group_size>
       </div>
       <div>
         <label for="describtion">describtion:</label>
