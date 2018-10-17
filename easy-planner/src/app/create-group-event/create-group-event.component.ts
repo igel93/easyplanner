@@ -50,10 +50,6 @@ export class CreateGroupEventComponent implements OnInit {
       this.event.year = Number (this.inputdate[0]);
       this.event.month = Number (this.inputdate[1]);
       this.event.day = Number (this.inputdate[2]); 
-      console.log(this.input);
-      console.log(this.event.year);
-      console.log(this.event.month);
-      console.log(this.event.day);
     }
     if (value.start_time == null) { } else { this.event.start_time = value.start_time; }
     if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time; }

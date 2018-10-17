@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { User } from '../model/user';
+import{ StringValue} from'../value/StringValue';
 
 @Component({
   selector: 'app-log-in',
@@ -32,7 +33,7 @@ export class LogInComponent implements OnInit {
           this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
         }
         else { 
-          this.warning = "Username or Password incorrect, please try again.";
+          this.warning = StringValue.USERORPASSWORDWRONG;
         }
       });
     }else{

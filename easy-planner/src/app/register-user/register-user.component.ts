@@ -3,6 +3,7 @@ import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { isNull } from 'util';
+import{ StringValue} from'../value/StringValue';
 
 @Component({
   selector: 'app-register-user',
@@ -51,7 +52,7 @@ export class RegisterUserComponent implements OnInit {
     if (value.password1 == value.password2&&value.password1!=null){
       this.user.password = value.password1; 
       this.test=this.test+1;
-    }else{this.warning= this.warning+"The password has to be same one! ";}
+    }else{this.warning= this.warning+StringValue.PASSWORDSAME;}
   
     if(this.test==4){
       this.calendarService.getUser(this.user.student_id,this.user.password)
@@ -59,7 +60,7 @@ export class RegisterUserComponent implements OnInit {
       this.result=result
       console.log("user:"+this.user.student_id)
       if(!isNull(result)){
-        this.warning="The username already exist!"
+        this.warning=StringValue.PASSWORDEXIST;
       }else{
         this.calendarService.addUser(this.user)
         .subscribe(user => {
@@ -72,7 +73,7 @@ export class RegisterUserComponent implements OnInit {
       //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
       // });
     }else{
-      this.warning= this.warning+"The register information is not allowed empty!  "
+      this.warning= this.warning+StringValue.INFOEMPTY
     }
   }
   

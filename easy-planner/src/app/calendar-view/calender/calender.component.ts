@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 import { EasyPlannerServerService } from '../../easy-planner-server.service'
 import { Event } from '../../model/event'
+import{ StringValue} from'../../value/StringValue';
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.component.html',
@@ -15,6 +16,7 @@ export class CalenderComponent implements OnInit {
 
   key: string;
   name: string;
+  hello: string = StringValue.HELLO;
   clickDate: number[] = [];
   selectedDate: number[] = [];
   events: Event[] = [];
@@ -295,11 +297,7 @@ export class CalenderComponent implements OnInit {
       .subscribe(events => {
         this.calendarEvents = events
         this.dateObject = this.getDatesOfMonth(this.year, this.month)
-        // console.log(this.calendarEvents[0].year, this.calendarEvents[0].month, this.calendarEvents[0].day)
-        // console.log(this.calendarEvents[1].year, this.calendarEvents[1].month, this.calendarEvents[1].day)
-        // console.log(this.calendarEvents[2].year, this.calendarEvents[2].month, this.calendarEvents[2].day)
-        // console.log(this.calendarEvents[3].year, this.calendarEvents[3].month, this.calendarEvents[3].day)
-        // console.log(this.calendarEvents[4].year, this.calendarEvents[4].month, this.calendarEvents[4].day)
+    
       })
     
     // console.log("flag length" + this.flag.length)

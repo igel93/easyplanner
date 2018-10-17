@@ -10,8 +10,6 @@ router.get('/:student_id/:password', (req, res) => {
         connection.query(sql, [req.params.student_id], function (err, rows, fields) {
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows[0]);
-            console.log('The solution is: ', rows[0].solution);
-            console.log('The solution is: ', rows);
             // results = JSON.stringify(rows[0]);
             // results = JSON.parse(results);
             // res.send(results)
@@ -26,7 +24,7 @@ router.get('/:user_id', (req, res) => {
         connection.query(sql, [req.params.user_id], function (err, rows, fields) {
             if (err) throw err
             // console.log('The solution is: ', rows[0].solution);
-            console.log('The solution is: ', rows);
+            //console.log('The solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             // res.send(rows[0]);
             results = JSON.stringify(rows[0]);
@@ -49,7 +47,7 @@ router.post('/', (req, res) => {
         connection.query(sql, [b, c, d, e], function (err, rows, fields) {
             if (err) throw err
             res.setHeader("Access-Control-Allow-Origin", "*");
-            console.log('The solution is: ', rows);
+        //    console.log('The solution is: ', rows);
             res.send(rows);
         })
     } catch (error) { }
@@ -66,7 +64,7 @@ router.put('/:user_id', (req, res) => {
         connection.query(sql, [password, user_id], function (err, rows, fields) {
             if (err) throw err
             res.setHeader("Access-Control-Allow-Origin", "*")
-            console.log('The solution is: ', rows);;
+         //   console.log('The solution is: ', rows);;
             res.send(rows);
         })
     } catch (error) { }

@@ -15,7 +15,6 @@ router.get('/:id', (req, res, next) => {
             results = JSON.stringify(rows);
             results = JSON.parse(results);
             res.send(results);
-            console.log('The by id solution is: ', results);
         })
     } catch (error) { }
 })
@@ -31,7 +30,6 @@ router.get('/modify-event/:event_id', (req, res) => {
             results = JSON.stringify(rows[0]);
             results = JSON.parse(results);
             res.send(results);
-            console.log('The by id solution is: ', results);
         })
     } catch (error) { }
 })
@@ -48,7 +46,7 @@ router.get('/:id/:year/:month/:day', (req, res, next) => {
                 results = JSON.stringify(rows);
                 results = JSON.parse(results);
                 res.send(results)
-                console.log('The solution Of by date is: ', results);
+        
             })
     } catch (error) { }
 })
@@ -94,7 +92,6 @@ router.post('/', (req, res) => {
         sql = "INSERT INTO event (year,month,day,user_id,start_time,ending_time,location,group_name,group_size,describtion) VALUES (?,?,?,?,?,?,?,?,?,?);"
         connection.query(sql, [a1, a2, a3, h, b, c, d, e, f, g], function (err, rows, fields) {
             if (err) throw err
-            console.log('The add solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
@@ -123,7 +120,6 @@ router.put('/', (req, res) => {
         sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=? WHERE event.event_id =?";
         connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, event_id], function (err, rows, fields) {
             if (err) throw err
-            console.log('The modify solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
@@ -137,7 +133,6 @@ router.delete('/:id', (req, res) => {
         sql = "DELETE FROM event WHERE event.event_id =?";
         connection.query(sql, [req.params.id], function (err, rows, fields) {
             if (err) throw err
-            console.log('The delete solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
