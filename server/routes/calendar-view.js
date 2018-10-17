@@ -89,10 +89,9 @@ router.put('/', (req, res) => {
         e = param.group_name
         f = param.group_size
         g = param.describtion
-        h = param.user_id
         event_id = param.event_id
-        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?, user_id=?, WHERE event.event_id =?";
-        connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, h, event_id], function (err, rows, fields) {
+        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=? WHERE event.event_id =?";
+        connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, event_id], function (err, rows, fields) {
             if (err) throw err
             console.log('The modify solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
@@ -100,7 +99,6 @@ router.put('/', (req, res) => {
         })
     } catch (error) { }
 })
-
 
 //DELETE HTTP method to /calendar-event
 router.delete('/:id', (req, res) => {

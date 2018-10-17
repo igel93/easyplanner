@@ -89,6 +89,7 @@ export class CalenderComponent implements OnInit {
    */
   getDatesOfMonth(year: number, month: number) {
     let datesArray: number[] = [];
+    let monthArray: number[] = [];
     let date = new Date(year, month - 1);
     let nowDay = new Date().getDate();
     let nowMonth = new Date().getMonth() + 1;
@@ -103,6 +104,7 @@ export class CalenderComponent implements OnInit {
     //add last months'date
     for (let i = lastDayOfLastMonth; i > lastDayOfLastMonth - day; i--) {
       datesArray.unshift(i);
+      monthArray.unshift(month-1);
       pastDates.unshift(i);
     }
     //  console.log("last"+datesArray)
@@ -126,6 +128,8 @@ export class CalenderComponent implements OnInit {
     let lastDayOfNowMonth = new Date(year, month, 0).getDate()
     for (let index = 1; index <= lastDayOfNowMonth; index++) {
       datesArray.push(index);
+      monthArray.push(month);
+     
       nowDates.push(index);
     }
     //console.log("now"+nowDates)
@@ -142,6 +146,7 @@ export class CalenderComponent implements OnInit {
     let countOfNextMonth = 42 - lastDayOfNowMonth - day;
     for (let index = 1; index <= countOfNextMonth; index++) {
       datesArray.push(index);
+      monthArray.push(month+1);
       nextDates.push(index);
     }
     // console.log("next" + datesArray)
@@ -167,6 +172,7 @@ export class CalenderComponent implements OnInit {
       nowMonth: nowMonth,
       month: month,
       datesArray: datesArray,
+      monthArray:monthArray
     }
   }
 
