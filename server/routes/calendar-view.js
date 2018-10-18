@@ -70,12 +70,12 @@ router.post('/', (req, res) => {
         sql = "INSERT INTO event (year,month,day,start_time,ending_time,location,group_name,group_size,describtion, user_id) VALUES (?,?,?,?,?,?,?,?,?,?);"
         connection.query(sql, [year, month, day, start_time, ending_time, location, group_name, group_size, describtion, user_id,], function (err, rows, fields) {
             if (err) throw err
-            
+            console.log("Tester om denne printer seg ut");
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
     } catch (error) { 
-         console.log(error)
+        console.log(error)
         return res.status(500).send("Fill inn all fields to store the event")
     }
 })

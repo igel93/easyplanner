@@ -32,7 +32,6 @@
     <h2>My meetings
       <button class="btn btn-primary" routerLink="/create-group-event" [queryParams]="{key:key,name:name}">Add New</button>
     </h2>
-    <a *ngIf="success">Delete {{message}} success!!!</a>
     <hr>
     <ul class="events">
       <li *ngFor="let event of events; let i = index; trackBy: trackEvents">
