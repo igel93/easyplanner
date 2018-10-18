@@ -372,7 +372,7 @@ var CalenderComponent = /** @class */ (function () {
             _this.dateObject = _this.getDatesOfMonth(_this.year, _this.month);
         });
         this.month--;
-        if (this.month == 0) {
+        if (this.month === 0) {
             this.month = 12;
             this.year--;
         }
@@ -391,7 +391,7 @@ var CalenderComponent = /** @class */ (function () {
             _this.dateObject = _this.getDatesOfMonth(_this.year, _this.month);
         });
         this.month++;
-        if (this.month == 13) {
+        if (this.month === 13) {
             this.month = 1;
             this.year++;
         }
@@ -426,7 +426,7 @@ var CalenderComponent = /** @class */ (function () {
         }
         //  console.log("last"+datesArray)
         //  console.log(pastDates)
-        if (month == 1) {
+        if (month === 1) {
             tempYear = year - 1;
             tempMonth = 12;
         }
@@ -436,7 +436,7 @@ var CalenderComponent = /** @class */ (function () {
         }
         for (var i = 0; i < pastDates.length; i++) {
             for (var j = 0; j < this.calendarEvents.length; j++) {
-                if (this.calendarEvents[j].year == tempYear && this.calendarEvents[j].month == tempMonth && this.calendarEvents[j].day == pastDates[i]) {
+                if (this.calendarEvents[j].year === tempYear && this.calendarEvents[j].month === tempMonth && this.calendarEvents[j].day === pastDates[i]) {
                     this.flag[i] = 1;
                 }
             }
@@ -451,7 +451,7 @@ var CalenderComponent = /** @class */ (function () {
         //console.log("now"+nowDates)
         for (var i = 0; i < nowDates.length; i++) {
             for (var j = 0; j < this.calendarEvents.length; j++) {
-                if (this.calendarEvents[j].year == year && this.calendarEvents[j].month == month && this.calendarEvents[j].day == nowDates[i]) {
+                if (this.calendarEvents[j].year === year && this.calendarEvents[j].month === month && this.calendarEvents[j].day === nowDates[i]) {
                     //console.log('my test' + j + this.calendarEvents[j].year, year + 'month' + this.calendarEvents[j].month, month + 'day' + this.calendarEvents[j].day, nowDates[i])
                     this.flag[pastDates.length + i] = 1;
                 }
@@ -466,7 +466,7 @@ var CalenderComponent = /** @class */ (function () {
         }
         // console.log("next" + datesArray)
         // console.log("changdu" + datesArray.length)
-        if (month == 12) {
+        if (month === 12) {
             tempYear = year + 1;
             tempMonth = 1;
         }
@@ -476,7 +476,7 @@ var CalenderComponent = /** @class */ (function () {
         }
         for (var i = 0; i < nextDates.length; i++) {
             for (var j = 0; j < this.calendarEvents.length; j++) {
-                if (this.calendarEvents[j].year == tempYear && this.calendarEvents[j].month == tempMonth && this.calendarEvents[j].day == nextDates[i]) {
+                if (this.calendarEvents[j].year === tempYear && this.calendarEvents[j].month === tempMonth && this.calendarEvents[j].day === nextDates[i]) {
                     this.flag[pastDates.length + nowDates.length + i] = 1;
                 }
             }
@@ -500,7 +500,7 @@ var CalenderComponent = /** @class */ (function () {
         var _this = this;
         this.selectedDate = [];
         this.success = false;
-        if (this.dateObject.month == 12 && item < 14 && index > 28) {
+        if (this.dateObject.month === 12 && item < 14 && index > 28) {
             this.selectedDate[0] = this.dateObject.year + 1;
         }
         else {
@@ -519,7 +519,7 @@ var CalenderComponent = /** @class */ (function () {
             });
             return;
         }
-        if (item > 14 && index < 13 && this.dateObject.month == 1) {
+        if (item > 14 && index < 13 && this.dateObject.month === 1) {
             this.selectedDate[1] = 12;
             this.selectedDate[2] = item;
             this.clickDate = this.selectedDate;
@@ -545,7 +545,7 @@ var CalenderComponent = /** @class */ (function () {
             });
             return;
         }
-        if (item < 14 && index > 28 && this.dateObject.month == 12) {
+        if (item < 14 && index > 28 && this.dateObject.month === 12) {
             this.selectedDate[1] = 1;
             this.selectedDate[2] = item;
             this.clickDate = this.selectedDate;
@@ -741,7 +741,7 @@ var CreateGroupEventComponent = /** @class */ (function () {
             this.event.describtion = value.describtion;
         }
         this.event.user_id = this.key;
-        console.log(this.event);
+        // console.log(this.event);
         this.calendarService.addEvent(this.event)
             .subscribe(function (result) {
             if (result.affectedRows !== 0) {
@@ -1106,7 +1106,7 @@ var ModifyEventComponent = /** @class */ (function () {
         else {
             this.event.describtion = value.describtion;
         }
-        console.log(this.event);
+        // console.log(this.event);
         this.calendarService.updateEvent(this.event)
             .subscribe(function (result) {
             if (result.affectedRows != 0) {
@@ -1254,7 +1254,7 @@ var RegisterUserComponent = /** @class */ (function () {
             this.calendarService.getUser(this.user.student_id, this.user.password)
                 .subscribe(function (result) {
                 _this.result = result;
-                console.log("user:" + _this.user.student_id);
+                // console.log("user:" + _this.user.student_id);
                 if (!Object(util__WEBPACK_IMPORTED_MODULE_3__["isNull"])(result)) {
                     _this.warning = "The username already exist!";
                 }

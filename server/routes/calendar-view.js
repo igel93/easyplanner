@@ -15,7 +15,7 @@ router.get('/:id', (req, res, next) => {
             results = JSON.stringify(rows);
             results = JSON.parse(results);
             res.send(results);
-            console.log('The by id solution is: ', results);
+            // console.log('The by id solution is: ', results);
         })
     } catch (error) { }
 })
@@ -31,7 +31,7 @@ router.get('/modify-event/:event_id', (req, res) => {
             results = JSON.stringify(rows[0]);
             results = JSON.parse(results);
             res.send(results);
-            console.log('The by id solution is: ', results);
+            // console.log('The by id solution is: ', results);
         })
     } catch (error) { }
 })
@@ -48,7 +48,7 @@ router.get('/:id/:year/:month/:day', (req, res, next) => {
                 results = JSON.stringify(rows);
                 results = JSON.parse(results);
                 res.send(results)
-                console.log('The solution Of by date is: ', results);
+                // console.log('The solution Of by date is: ', results);
             })
     } catch (error) { }
 })
@@ -56,26 +56,26 @@ router.get('/:id/:year/:month/:day', (req, res, next) => {
 //POST HTTP method to /calendar-event
 router.post('/', (req, res) => {
     try {
-        var param = req.body;
-        a1 = param.year
-        a2 = param.month
-        a3 = param.day
-        b = param.start_time
-        c = param.ending_time
-        d = param.location
-        e = param.group_name
-        f = param.group_size
-        g = param.describtion
-        h = param.user_id
-        sql = "INSERT INTO event (year,month,day,user_id,start_time,ending_time,location,group_name,group_size,describtion) VALUES (?,?,?,?,?,?,?,?,?,?);"
-        connection.query(sql, [a1, a2, a3, h, b, c, d, e, f, g], function (err, rows, fields) {
+        var param = req.body
+        var year = param.year
+        var month = param.month
+        var day = param.day
+        var start_time = param.start_time
+        var ending_time = param.ending_time
+        var location = param.location
+        var group_name = param.group_name
+        var group_size = param.group_size
+        var describtion = param.describtion
+        var user_id = param.user_id
+        sql = "INSERT INTO event (year,month,day,start_time,ending_time,location,group_name,group_size,describtion, user_id) VALUES (?,?,?,?,?,?,?,?,?,?);"
+        connection.query(sql, [year, month, day, start_time, ending_time, location, group_name, group_size, describtion, user_id,], function (err, rows, fields) {
             if (err) throw err
-            console.log('The add solution is: ', rows);
+            
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
     } catch (error) { 
-        console.log(error)
+         console.log(error)
         return res.status(500).send("Fill inn all fields to store the event")
     }
 })
@@ -85,22 +85,22 @@ router.post('/', (req, res) => {
 router.put('/', (req, res) => {
     try {
         //param can pass the select infor
-        var param = req.body;
-        a1 = param.year
-        a2 = param.month
-        a3 = param.day
-        b = param.start_time
-        c = param.ending_time
-        d = param.location
-        e = param.group_name
-        f = param.group_size
-        g = param.describtion
-        h = param.user_id
-        event_id = param.event_id
-        sql = "UPDATE event SET year=?,month=?,day=?,start_time=?,ending_time=?,location=?,group_name=?,group_size=?,describtion=?,user_id=? WHERE event_id =?";
-        connection.query(sql, [a1, a2, a3, b, c, d, e, f, g, h, event_id], function (err, rows, fields) {
+        var param = req.body
+        var year = param.year
+        var month = param.month
+        var day = param.day
+        var start_time = param.start_time
+        var ending_time = param.ending_time
+        var location = param.location
+        var group_name = param.group_name
+        var group_size = param.group_size
+        var description = param.describtion
+        var user_id = param.user_id
+        var event_id = param.event_id
+        sql = "UPDATE event SET year=?, month=?, day=?, start_time=?, ending_time=?, location=?, group_name=?, group_size=?, describtion=?, user_id=? WHERE event_id =?";
+        connection.query(sql, [year, month, day, start_time, ending_time, location, group_name, group_size, description, user_id, event_id], function (err, rows, fields) {
             if (err) throw err
-            console.log('The modify solution is: ', rows);
+            // console.log('The modify solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })
@@ -117,7 +117,7 @@ router.delete('/:id', (req, res) => {
         sql = "DELETE FROM event WHERE event_id =?";
         connection.query(sql, [req.params.id], function (err, rows, fields) {
             if (err) throw err
-            console.log('The delete solution is: ', rows);
+            // console.log('The delete solution is: ', rows);
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.send(rows);
         })

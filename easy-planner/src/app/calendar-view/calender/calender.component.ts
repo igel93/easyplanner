@@ -258,7 +258,7 @@ export class CalenderComponent implements OnInit {
         if (result.affectedRows != 0) {
           this.success = true;
           this.message = event_id;
-          //this.ngOnInit();
+          this.ngOnInit();
         }
       })
   }

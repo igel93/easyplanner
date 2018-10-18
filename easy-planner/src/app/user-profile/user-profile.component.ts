@@ -19,16 +19,16 @@ export class UserProfileComponent implements OnInit {
   oldpassword = null; 
   newpassword = null
   onSubmit(value) {
-    if (value.oldPassword != null && value.newPassword1 != null && value.newPassword2 != null) {
+    if (value.oldPassword !== null && value.newPassword1 !== null && value.newPassword2 !== null) {
       if (value.newPassword1 === value.newPassword2) {
         this.oldpassword = value.oldPassword;
         this.newpassword = value.newPassword1;
-        console.log(this.oldpassword);
-        console.log(this.newpassword);
+        // console.log(this.oldpassword);
+        // console.log(this.newpassword);
         this.service.updateUser(this.user, this.oldpassword, this.newpassword)
           .subscribe(result => {
-            console.log(result);
-            if (result.affectedRows != 0) {
+            // console.log(result);
+            if (result.affectedRows !== 0) {
               this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } })
             }
           }, err => this.warning = err.error);

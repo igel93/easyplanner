@@ -37,27 +37,37 @@ export class CreateGroupEventComponent implements OnInit {
     group_size: null,
     describtion: null,
     user_id: this.key
-  };
+  }
+  warning: string
 
   onSubmit(value) {
-    if (value.year == null) { } else { this.event.year = value.year; }
-    if (value.month == null) { } else { this.event.month = value.month; }
-    if (value.day == null) { } else { this.event.day = value.day; }
-    if (value.start_time == null) { } else { this.event.start_time = value.start_time; }
-    if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time; }
-    if (value.location == null) { } else { this.event.location = value.location; }
-    if (value.group_name == null) { } else { this.event.group_name = value.group_name; }
-    if (value.group_size == null) { } else { this.event.group_size = value.group_size; }
-    if (value.describtion == null) { } else { this.event.describtion = value.describtion; }
-    this.event.user_id = this.key;
-    console.log(this.event);
-    this.calendarService.addEvent(this.event)
-      .subscribe(result => {
-        if (result.affectedRows !== 0) {
-          this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
-        }
-      });
+    if (value.year !== null && value.month !== null && value.day !== null 
+       && value.start_time !== null && value.ending_time !== null 
+       && value.location !== null && value.group_name !== null 
+       && value.group_size !== null && value.describtion !== null) {
+
+        this.event.year = value.year;
+        this.event.month = value.month;
+        this.event.day = value.day;
+        this.event.start_time = value.start_time;
+        this.event.ending_time = value.ending_time;
+        this.event.location = value.location;
+        this.event.group_name = value.group_name;
+        this.event.group_size = value.group_size;
+        this.event.describtion = value.describtion;
+        this.event.user_id = this.key;
+        // console.log(this.event);
+        this.calendarService.addEvent(this.event)
+          .subscribe(result => {
+            if (result.affectedRows !== 0) {
+              this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
+            }
+          }, err => this.warning = err.error);
+      } else {
+        this.warning = "Make sure all fields are filled"
+      }
   }
+
   cancelClick() {
     this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
   }

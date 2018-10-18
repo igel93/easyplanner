@@ -8,11 +8,11 @@ router.get('/:id',(req,res,next) => {
     
 	//param can pass the select infor
     var param =req.query || req.params;
-    console.log(param.id);
+    //console.log(param.id);
     connection.query(param, function (err, rows, fields) {
         if (err) throw err
-        console.log('The solution is: ', rows[0].solution);
-        console.log('The solution is: ', rows);
+        //console.log('The solution is: ', rows[0].solution);
+        //console.log('The solution is: ', rows);
         res.send(rows);
     })
 })
@@ -21,12 +21,12 @@ router.get('/:id',(req,res,next) => {
 router.post('/',(req,res) => {
 	//param can pass the select infor
     var param =req.query || req.params;
-    console.log(param);
+    //console.log(param);
     
     connection.query(param, function (err, rows, fields) {
         if (err) throw err
-        console.log('The solution is: ', rows[0].solution);
-        console.log('The solution is: ', rows);
+        //console.log('The solution is: ', rows[0].solution);
+        //console.log('The solution is: ', rows);
         res.send(rows);
     })
 })
@@ -36,11 +36,11 @@ router.post('/',(req,res) => {
 router.put('/:id',(req,res) => {
 	//param can pass the select infor
     var param =req.query || req.params;
-    console.log(param.id);
+    //console.log(param.id);
     connection.query(param, function (err, rows, fields) {
         if (err) throw err
-        console.log('The solution is: ', rows[0].solution);
-        console.log('The solution is: ', rows);
+        // console.log('The solution is: ', rows[0].solution);
+        // console.log('The solution is: ', rows);
         res.send(rows);
     })
 })
@@ -50,11 +50,11 @@ router.put('/:id',(req,res) => {
 router.delete('/:id',(req,res) => {
 	//param can pass the select infor
     var param =req.query || req.params;
-    console.log(param.id);
+    //console.log(param.id);
     connection.query(param, function (err, rows, fields) {
         if (err) throw err
-        console.log('The solution is: ', rows[0].solution);
-        console.log('The solution is: ', rows);
+        // console.log('The solution is: ', rows[0].solution);
+        // console.log('The solution is: ', rows);
         res.send(rows);
     })
 })

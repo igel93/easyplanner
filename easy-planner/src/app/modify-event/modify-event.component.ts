@@ -36,13 +36,13 @@ export class ModifyEventComponent implements OnInit {
   warning: string;
   onSubmit(value) {
     //if (value.ending_time < value.start_time) { this.warning1 = "Ending time can not less than start time " }
-    if (value.start_time == null) { } else { this.event.start_time = value.start_time }
-    if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time }
-    if (value.location == null) { } else { this.event.location = value.location }
-    if (value.group_name == null) { } else { this.event.group_name = value.group_name }
-    if (value.group_size == null) { } else { this.event.group_size = value.group_size }
-    if (value.describtion == null) { } else { this.event.describtion = value.describtion }
-    console.log(this.event)
+    if (value.start_time === null) { } else { this.event.start_time = value.start_time }
+    if (value.ending_time === null) { } else { this.event.ending_time = value.ending_time }
+    if (value.location === null) { } else { this.event.location = value.location }
+    if (value.group_name === null) { } else { this.event.group_name = value.group_name }
+    if (value.group_size === null) { } else { this.event.group_size = value.group_size }
+    if (value.describtion === null) { } else { this.event.describtion = value.describtion }
+    // console.log(this.event)
     this.calendarService.updateEvent(this.event, this.user.user_id)
       .subscribe(result => {
         if (result.affectedRows != 0) {

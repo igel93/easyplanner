@@ -12,8 +12,8 @@
       <div class="date-day">Thu</div>
       <div class="date-day">Fri</div>
       <div class="date-day">Sat</div>
-      <div *ngFor="let item of dateObject.datesArray,let i = index" class="date-item" [class.active]="item == dateObject.nowDay && dateObject.monthArray[i]==dateObject.nowMonth"
-        [class.event]="flag[i]==1" (click)='dateClickEvent(i,item)'>{{item}}</div>
+      <div *ngFor="let item of dateObject.datesArray,let i = index" class="date-item" [class.active]="item === dateObject.nowDay && dateObject.monthArray[i]===dateObject.nowMonth"
+        [class.event]="flag[i]===1" (click)='dateClickEvent(i,item)'>{{item}}</div>
     </div>
   </div>
   <div>

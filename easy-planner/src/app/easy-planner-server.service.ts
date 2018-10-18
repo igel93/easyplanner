@@ -28,11 +28,11 @@ export class EasyPlannerServerService {
         return this.http.get<User>(this.url + 'login/' + user_id);
     }
     addUser(user: User): Observable<any> {
-        return this.http.post<any>(this.url + 'login/',user, httpOptions);
+        return this.http.post<any>(this.url + 'login/', user, httpOptions);
     }
 
     updateUser(user: User, oldpassword: string, newpassword: string): Observable<any> {
-        return this.http.put<any>(this.url +'login/' + user.user_id, {user: user, oldpassword: oldpassword, newpassword: newpassword}, httpOptions);
+        return this.http.put<any>(this.url + 'login/' + user.user_id, {user: user, oldpassword: oldpassword, newpassword: newpassword}, httpOptions);
     }
 
     /**

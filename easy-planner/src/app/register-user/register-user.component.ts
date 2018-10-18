@@ -39,24 +39,24 @@ export class RegisterUserComponent implements OnInit {
     // this.user.email = value.email; 
     this.test=0;
     this.warning=" ";
-    if (value.student_id != null) {
+    if (value.student_id !== null) {
        this.user.student_id = value.student_id; 
        this.test=this.test+1;}
-    if (value.name == null) { } else { 
+    if (value.name === null) { } else { 
       this.user.name = value.name; 
       this.test=this.test+1;}
-    if (value.email == null) { } else {
+    if (value.email ===null) { } else {
        this.user.email = value.email; 
        this.test=this.test+1;}
-    if (value.password1 == value.password2&&value.password1!=null){
+    if (value.password1 === value.password2&&value.password1!=null){
       this.user.password = value.password1; 
       this.test=this.test+1;
     }else{this.warning= this.warning+"The password has to be same one! ";}
   
-    if(this.test==4){
+    if(this.test===4){
         this.calendarService.addUser(this.user)
         .subscribe(user => {
-          console.log(user)
+          // console.log(user)
           if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
         }, err => this.warning = err.error);
       // this.calendarService.addUser(this.user)
@@ -64,7 +64,7 @@ export class RegisterUserComponent implements OnInit {
       //   if (user.affectedRows !== 0) {this.router.navigate(['/login']);}
       // });
     }else{
-      this.warning= this.warning+"The register information is not allowed empty!  "
+      this.warning = this.warning+"The register information is not allowed empty!  "
     }
   }
   
