@@ -4,7 +4,7 @@ A group work planner developed using Angular, Express.js and MySQL.
 
 
 ## Getting Started
-To work on this project you will first need to make sure all the prerequisites are installed on your machine. Adter that y
+To work on this project you will first need to make sure all the prerequisites are installed on your machine. After that you follow the instructions on installation and running the application. 
 
 ## Prerequisites
 You will need: 
@@ -25,22 +25,22 @@ In the second terminal locate the folder called server and run the same command:
 $ npm install
 ```
 
-After doing that you will need to get your database up and running. So start you local server environment and import the MySQL script provided with the project. 
+After doing that you will need to get your database up and running. So start you local server environment and import the MySQL script provided with the project. Run the localhost and move on to the next step. 
 
 
 ### Run Application and start development Server
 To run the application you will need two terminal windows, one for the front end and one for the back end. 
-Lets make sure the server is running first. In the terminal where you have opened up the server folder run the following command: 
+Lets make sure the server is running first. In the first terminal locate the folder called server and run the following command: 
 ```SH
 $ npm start
 ```
 
-To run the front end of the application use the second terminal window and make sure you are in the easy-planner folder and run the following command:
+To run the front end of the application use the second terminal window and locate the easy-planner folder and run the following command:
 ```SH
 $ ng serve 
 ```
 
-Now you can open up your browser and paste in the following url [http://localhost:4200/login] and the application will run. You can alternatively run the command included under to open up the internet browser automatically when you run the front end command
+Now you can open up your browser and paste in the following url [http://localhost:4200/login] and the application will run. You can alternatively run the command included under to open up the internet browser automatically when you run the front end command, in the folder easy-planner
 ```SH
 $ ng serve --open
 ```
