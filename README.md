@@ -40,7 +40,7 @@ To run the front end of the application use the second terminal window and locat
 $ ng serve 
 ```
 
-Now you can open up your browser and paste in the following url (http://localhost:4200/login) and the application will run. You can alternatively run the command below to open up the internet browser automatically when you run the front end
+Now you can open up your browser and paste in the following url http://localhost:4200/login and the application will run. You can alternatively run the command below to open up the internet browser automatically when you run the front end
 ```SH
 $ ng serve --open
 ```
