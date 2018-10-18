@@ -78,9 +78,7 @@ export class CreateGroupEventComponent implements OnInit {
       this.restOfTheFieldsFilledIn = false;
     }
 
-    //console.log(this.event)
-console.log(this.dateFilledIn)
-console.log(this.restOfTheFieldsFilledIn)
+
     if (this.dateFilledIn && this.restOfTheFieldsFilledIn) {
       this.calendarService.addEvent(this.event).subscribe(result => {
         if (result.affectedRows !== 0) {
