@@ -25,7 +25,7 @@ In the second terminal locate the folder called server and run the same command:
 $ npm install
 ```
 
-After doing that you will need to get your database up and running. So start you local server environment and import the MySQL script provided with the project named easyplanner_database.sql. Ensure that your database is listening on localhost MySQL port 3306 and move on to the next step. 
+After doing that you will need to get your database up and running. So start you local server environment and import the MySQL script provided with the project named easyplanner_database.sql to implement the database. Ensure that your database is listening on localhost MySQL port 3306 and move on to the next step. 
 
 
 ### Run Application and start development Server
