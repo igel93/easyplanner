@@ -38,8 +38,7 @@ export class UserProfileComponent implements OnInit {
       if (value.newPassword1 === value.newPassword2) {
         this.oldpassword = value.oldPassword;
         this.newpassword = value.newPassword1;
-        this.service
-          .updateUser(this.user, this.oldpassword, this.newpassword)
+        this.service.updateUser(this.user, this.oldpassword, this.newpassword)
           .subscribe(
             result => {
               if (result.affectedRows !== 0) {
