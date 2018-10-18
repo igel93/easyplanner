@@ -29,6 +29,8 @@ export class LogInComponent implements OnInit {
     private calendarService: EasyPlannerServerService,
     private router: Router
   ) {}
+
+
   ngOnInit() {}
 
   /**
@@ -36,9 +38,8 @@ export class LogInComponent implements OnInit {
    * @param value the form value which contained the user name and password
    */
   onSubmit(value) {
-    if (value.password != null && value.username != null) {
-      this.calendarService
-        .verifyLogin(value.username, value.password)
+    if (value.password !== null && value.username !== null) {
+      this.calendarService.verifyLogin(value.username, value.password)
         .subscribe(
           user => {
             this.user = user;
