@@ -28,14 +28,17 @@ export class CalenderComponent implements OnInit {
   calendarEvents: Event[] = [];
   flag: number[] = [];
 
-
-
+  /**
+   * initial the flag array
+   */
   initFlag() {
     for (let i = 0; i < 42; i++) {
       this.flag[i] = 0
     }
   }
-
+  /**
+   * Profile click event used to get into the user-profile page
+   */
   myProfileClick() {
     if (this.key != null) {
       this.router.navigate(["/user-profile"], { queryParams: { key: this.key } })
@@ -57,9 +60,6 @@ export class CalenderComponent implements OnInit {
       this.month = 12;
       this.year--;
     }
-    
-    //console.log("month" + this.month)
-    //console.log("flag values" + this.flag)
   }
   /**
    * //return next month data
@@ -76,16 +76,12 @@ export class CalenderComponent implements OnInit {
       this.month = 1;
       this.year++;
     }
-    
-    // this.setFlag(this.year, this.month, this.dateObject)
-    // console.log("flag length" + this.month)
-    //console.log("flag values" + this.flag)
   }
 
   /**
    * return a array data which contains specific date inforamtion
-   * @param year 
-   * @param month 
+   * @param year the selected year
+   * @param month the selected month
    */
   getDatesOfMonth(year: number, month: number) {
     let datesArray: number[] = [];
@@ -104,11 +100,9 @@ export class CalenderComponent implements OnInit {
     //add last months'date
     for (let i = lastDayOfLastMonth; i > lastDayOfLastMonth - day; i--) {
       datesArray.unshift(i);
-      monthArray.unshift(month-1);
+      monthArray.unshift(month - 1);
       pastDates.unshift(i);
     }
-    //  console.log("last"+datesArray)
-    //  console.log(pastDates)
     if (month == 1) {
       tempYear = year - 1
       tempMonth = 12
@@ -129,14 +123,13 @@ export class CalenderComponent implements OnInit {
     for (let index = 1; index <= lastDayOfNowMonth; index++) {
       datesArray.push(index);
       monthArray.push(month);
-     
+
       nowDates.push(index);
     }
-    //console.log("now"+nowDates)
+
     for (let i = 0; i < nowDates.length; i++) {
       for (let j = 0; j < this.calendarEvents.length; j++) {
         if (this.calendarEvents[j].year == year && this.calendarEvents[j].month == month && this.calendarEvents[j].day == nowDates[i]) {
-          //console.log('my test' + j + this.calendarEvents[j].year, year + 'month' + this.calendarEvents[j].month, month + 'day' + this.calendarEvents[j].day, nowDates[i])
           this.flag[pastDates.length + i] = 1
         }
       }
@@ -146,11 +139,9 @@ export class CalenderComponent implements OnInit {
     let countOfNextMonth = 42 - lastDayOfNowMonth - day;
     for (let index = 1; index <= countOfNextMonth; index++) {
       datesArray.push(index);
-      monthArray.push(month+1);
+      monthArray.push(month + 1);
       nextDates.push(index);
     }
-    // console.log("next" + datesArray)
-    // console.log("changdu" + datesArray.length)
     if (month == 12) {
       tempYear = year + 1
       tempMonth = 1
@@ -165,21 +156,21 @@ export class CalenderComponent implements OnInit {
         }
       }
     }
-    //console.log(datesArray)
+    //return the result to the dataObject Object
     return {
       year: year,
       nowDay: nowDay,
       nowMonth: nowMonth,
       month: month,
       datesArray: datesArray,
-      monthArray:monthArray
+      monthArray: monthArray
     }
   }
 
   /**
    * this click method will retrun the cilcked date for search
-   * @param index 
-   * @param item 
+   * @param index the clicked dates' index in array
+   * @param item  the clicked date
    */
   dateClickEvent(index, item) {
     this.selectedDate = [];
@@ -251,7 +242,10 @@ export class CalenderComponent implements OnInit {
         this.events = events
       })
   }
-
+  /**
+   * this method handle the delete event
+   * @param event_id the selected envents' id
+   */
   deleteClick(event_id: string) {
     this.calendarService.deleteEvent(event_id)
       .subscribe(result => {
@@ -262,9 +256,13 @@ export class CalenderComponent implements OnInit {
       })
   }
 
+  /**
+   *  this method handle the modified event
+   * @param event_id the selected envents' id
+   */
   modifyClick(event_id: string) {
     if (event_id != null) {
-      this.router.navigate(['/modify-event'], { queryParams: { event_id: event_id,key:this.key,name:this.name} })
+      this.router.navigate(['/modify-event'], { queryParams: { event_id: event_id, key: this.key, name: this.name } })
     }
   }
 
@@ -279,8 +277,6 @@ export class CalenderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.key = this.activatedRoute.snapshot.queryParamMap.get('key')
-    // this.name = this.activatedRoute.snapshot.queryParamMap.get('name')
     this.activatedRoute.queryParams.subscribe(params => {
       this.name = params['name'];
       this.key = params['key'];
@@ -288,21 +284,12 @@ export class CalenderComponent implements OnInit {
     this.calendarService.getEventsByDate(this.key, this.yearStr, this.monthStr, this.dayStr)
       .subscribe(events => {
         this.events = events
-        // console.log("result is" + this.events.length)
       })
-    //console.log("key is" + this.key)
     this.calendarService.getEvents(this.key)
       .subscribe(events => {
         this.calendarEvents = events
         this.dateObject = this.getDatesOfMonth(this.year, this.month)
-        // console.log(this.calendarEvents[0].year, this.calendarEvents[0].month, this.calendarEvents[0].day)
-        // console.log(this.calendarEvents[1].year, this.calendarEvents[1].month, this.calendarEvents[1].day)
-        // console.log(this.calendarEvents[2].year, this.calendarEvents[2].month, this.calendarEvents[2].day)
-        // console.log(this.calendarEvents[3].year, this.calendarEvents[3].month, this.calendarEvents[3].day)
-        // console.log(this.calendarEvents[4].year, this.calendarEvents[4].month, this.calendarEvents[4].day)
       })
-    
-    // console.log("flag length" + this.flag.length)
-    //console.log("flag values" + this.flag)
+
   }
 }

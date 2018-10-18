@@ -5,25 +5,23 @@
       <input type="text" name=username [(ngModel)]=username #usernameField="ngModel" required>
       <!-- <input type="text" (input)="onUpdateUserName($event)" required> -->
     </div>
-    
+
     <div>
 
-      <label >PASSWORD:</label>
-      <input type="password"  name=password [(ngModel)]=password #passwordField="ngModel" required>
-     
+      <label>PASSWORD:</label>
+      <input type="password" name=password [(ngModel)]=password #passwordField="ngModel" required>
+
     </div>
 
     <div *ngIf=valid>
 
-    <div *ngIf="usernameField.invalid && usernameField.errors.required">
-      Username is required.
+      <div *ngIf="usernameField.invalid && usernameField.errors.required">
+        Username is required.
+      </div>
+      <div *ngIf="passwordField.invalid && passwordField.errors.required">
+        Password is required.
+      </div>
     </div>
-    <div *ngIf="passwordField.invalid && passwordField.errors.required">
-      Password is required.
-    </div>
-
-    </div>
-
     <hr>
     <a>{{warning}}</a>
     <div>

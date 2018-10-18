@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { GroupEvent } from '../group-event';
 import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { Event } from '../model/event';
 import { User } from '../model/user';
 import { ActivatedRoute, Router, NavigationEnd, RouterStateSnapshot, RouterLink } from '@angular/router';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-create-group-event',
@@ -16,7 +13,7 @@ export class CreateGroupEventComponent implements OnInit {
   id: string;
   key: string;
   name: string;
-  input:string;
+  input: string;
   inputdate: string[];
   user: User = {
     user_id: null,
@@ -39,17 +36,17 @@ export class CreateGroupEventComponent implements OnInit {
     describtion: null,
     user_id: this.key
   };
-
+  /**
+   * this method is used to submit the form to create an event
+   * @param value the form value
+   */
   onSubmit(value) {
-    // if (value.year == null) { } else { this.event.year = value.year; }
-    // if (value.month == null) { } else { this.event.month = value.month; }
-    // if (value.day == null) { } else { this.event.day = value.day; }
     if (value.date == null) { } else {
-      this.input= value.date;
-      this.inputdate= this.input.split('-');
-      this.event.year = Number (this.inputdate[0]);
-      this.event.month = Number (this.inputdate[1]);
-      this.event.day = Number (this.inputdate[2]); 
+      this.input = value.date;
+      this.inputdate = this.input.split('-');
+      this.event.year = Number(this.inputdate[0]);
+      this.event.month = Number(this.inputdate[1]);
+      this.event.day = Number(this.inputdate[2]);
       console.log(this.input);
       console.log(this.event.year);
       console.log(this.event.month);
@@ -70,6 +67,9 @@ export class CreateGroupEventComponent implements OnInit {
         }
       });
   }
+  /**
+   * this method is used to handel cancel, so the user can back to main page
+   */
   cancelClick() {
     this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
   }
