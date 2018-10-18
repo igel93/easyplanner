@@ -1,12 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
-import { EasyPlannerServerService } from '../easy-planner-server.service';
-import { User } from '../model/user';
+import { Component, OnInit, Input } from "@angular/core";
+import {
+  ActivatedRouteSnapshot,
+  NavigationEnd,
+  Router,
+  RouterStateSnapshot,
+  RouterLink
+} from "@angular/router";
+import { EasyPlannerServerService } from "../easy-planner-server.service";
+import { User } from "../model/user";
 
 @Component({
-  selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  selector: "app-log-in",
+  templateUrl: "./log-in.component.html",
+  styleUrls: ["./log-in.component.css"]
 })
 export class LogInComponent implements OnInit {
   key: number;
@@ -19,9 +25,11 @@ export class LogInComponent implements OnInit {
   };
   warning: string;
   valid: Boolean = false;
-  constructor(private calendarService: EasyPlannerServerService
-    , private router: Router) { }
-  ngOnInit() { }
+  constructor(
+    private calendarService: EasyPlannerServerService,
+    private router: Router
+  ) {}
+  ngOnInit() {}
 
   /**
    * this method is used to submit a form wihch contained username and password
@@ -29,16 +37,17 @@ export class LogInComponent implements OnInit {
    */
   onSubmit(value) {
     if (value.password != null && value.username != null) {
-      this.calendarService.getUser(value.username, value.password)
-        .subscribe(user => {
-          this.user = user;
-          if (value.password === this.user.password) {
-            this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
-          }
-          else {
-            this.warning = "Username or Password incorrect, please try again.";
-          }
-        });
+      this.calendarService
+        .verifyLogin(value.username, value.password)
+        .subscribe(
+          user => {
+            this.user = user;
+            this.router.navigate(["/calendar-view"], {
+              queryParams: { name: this.user.name, key: this.user.user_id }
+            });
+          },
+          err => (this.warning = err.error)
+        );
     } else {
       this.valid = true;
     }

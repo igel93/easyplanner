@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './model/user';
 import { Event } from './model/event';
+import { environment } from '../environments/environment';
+
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -13,8 +15,8 @@ const httpOptions = {
 
 export class EasyPlannerServerService {
     events: Event[];
-    url: string = "http://localhost:3000/";
-
+    url: string = "http://localhost:3000/"; 
+    
     constructor(private http: HttpClient) { }
 
     /**
@@ -22,9 +24,9 @@ export class EasyPlannerServerService {
      * @param userName the user account
      * @param password the user password
      */
-    getUser(userName: string, password: string): Observable<User> {
+    verifyLogin(userName:string, password:string): Observable<User> {
         // FIXME: ensure that this is always used by login
-        return this.http.get<User>(this.url + 'login/' + userName + '/' + password);
+        return this.http.post<User>(this.url + 'login/verify', {userName, password});
     }
     /**
      *  this method is used to get users' information from database by user id
@@ -44,8 +46,8 @@ export class EasyPlannerServerService {
      * this method is used to update the user informtion in database
      * @param user user object
      */
-    updateUser(user: User): Observable<any> {
-        return this.http.put<any>(this.url + 'login/' + user.user_id, user, httpOptions);
+    updateUser(user: User, oldpassword: string, newpassword: string): Observable<any> {
+        return this.http.put<any>(this.url + 'login/' + user.user_id, {user: user, oldpassword: oldpassword, newpassword: newpassword}, httpOptions);
     }
 
     /**
@@ -59,7 +61,7 @@ export class EasyPlannerServerService {
      *  this method is used to get events' information from database by event id
      * @param event_id this is a event id in event table
      */
-    getEventByID(event_id: string): Observable<Event> {
+    getEventByID(event_id:string, user_id: string): Observable<Event> {
         return this.http.get<Event>(this.url + 'calender-view/modify-event/' + event_id)
     }
     /**
@@ -83,7 +85,7 @@ export class EasyPlannerServerService {
      * this method is used to update an event in the event table
      * @param event this is an event object
      */
-    updateEvent(event: Event): Observable<any> {
+    updateEvent(event: Event, user_id: string): Observable<any> {
         return this.http.put<any>(this.url + 'calender-view/', event, httpOptions)
     }
     /**

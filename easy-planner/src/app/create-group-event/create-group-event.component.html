@@ -4,46 +4,40 @@
   <div>
     <form (ngSubmit)="onSubmit(groupEventForm.value)" #groupEventForm="ngForm">
         <div>
-            <label for="date">Date</label>
-            <input type="date" value="date" name="date" required [(ngModel)]=date>
-          </div>
-      <div>
-        <label for="start_time">Start time:</label>
-        <input type="time" value="start_time" name="start_time" required [(ngModel)]=start_time>
-      </div>
-      <div>
-        <label for="ending_time">Ending time:</label>
-        <input type="time" value="ending_time" name="ending_time" required [(ngModel)]=ending_time>
-      </div>
-      <div>
-        <label for="location">Location:</label>
-        <input type="text" value="location" name="location" required [(ngModel)]=location>
-      </div>
-      <div>
-        <label for="group_name">Group name:</label>
-        <input type="text" value="group_name" name="group_name" required [(ngModel)]=group_name>
-      </div>
-      <div>
-        <label for="group_size">Group size:</label>
-        <input type="number" value="group_size" name="group_size" required [(ngModel)]=group_size>
-      </div>
-      <div>
-        <label for="describtion">describtion:</label>
-        <textarea rows="8" cols="30" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>
-      </div>
-      <div style="text-align:center">
-        <a>{{warning}}</a>
-      </div>
-      <div>
+          <label for="date">Date</label>
+          <input type="date" value="date" name="date" required [(ngModel)]=date>
+        </div>
+        <div>
+          <label for="start_time">Start time:</label>
+          <input type="time" value="start_time" name="start_time" required [(ngModel)]=start_time>
+        </div>
+        <div>
+          <label for="ending_time">Ending time:</label>
+          <input type="time" value="ending_time" name="ending_time" required [(ngModel)]=ending_time>
+        </div>
+        <div>
+          <label for="location">Location:</label>
+          <input type="text" value="location" name="location" required [(ngModel)]=location>
+        </div>
+        <div>
+          <label for="group_name">Group name:</label>
+          <input type="text" value="group_name" name="group_name" required [(ngModel)]=group_name>
+        </div>
+        <div>
+          <label for="group_size">Group size:</label>
+          <input type="number" value="group_size" name="group_size" required [(ngModel)]=group_size>
+        </div>
+        <div>
+          <label for="describtion">describtion:</label>
+          <textarea rows="8" cols="30" value={{event.describtion}} name=describtion [(ngModel)]=describtion name=describtion></textarea>
+        </div>
+        <div style="text-align:center">
+          <a>{{warning}}</a>
+        </div>
+        <div>
           <button class="btn btn-primary" (click)="cancelClick()">Cancel</button>
           <button class="btn btn-primary" type="submit">Confirm</button>
-      </div>
+        </div>
     </form>
   </div>
 </div>
-
-
-
-
-
-

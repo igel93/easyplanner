@@ -5,9 +5,9 @@ import { User } from '../model/user';
 import { ActivatedRoute, Router, NavigationEnd, RouterStateSnapshot, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-create-group-event',
-  templateUrl: './create-group-event.component.html',
-  styleUrls: ['./create-group-event.component.css']
+  selector: "app-create-group-event",
+  templateUrl: "./create-group-event.component.html",
+  styleUrls: ["./create-group-event.component.css"]
 })
 export class CreateGroupEventComponent implements OnInit {
   id: string;
@@ -36,55 +36,73 @@ export class CreateGroupEventComponent implements OnInit {
     describtion: null,
     user_id: this.key
   };
+  warning: string;
+  dateFilledIn: boolean = true;
+  restOfTheFieldsFilledIn: boolean = true;
+
   /**
    * this method is used to submit the form to create an event
    * @param value the form value
    */
   onSubmit(value) {
-    if (value.date == null) { } else {
+    if (typeof value.date === "undefined") {
+      this.warning = "Remember to fill in date";
+      this.dateFilledIn = false;
+    } else {
       this.input = value.date;
-      this.inputdate = this.input.split('-');
+      this.inputdate = this.input.split("-");
       this.event.year = Number(this.inputdate[0]);
       this.event.month = Number(this.inputdate[1]);
       this.event.day = Number(this.inputdate[2]);
-      console.log(this.input);
-      console.log(this.event.year);
-      console.log(this.event.month);
-      console.log(this.event.day);
     }
-    if (value.start_time == null) { } else { this.event.start_time = value.start_time; }
-    if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time; }
-    if (value.location == null) { } else { this.event.location = value.location; }
-    if (value.group_name == null) { } else { this.event.group_name = value.group_name; }
-    if (value.group_size == null) { } else { this.event.group_size = value.group_size; }
-    if (value.describtion == null) { } else { this.event.describtion = value.describtion; }
-    this.event.user_id = this.key;
-    console.log(this.event);
-    this.calendarService.addEvent(this.event)
-      .subscribe(result => {
+
+    if (
+      value.start_time !== null &&
+      value.ending_time !== null &&
+      value.location !== null
+    ) {
+      this.event.start_time = value.start_time;
+      this.event.ending_time = value.ending_time;
+      this.event.location = value.location;
+      this.event.group_name = value.group_name;
+      this.event.group_size = value.group_size;
+      this.event.describtion = value.describtion;
+      this.event.user_id = this.key;
+    } else {
+      this.warning = "Remeber to fill in all fields";
+      this.restOfTheFieldsFilledIn = false;
+    }
+
+
+    if (this.dateFilledIn && this.restOfTheFieldsFilledIn) {
+      this.calendarService.addEvent(this.event).subscribe(result => {
         if (result.affectedRows !== 0) {
-          this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
+          this.router.navigate(["/calendar-view"], {
+            queryParams: { name: this.name, key: this.key }
+          });
         }
       });
+    }
   }
   /**
    * this method is used to handel cancel, so the user can back to main page
    */
   cancelClick() {
-    this.router.navigate(['/calendar-view'], { queryParams: { name: this.name, key: this.key } });
+    this.router.navigate(["/calendar-view"], {
+      queryParams: { name: this.name, key: this.key }
+    });
   }
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private calendarService: EasyPlannerServerService) { }
+    private calendarService: EasyPlannerServerService
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
-      this.name = params['name'];
-      this.key = params['key'];
+      this.name = params["name"];
+      this.key = params["key"];
     });
   }
-
-
 }

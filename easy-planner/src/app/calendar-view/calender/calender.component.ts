@@ -250,7 +250,6 @@ export class CalenderComponent implements OnInit {
     this.calendarService.deleteEvent(event_id)
       .subscribe(result => {
         if (result.affectedRows != 0) {
-          this.success = true;
           this.ngOnInit();
         }
       })
@@ -274,6 +273,10 @@ export class CalenderComponent implements OnInit {
     let date = new Date()
     this.year = date.getFullYear()
     this.month = date.getMonth() + 1
+  }
+
+  trackEvents(index, event) {
+    return event ? event.event_id : undefined;
   }
 
   ngOnInit() {

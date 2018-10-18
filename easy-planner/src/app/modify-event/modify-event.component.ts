@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterStateSnapshot, RouterLink } from '@angular/router';
 import { EasyPlannerServerService } from '../easy-planner-server.service';
 import { Event } from '../model/event';
+import { User } from '../model/user';
 import { Time } from '@angular/common';
 @Component({
   selector: 'app-modify-event',
@@ -25,30 +26,40 @@ export class ModifyEventComponent implements OnInit {
     describtion: null,
     user_id: null
   }
+  user: User = {
+    user_id: null,
+    student_id: null,
+    name: null,
+    password: null,
+    email: null
+  }
+  warning: string;
+
   /**
    * this method is used to submit a form which contained the envent information for modifying the event.
    * @param value the form value
    */
   onSubmit(value) {
-    if (value.start_time == null) { } else { this.event.start_time = value.start_time }
-    if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time }
-    if (value.location == null) { } else { this.event.location = value.location }
-    if (value.group_name == null) { } else { this.event.group_name = value.group_name }
-    if (value.group_size == null) { } else { this.event.group_size = value.group_size }
-    if (value.describtion == null) { } else { this.event.describtion = value.describtion }
-    console.log(this.event)
-    this.calendarService.updateEvent(this.event)
+    //if (value.ending_time < value.start_time) { this.warning1 = "Ending time can not less than start time " }
+    if (value.start_time === null) { } else { this.event.start_time = value.start_time }
+    if (value.ending_time === null) { } else { this.event.ending_time = value.ending_time }
+    if (value.location === null) { } else { this.event.location = value.location }
+    if (value.group_name === null) { } else { this.event.group_name = value.group_name }
+    if (value.group_size === null) { } else { this.event.group_size = value.group_size }
+    if (value.describtion === null) { } else { this.event.describtion = value.describtion }
+    // console.log(this.event)
+    this.calendarService.updateEvent(this.event, this.user.user_id) //might have to remove the last parameter
       .subscribe(result => {
         if (result.affectedRows != 0) {
-          this.router.navigate(["/calendar-view"], { queryParams: { name: this.name, key: this.key } })
+          this.router.navigate(["/calendar-view"], { queryParams: { name: this.id, key: this.key } })
         }
-      })
+      }, err => this.warning = err.error);
   }
   /**
    * this method is used to handel cancel event
    */
   cancelClick() {
-    this.router.navigate(["/calendar-view"], { queryParams: { name: this.name, key: this.key } })
+    this.router.navigate(["/calendar-view"], { queryParams: { name: this.id, key: this.key } })
   }
 
   constructor(
@@ -63,7 +74,7 @@ export class ModifyEventComponent implements OnInit {
         this.key = params['key'];
         this.name = params['name']
       })
-    this.calendarService.getEventByID(this.event.event_id)
+    this.calendarService.getEventByID(this.event.event_id, this.user.user_id)
       .subscribe(result => {
         if (result) {
           this.event = result
