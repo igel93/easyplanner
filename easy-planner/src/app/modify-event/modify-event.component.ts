@@ -25,9 +25,11 @@ export class ModifyEventComponent implements OnInit {
     describtion: null,
     user_id: null
   }
-  //warning1: string
+  /**
+   * this method is used to submit a form which contained the envent information for modifying the event.
+   * @param value the form value
+   */
   onSubmit(value) {
-    //if (value.ending_time < value.start_time) { this.warning1 = "Ending time can not less than start time " }
     if (value.start_time == null) { } else { this.event.start_time = value.start_time }
     if (value.ending_time == null) { } else { this.event.ending_time = value.ending_time }
     if (value.location == null) { } else { this.event.location = value.location }
@@ -42,6 +44,9 @@ export class ModifyEventComponent implements OnInit {
         }
       })
   }
+  /**
+   * this method is used to handel cancel event
+   */
   cancelClick() {
     this.router.navigate(["/calendar-view"], { queryParams: { name: this.name, key: this.key } })
   }

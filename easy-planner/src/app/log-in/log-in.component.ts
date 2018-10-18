@@ -18,53 +18,29 @@ export class LogInComponent implements OnInit {
     email: null
   };
   warning: string;
-  valid:Boolean=false;
+  valid: Boolean = false;
   constructor(private calendarService: EasyPlannerServerService
     , private router: Router) { }
   ngOnInit() { }
 
+  /**
+   * this method is used to submit a form wihch contained username and password
+   * @param value the form value which contained the user name and password
+   */
   onSubmit(value) {
-    if(value.password!=null&&value.username!=null){
-    this.calendarService.getUser(value.username, value.password)
-      .subscribe(user => {
-        this.user = user;
-        if (value.password === this.user.password) {
-          this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
-        }
-        else { 
-          this.warning = "Username or Password incorrect, please try again.";
-        }
-      });
-    }else{
-      this.valid=true;
+    if (value.password != null && value.username != null) {
+      this.calendarService.getUser(value.username, value.password)
+        .subscribe(user => {
+          this.user = user;
+          if (value.password === this.user.password) {
+            this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } });
+          }
+          else {
+            this.warning = "Username or Password incorrect, please try again.";
+          }
+        });
+    } else {
+      this.valid = true;
     }
   }
-
-  // onClickAuthentication() {
-  //   this.getUser()
-  //   if (this.userName == this.user.student_id) {
-  //     this.link = "/calendar-view";
-  //     this.key = this.user.user_id;
-  //     this.name = this.user.name;
-  //   }
-  //   else {
-  //     this.warning = "Username or Passward incorrect, please try again."
-  //   }
-  // }
-
-  // getUser() {
-  //   this.calendarService.getUser(this.userName, this.password)
-  //     .subscribe(user => {
-  //       this.user = user
-  //       //console.log(this.user.password)
-  //     })
-  // }
-
-  // onUpdateUserName(event: Event) {
-  //   this.userName = (<HTMLInputElement>event.target).value;
-  // }
-  // onUpdatePassword(event: Event) {
-  //   this.password = (<HTMLInputElement>event.target).value;
-  // }
-
 }

@@ -16,6 +16,10 @@ export class UserProfileComponent implements OnInit {
     email: null
   }
   warning: string
+  /**
+   * this method is used to submit a form which contained the user's old password and new password for changing password.
+   * @param value form value
+   */
   onSubmit(value) {
     if (this.user.password == value.oldPassword) {
       if (value.newPassword1 == value.newPassword2) {
@@ -35,6 +39,9 @@ export class UserProfileComponent implements OnInit {
       this.warning = "Please enter correct old password!"
     }
   }
+  /**
+   * this method is used to cancel the change password and back to the main page.
+   */
   cancelClick() {
     this.router.navigate(["/calendar-view"], { queryParams: { name: this.user.name, key: this.user.user_id } })
   }
