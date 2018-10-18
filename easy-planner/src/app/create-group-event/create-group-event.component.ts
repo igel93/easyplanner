@@ -22,7 +22,7 @@ export class CreateGroupEventComponent implements OnInit {
   id: string;
   key: string;
   name: string;
-  input: string;
+  input:string;
   inputdate: string[];
   user: User = {
     user_id: null,

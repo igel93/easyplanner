@@ -53,6 +53,30 @@ router.get('/:id/:year/:month/:day', (req, res, next) => {
     } catch (error) { }
 })
 
+// //POST HTTP method to /calendar-event
+// router.post('/', (req, res) => {
+//     try {
+//         var param = req.body;
+//         a1 = param.year;
+//         a2 = param.month;
+//         a3 = param.day;
+//         b = param.start_time
+//         c = param.ending_time
+//         d = param.location
+//         e = param.group_name
+//         f = param.group_size
+//         g = param.describtion
+//         h = param.user_id
+//         sql = "INSERT INTO event (user_id,year, month, day,start_time,ending_time,location,group_name,group_size,describtion) VALUES (?,?,?,?,?,?,?);"
+//         connection.query(sql, [h, a1, a2, a3, b, c, d, e, f, g], function (err, rows, fields) {
+//             if (err) throw err
+//             console.log('The SQL is: ', sql);
+//             res.setHeader("Access-Control-Allow-Origin", "*");
+//             res.send(rows);
+//         })
+//     } catch (error) { }
+// })
+
 //POST HTTP method to /calendar-event
 router.post('/', (req, res) => {
     try {
@@ -108,7 +132,6 @@ router.put('/', (req, res) => {
         return res.status(500).send(error.toString());
      }
 })
-
 
 //DELETE HTTP method to /calendar-event
 router.delete('/:id', (req, res) => {

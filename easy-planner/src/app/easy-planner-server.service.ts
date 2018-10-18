@@ -16,7 +16,6 @@ const httpOptions = {
 export class EasyPlannerServerService {
     events: Event[];
     url: string = environment.apiUrl;
-
     constructor(private http: HttpClient) { }
 
     verifyLogin(userName:string,password:string): Observable<User> {

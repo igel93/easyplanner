@@ -12,7 +12,7 @@ export class CalenderComponent implements OnInit {
   private month: number;
   private dateObject;
   success: boolean = false;
-  message: string;
+
   key: string;
   name: string;
   clickDate: number[] = [];
@@ -256,8 +256,6 @@ export class CalenderComponent implements OnInit {
     this.calendarService.deleteEvent(event_id)
       .subscribe(result => {
         if (result.affectedRows != 0) {
-          this.success = true;
-          this.message = event_id;
           this.ngOnInit();
         }
       })
