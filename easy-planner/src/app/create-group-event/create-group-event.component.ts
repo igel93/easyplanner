@@ -1,17 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-
-import { GroupEvent } from "../group-event";
-import { EasyPlannerServerService } from "../easy-planner-server.service";
-import { Event } from "../model/event";
-import { User } from "../model/user";
-import {
-  ActivatedRoute,
-  Router,
-  NavigationEnd,
-  RouterStateSnapshot,
-  RouterLink
-} from "@angular/router";
-import { FormGroup } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { EasyPlannerServerService } from '../easy-planner-server.service';
+import { Event } from '../model/event';
+import { User } from '../model/user';
+import { ActivatedRoute, Router, NavigationEnd, RouterStateSnapshot, RouterLink } from '@angular/router';
 
 @Component({
   selector: "app-create-group-event",
@@ -22,7 +13,7 @@ export class CreateGroupEventComponent implements OnInit {
   id: string;
   key: string;
   name: string;
-  input:string;
+  input: string;
   inputdate: string[];
   user: User = {
     user_id: null,
@@ -49,6 +40,10 @@ export class CreateGroupEventComponent implements OnInit {
   dateFilledIn: boolean = true;
   restOfTheFieldsFilledIn: boolean = true;
 
+  /**
+   * this method is used to submit the form to create an event
+   * @param value the form value
+   */
   onSubmit(value) {
     if (typeof value.date === "undefined") {
       this.warning = "Remember to fill in date";
@@ -78,9 +73,7 @@ export class CreateGroupEventComponent implements OnInit {
       this.restOfTheFieldsFilledIn = false;
     }
 
-    //console.log(this.event)
-console.log(this.dateFilledIn)
-console.log(this.restOfTheFieldsFilledIn)
+
     if (this.dateFilledIn && this.restOfTheFieldsFilledIn) {
       this.calendarService.addEvent(this.event).subscribe(result => {
         if (result.affectedRows !== 0) {
@@ -91,6 +84,9 @@ console.log(this.restOfTheFieldsFilledIn)
       });
     }
   }
+  /**
+   * this method is used to handel cancel, so the user can back to main page
+   */
   cancelClick() {
     this.router.navigate(["/calendar-view"], {
       queryParams: { name: this.name, key: this.key }
